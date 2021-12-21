@@ -1,0 +1,32 @@
+{
+  "name": "fhiruck-for-vghtc",
+  "private": true,
+  "version": "0.0.0",
+  "description": "FHIR U.C.K tool for VGHTC",
+  "keywords": [],
+  "dependencies": {
+    "sails": "^1.5.0",
+    "sails-hook-orm": "^4.0.0",
+    "sails-hook-sockets": "^2.0.0",
+    "@sailshq/lodash": "^3.10.3"
+  },
+  "devDependencies": {
+    "eslint": "5.16.0"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
+    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.sita.tech/sitatech/vghtc/fuck-vghtc.git"
+  },
+  "author": "Lorex@sitatech",
+  "license": "Copyright (c) 2021 Sitatech Information Services Co. Ltd. All rights reserved.",
+  "engines": {
+    "node": "^16.8"
+  }
+}
