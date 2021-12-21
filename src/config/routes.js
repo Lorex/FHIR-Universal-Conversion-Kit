@@ -9,6 +9,5 @@
  */
 
 module.exports.routes = {
-
-
+    'POST /': 'convert'
 };
