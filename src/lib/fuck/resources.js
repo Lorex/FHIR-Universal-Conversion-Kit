@@ -1,5 +1,3 @@
-const config = require('../../../fhirconfig');
-
 module.exports.Organization = {
   resourceType: 'Organization',
   id: 'org-vghtc',
@@ -32,17 +30,22 @@ module.exports.Organization = {
   }]
 };
 
-const bundleOrganization = {
-  fullUrl: `${config.config.fhirServerBaseUrl}/Organization/org-vghtc`,
-  resource: module.exports.Organization,
-  request: {
-    method: 'PUT',
-    url: '/Organization/org-vghtc'
-  }
+const bundleOrganization = (profile) => {
+  return {
+    fullUrl: `${profile.profile.fhirServerBaseUrl}/Organization/org-vghtc`,
+    resource: module.exports.Organization,
+    request: {
+      method: 'PUT',
+      url: '/Organization/org-vghtc'
+    }
+  };
 };
 
-module.exports.Bundle = {
-  resourceType: 'Bundle',
-  type: 'transaction',
-  entry: [bundleOrganization],
+module.exports.Bundle = (profile) => {
+  const p = require(`../../../profile/${profile}`);
+  return {
+    resourceType: 'Bundle',
+    type: 'transaction',
+    entry: [bundleOrganization(p)],
+  };
 };

@@ -1,20 +1,35 @@
 'use strict';
 
-const fhir = require('../../../fhirconfig');
 const resources = Object.assign({},require('./resources'));
+const schema = require('./fhir_schema/schema.json');
 const objectPath = require('object-path');
 const jp = require('jsonpath');
 const uuid = require('uuid');
-const schema = require('./fhir_schema/schema.json');
+const axios = require('axios');
+
+// load all profiles from profile folder
+const _profiles = {};
+const profilePath = '../../../profile';
+const fs = require('fs');
+const path = require('path');
+const profileFiles = fs.readdirSync(path.join(__dirname, profilePath));
+profileFiles.forEach(file => {  
+  const profile = require(path.join(__dirname, profilePath, file));
+  _profiles[profile.profile.name] = profile;
+});
 
 
 class Convert {
-  constructor(src) {
+  constructor(src, useProfile) {
     this.data = src;
-    this.bundle = JSON.parse(JSON.stringify(resources.Bundle));
+    this.useProfile = useProfile;
     this.resourceIdList = {};
-    this.fhir = JSON.parse(JSON.stringify(fhir));
-    
+    this.profiles = JSON.parse(JSON.stringify(_profiles));
+    if (!_profiles[this.useProfile]) {
+      throw new Error('Profile not found.');
+    } else {
+      this.bundle = JSON.parse(JSON.stringify(resources.Bundle(useProfile)));
+    }
   }
 
   async convert() {
@@ -23,13 +38,24 @@ class Convert {
     
     let bundle = JSON.parse(JSON.stringify(this.bundle));
     let resourceIdList = JSON.parse(JSON.stringify(this.resourceIdList));
-    let fhir = JSON.parse(JSON.stringify(this.fhir));
+    let profiles = JSON.parse(JSON.stringify(this.profiles));
 
+    // find the profile 
+    const profile = JSON.parse(JSON.stringify(profiles[this.useProfile]));
+    
+
+    if(!profile) {
+      throw new Error('Profile not found.');
+    }
+    
     for (const field in data){
       // find target field in the config
-      let targetField = fhir.fields.find(f => {
+      let targetField = profile.fields.find(f => {
         return (f.source === field)
       });
+      if(!targetField) {
+        continue;
+      }
       const target = targetField.target;
       
       // get the resource type
@@ -42,11 +68,11 @@ class Convert {
       if (!resource) {
         const id = uuid.v4();
         bundle.entry.push({
-          fullUrl: `${fhir.config.fhirServerBaseUrl}/${resourceType}/${id}`,
+          fullUrl: `${profile.profile.fhirServerBaseUrl}/${resourceType}/${id}`,
           resource: {
             resourceType: resourceType,
             id: id,
-            ...fhir.globalResource[resourceType]
+            ...profile.globalResource[resourceType]
           },
           request: {
             method: 'PUT',
@@ -63,7 +89,10 @@ class Convert {
       let fhirPath = target.split('.').slice(1).join('.');
 
       // run beforeConvert function if it exists
-      let preprocessedData = targetField.beforeConvert ? targetField.beforeConvert(data[field]) : data[field];
+      const targetbeforeConvert = _profiles[this.useProfile].fields.find(f => {
+        return (f.source === field)
+      });
+      let preprocessedData = targetbeforeConvert.beforeConvert ? targetbeforeConvert.beforeConvert(data[field]) : data[field];
 
       // write the resource to the bundle
       switch (schema.definitions[resourceType].properties[fhirPath].type) {
@@ -74,6 +103,11 @@ class Convert {
           objectPath.set(bundle.entry[resourceIndex].resource, fhirPath, preprocessedData);
           break;
       }
+
+      // if id was changed, update the fullUrl
+      bundle.entry[resourceIndex].fullUrl = `${profile.profile.fhirServerBaseUrl}/${resourceType}/${bundle.entry[resourceIndex].resource.id}`;
+      bundle.entry[resourceIndex].request.url = `/${resourceType}/${bundle.entry[resourceIndex].resource.id}`;
+      resourceIdList[resourceType] = bundle.entry[resourceIndex].resource.id;
     }
     // build id list
     resourceIdList = {};
@@ -94,7 +128,19 @@ class Convert {
         objectPath.set(bundle.entry[resourceIndex], reference.path.slice(2).join('.'), `${resourceType}/${resourceId}`);
       }
     }
-    return bundle;
+
+
+    // return convert result or upload to FHIR server
+    if (profile.profile.action === 'return') {
+      return bundle;
+    }
+
+    if (profile.profile.action === 'upload') {
+      const result = await axios.post(`${profile.profile.fhirServerBaseUrl}`, bundle).catch(err => {
+        console.log(err.response.data);
+      });
+      return result.data;
+    }
   }
 }
 

@@ -1,5 +1,8 @@
-module.exports.config = {
+module.exports.profile = {
+    name: 'example',
+    version: '1.0.0',
     fhirServerBaseUrl: 'https://hapi.fhir.tw/fhir',
+    action: 'upload', // return, upload
 }
 
 module.exports.globalResource = {
@@ -25,6 +28,10 @@ module.exports.globalResource = {
 }
 
 module.exports.fields = [
+    {
+        source: 'id',
+        target: 'Patient.id',
+    },
     {
         source: 'identifier',
         target: 'Patient.identifier',

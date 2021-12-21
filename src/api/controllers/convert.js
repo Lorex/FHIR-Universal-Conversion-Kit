@@ -35,6 +35,11 @@ module.exports = {
       description: 'The data to convert.',
       type: 'json',
       required: true
+    },
+    profile: {
+      description: 'The profile to use.',
+      type: 'string',
+      required: true
     }
   },
 
@@ -49,7 +54,8 @@ module.exports = {
 
     for (let i = 0; i < inputs.data.length; i++) {
       let data = inputs.data[i];
-      const convert = new fuck.Convert(data);
+      let profile = inputs.profile;
+      const convert = new fuck.Convert(data, profile);
       const converted = await convert.convert(data);
       // console.log(converted)
       res.push(converted);
