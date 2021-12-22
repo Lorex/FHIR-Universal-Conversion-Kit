@@ -34,20 +34,23 @@ class Convert {
 
   async convert() {
     // iterate through each field in the data
-    const data = this.data;
+    let data = JSON.parse(JSON.stringify(this.data));
     
     let bundle = JSON.parse(JSON.stringify(this.bundle));
     let resourceIdList = JSON.parse(JSON.stringify(this.resourceIdList));
     let profiles = JSON.parse(JSON.stringify(this.profiles));
 
     // find the profile 
-    const profile = JSON.parse(JSON.stringify(profiles[this.useProfile]));
+    let profile = JSON.parse(JSON.stringify(profiles[this.useProfile]));
     
 
     if(!profile) {
       throw new Error('Profile not found.');
     }
     
+    // run beforeProcess
+    data = _profiles[this.useProfile].beforeProcess ? _profiles[this.useProfile].beforeProcess(data) : data;
+
     for (const field in data){
       // find target field in the config
       let targetField = profile.fields.find(f => {
@@ -94,6 +97,11 @@ class Convert {
       });
       let preprocessedData = targetbeforeConvert.beforeConvert ? targetbeforeConvert.beforeConvert(data[field]) : data[field];
 
+      // skip if the data is empty
+      if (preprocessedData === null) {
+        continue;
+      }
+
       // write the resource to the bundle
       switch (schema.definitions[resourceType].properties[fhirPath].type) {
         case 'array':
@@ -138,6 +146,7 @@ class Convert {
     if (profile.profile.action === 'upload') {
       const result = await axios.post(`${profile.profile.fhirServerBaseUrl}`, bundle).catch(err => {
         console.log(err.response.data);
+        throw new Error(JSON.stringify(err.response.data));
       });
       return result.data;
     }
