@@ -1,8 +1,8 @@
 {
-  "name": "fhiruck-for-vghtc",
+  "name": "project-fuck",
   "private": true,
   "version": "0.0.0",
-  "description": "FHIR U.C.K tool for VGHTC",
+  "description": "FHIR Universal Conversion Kit",
   "keywords": [],
   "dependencies": {
     "@sailshq/lodash": "^3.10.3",
@@ -30,7 +30,7 @@
     "url": "http://gitlab.sita.tech/sitatech/vghtc/fuck-vghtc.git"
   },
   "author": "Lorex@sitatech",
-  "license": "Copyright (c) 2021 Sitatech Information Services Co. Ltd. All rights reserved.",
+  "license": "Apache 2.0",
   "engines": {
     "node": "^16.8"
   }
