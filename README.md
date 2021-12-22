@@ -14,24 +14,24 @@ FHIR Universal Conversion Kit (F.U.C.K.) is a super awesome and sexy kit that ca
 
 ## Installation
 Clone this repository to your computer
-```bash=
+```bash
 $ git clone https://github.com/Lorex/FHIR-Universal-Conversion-Kit.git
 ```
 
 Install npm packages
-```bash=
+```bash
 $ cd src
 $ npm install
 ```
 
 Install npm packages
-```bash=
+```bash
 $ cd src
 $ npm install
 ```
 
 Run Service
-```bash=
+```bash
 $ chmod +x ./start_server
 $ ./start_server
 ```
@@ -46,7 +46,7 @@ POST <serverurl>
 ```
 
 Payload
-```json=
+```json
 {
     "profile": "<Profile Name>",
     "data": [
@@ -56,7 +56,7 @@ Payload
 ```
 
 Response
-```json=
+```json
 {
     "success": true,
     "data": [
@@ -71,6 +71,8 @@ Response
 If you have many different data source formats, you can create separate profiles (also known as config files) for each of them.
 Each profile can define different data sources, source fields, conversion rules, and preprocessors.
 
+**ATTENTION: The 'Profile' in this section is NOT FHIR Profile**
+
 Every source data will be processed and converted as the following workflow: 
 
 ![workflow](https://i.imgur.com/6JwsLXC.png)
@@ -78,7 +80,7 @@ Every source data will be processed and converted as the following workflow:
 To define a profile, just create `<profileName>.js` in the `profile` folder simply, the server should automatically load all profiles at the start.
 
 This is an example of the profile:
-```javascript=
+```javascript
 module.exports.profile = {
     // Name of the profile
     name: 'example',
@@ -135,5 +137,3 @@ module.exports.fields = [
 ]
 
 ```
-
-**ATTENTION: The 'Profile' in this section is NOT FHIR Profile**
