@@ -27,10 +27,10 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "http://gitlab.sita.tech/sitatech/vghtc/fuck-vghtc.git"
+    "url": "https://github.com/Lorex/FHIR-Universal-Conversion-Kit.git"
   },
   "author": "Lorex@sitatech",
-  "license": "Apache 2.0",
+  "license": "CC-TW BY-NC-SA 3.0",
   "engines": {
     "node": "^16.8"
   }
