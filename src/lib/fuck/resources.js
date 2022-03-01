@@ -46,6 +46,7 @@ module.exports.Bundle = (profile) => {
   return {
     resourceType: 'Bundle',
     type: 'transaction',
-    entry: [bundleOrganization(p)],
+    entry: []
+    // entry: [bundleOrganization(p)],
   };
 };
