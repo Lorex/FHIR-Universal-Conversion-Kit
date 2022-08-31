@@ -26,4 +26,5 @@ RUN cd FHIR-Universal-Conversion-Kit/src && npm install
 
 RUN cd FHIR-Universal-Conversion-Kit && chmod +x ./start_server
 
-CMD ["/home/FHIR-Universal-Conversion-Kit/start_server"]
+# https://docs.docker.com/engine/reference/builder/#cmd
+CMD /home/FHIR-Universal-Conversion-Kit/start_server
