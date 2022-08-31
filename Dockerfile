@@ -19,8 +19,8 @@ RUN git --version
 
 # https://github.com/Lorex/FHIR-Universal-Conversion-Kit
 RUN git clone https://github.com/Lorex/FHIR-Universal-Conversion-Kit.git
-RUN cd FHIR-Universal-Conversion-Kit/src
-RUN npm install
-RUN cd ..
-RUN chmod +x ./start_server
-RUN ./start_server
+
+# Fix npm ERR:  https://ithelp.ithome.com.tw/articles/10204227
+RUN cd FHIR-Universal-Conversion-Kit/src && npm install
+
+RUN cd FHIR-Universal-Conversion-Kit && chmod +x ./start_server && ./start_server
