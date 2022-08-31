@@ -2,7 +2,8 @@ FROM ubuntu:latest
 MAINTAINER luckypig3400
 # https://ithelp.ithome.com.tw/articles/10191016
 
-RUN cd ~
+# SET WORKDIR for all RUN script: https://docs.docker.com/engine/reference/builder/#workdir
+WORKDIR /home/
 
 # https://askubuntu.com/questions/720784/how-to-install-latest-node-inside-a-docker-container
 RUN apt-get update
@@ -23,4 +24,6 @@ RUN git clone https://github.com/Lorex/FHIR-Universal-Conversion-Kit.git
 # Fix npm ERR:  https://ithelp.ithome.com.tw/articles/10204227
 RUN cd FHIR-Universal-Conversion-Kit/src && npm install
 
-RUN cd FHIR-Universal-Conversion-Kit && chmod +x ./start_server && ./start_server
+RUN cd FHIR-Universal-Conversion-Kit && chmod +x ./start_server
+
+CMD ["/home/FHIR-Universal-Conversion-Kit/start_server"]
