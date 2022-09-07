@@ -19,5 +19,32 @@ module.exports.fields = [
         beforeConvert: (data) => {
             return `org-${data}`
         }
-    }
+    },
+    {
+        source: 'text',
+        target: 'Organization.text',
+        beforeConvert: (data) => {
+            return {
+                // 忽略text紀載的內容，使用Narrative子項目來組合
+            }
+        }
+    },
+    {
+        source: 'text.status',
+        target: 'Organization.text',
+        beforeConvert: (data) => {
+            return {
+                status: data // HL7 FHIR官方提供 generated | extensions | additional | empty
+            }
+        }
+    },
+    {
+        source: 'text.div',
+        target: 'Organization.text',
+        beforeConvert: (data) => {
+            return {
+                div: data
+            }
+        }
+    },
 ]
