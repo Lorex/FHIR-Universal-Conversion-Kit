@@ -1,6 +1,6 @@
 [
     {
-        "identifier": "E123456789",
+        "identifier":{ "id":"E123456789","system":"xxx","value":"23432"},
         "identifier2": "E123456789",
         "name": "Test",
         "wbc": 10
