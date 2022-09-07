@@ -5,6 +5,13 @@ module.exports.profile = {
     action: 'return', // return, upload
 }
 
+module.exports.globalResource = {
+    // Should be resource name
+    Organization: {
+        active: true,
+    }
+}
+
 module.exports.fields = [
     {
         source: 'id',
