@@ -49,26 +49,9 @@ module.exports.fields = [
     },
     {
         source: 'identifier',
-        target: 'Organization.identifier',
-        beforeConvert: (data) => {
-            let dataUse;
-            console.log("正在轉換所有Identifier子資料");
-
-            let dataUseObj = {
-                source: 'identifier.use',
-                target: 'Organization.identifier',
-                beforeConvert: (data) => {
-                    dataUse = data;
-                }
-            }
-
-            console.log("data:" + data, "dataUse:" + dataUse);
-            return {
-                // 忽略identifier紀載的內容，使用Identifier子項目來組合
-                value: data,
-                use: dataUse
-            }
-        }
+        target: 'Organization.identifier'
+        // 嘗試額外寫js直接把identifier組成Object傳入
+        // 若照上述方法，則無需使用beforeConvert來處理傳入的資料
     },
     {
         source: 'identifier.use',
