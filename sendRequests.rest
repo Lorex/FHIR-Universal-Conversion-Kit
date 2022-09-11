@@ -1,0 +1,15 @@
+GET http://localhost:1337
+
+### https://youtu.be/Ud5xKCYQTjM?t=267
+
+POST http://localhost:1337
+Content-Type: application/json
+
+{
+    "profile": "dental",
+    "data": [
+        {"doctor_id": "6"},
+        {"doctor_id": "69"},
+        {"doctor_id": "168"}
+    ]
+}
