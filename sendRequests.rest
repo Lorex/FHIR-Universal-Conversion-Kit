@@ -8,8 +8,112 @@ Content-Type: application/json
 {
     "profile": "dental",
     "data": [
-        {"doctor_id": "6"},
-        {"doctor_id": "69"},
-        {"doctor_id": "168"}
+        {
+            "doctor_id": "6"
+        },
+        {
+            "doctor_id": "69"
+        },
+        {
+            "doctor_id": "168"
+        }
+    ]
+}
+
+###
+
+POST http://localhost:1337
+Content-Type: application/json
+
+{
+    "profile": "organizationMS",
+    "data": [
+        {
+            "id": 1,
+            "text": "",
+            "text.status": "generated",
+            "text.div": "<div>測試網頁原始碼</div>",
+            "identifier": "",
+            "identifier.use": "official&nbsp;",
+            "identifier.type": "",
+            "identifier.type.coding": "",
+            "identifier.type.coding.system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
+            "identifier.type.coding.code": 1101010012,
+            "identifier.type.coding.display": "長庚醫療財團法人台北長庚紀念醫院",
+            "identifier.type.text": "長庚醫療財團法人台北長庚紀念醫院-醫事機構代碼:1101010012",
+            "identifier.system": "https://hrpts.osha.gov.tw/asshp/hrpm1056.aspx",
+            "identifier.value": "醫事機構代碼:1101010012",
+            "active": "TRUE",
+            "type": "",
+            "type.coding": "",
+            "type.coding.system": "http://hitstdio.ntunhs.edu.tw/ig/twcore/CodeSystem-v2-0203.html#v2-0203-HOI",
+            "type.coding.code": "HOI",
+            "type.coding.display": "Healthcare Organization Identifier",
+            "type.text": "醫事機構代碼",
+            "name": "長庚醫療財團法人台北長庚紀念醫院",
+            "telecom": "",
+            "telecom.system": "phone&nbsp;",
+            "telecom.value": "02 2713 5211",
+            "address.text": "台北市松山區敦化北路１９９號",
+            "": ""
+        },
+        {
+            "id": 2,
+            "text": "",
+            "text.status": "empty",
+            "text.div": "",
+            "identifier": "",
+            "identifier.use": "official&nbsp;",
+            "identifier.type": "",
+            "identifier.type.coding": "",
+            "identifier.type.coding.system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
+            "identifier.type.coding.code": 10109051704,
+            "identifier.type.coding.display": "臺北市立聯合醫院忠孝院區",
+            "identifier.type.text": "臺北市立聯合醫院忠孝院區-醫事機構代碼:10109051704",
+            "identifier.system": "https://hrpts.osha.gov.tw/asshp/hrpm1056.aspx",
+            "identifier.value": "醫事機構代碼:10109051704",
+            "active": "TRUE",
+            "type": "",
+            "type.coding": "",
+            "type.coding.system": "http://hitstdio.ntunhs.edu.tw/ig/twcore/CodeSystem-v2-0203.html#v2-0203-HOI",
+            "type.coding.code": "HOI",
+            "type.coding.display": "Healthcare Organization Identifier",
+            "type.text": "醫事機構代碼",
+            "name": "臺北市立聯合醫院忠孝院區",
+            "telecom": "",
+            "telecom.system": "phone&nbsp;",
+            "telecom.value": "02 2786 1288",
+            "address.text": "台北市南港區同德路87號",
+            "": ""
+        },
+        {
+            "id": 3,
+            "text": "",
+            "text.status": "empty",
+            "text.div": "",
+            "identifier": "",
+            "identifier.use": "official&nbsp;",
+            "identifier.type": "",
+            "identifier.type.coding": "",
+            "identifier.type.coding.system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
+            "identifier.type.coding.code": 1101010021,
+            "identifier.type.coding.display": "基督復臨安息日會醫療財團法人臺安醫院",
+            "identifier.type.text": "基督復臨安息日會醫療財團法人臺安醫院-醫事機構代碼:1101010021",
+            "identifier.system": "https://hrpts.osha.gov.tw/asshp/hrpm1056.aspx",
+            "identifier.value": "醫事機構代碼:1101010021",
+            "active": "TRUE",
+            "type": "",
+            "type.coding": "",
+            "type.coding.system": "http://hitstdio.ntunhs.edu.tw/ig/twcore/CodeSystem-v2-0203.html#v2-0203-HOI",
+            "type.coding.code": "HOI",
+            "type.coding.display": "Healthcare Organization Identifier",
+            "type.text": "醫事機構代碼",
+            "name": "基督復臨安息日會醫療財團法人臺安醫院",
+            "telecom": "",
+            "telecom.system": "phone&nbsp;",
+            "telecom.value": "02 2771 8151",
+            "address.text": "台北市松山區八德路２段４２４、４２６號",
+            "": ""
+        }
     ]
 }
