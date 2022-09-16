@@ -1,7 +1,6 @@
 // https://stackoverflow.com/questions/27979002/convert-csv-data-into-json-format-using-javascript
 
 function csv2json(csvText) {
-    console.log(csvText);
     var lines = csvText.split("\n");
 
     var resultJSON = [];
@@ -13,7 +12,8 @@ function csv2json(csvText) {
         var currentLine = lines[i].split(",");
 
         for (let j = 0; j < currentLine.length; j++) {
-            obj[headers[j]] = currentLine[j];
+            if (currentLine[j] == "");// ignore blank value
+            else obj[headers[j]] = currentLine[j];
         }
         resultJSON.push(obj);
     }
