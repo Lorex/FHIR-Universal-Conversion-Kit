@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSV to JSON轉換器</title>
+        <style>
+            textarea {
+                width: 96%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>CSV to JSON轉換器</h1>
+        <hr>
+        <h3>請在下方貼上您的CSV檔案文字內容</h3>
+        <textarea name="csvText" id="csvTextArea" rows="10"></textarea>
+        <button onclick="convertAndOutput()">開始轉換</button>
+        <hr>
+        <h3>JSON轉換輸出結果</h3>
+        <textarea name="outputText" id="outputTextArea" rows="30"></textarea>
+    </body>
+
+    <script src="./csv2json.js"></script>
+    <script>
+        function convertAndOutput() {
+            csvText = document.getElementById("csvTextArea").value;
+
+            outputArea = document.getElementById("outputTextArea");
+            outputArea.value = csv2json(csvText);
+        }
+    </script>
+
+</html>
