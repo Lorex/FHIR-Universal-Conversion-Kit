@@ -32,7 +32,7 @@ Content-Type: application/json
             "id": "1",
             "text": {
                 "status": "generated",
-                "div": "<div>測試網頁原始碼</div>"
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>應該放一些關於此機構的資訊或是FHIR定義的text.div之類的值，但是我尚且不清楚規範，剩下的都丟空值來測試吧!</p></div>"
             },
             "identifier": {
                 "use": "official",
@@ -53,7 +53,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "prov",
                         "display": "Healthcare Provider"
                     }
@@ -72,7 +72,8 @@ Content-Type: application/json
         {
             "id": "2",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -93,7 +94,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "prov",
                         "display": "Healthcare Provider"
                     }
@@ -112,7 +113,8 @@ Content-Type: application/json
         {
             "id": "3",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2000/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -133,7 +135,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "prov",
                         "display": "Healthcare Provider"
                     }
@@ -152,7 +154,8 @@ Content-Type: application/json
         {
             "id": "4",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2001/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -173,7 +176,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "prov",
                         "display": "Healthcare Provider"
                     }
@@ -192,7 +195,8 @@ Content-Type: application/json
         {
             "id": "5",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2002/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -213,7 +217,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "prov",
                         "display": "Healthcare Provider"
                     }
@@ -232,7 +236,8 @@ Content-Type: application/json
         {
             "id": "6",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2003/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -253,7 +258,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "prov",
                         "display": "Healthcare Provider"
                     }
@@ -272,7 +277,8 @@ Content-Type: application/json
         {
             "id": "7",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2004/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -293,7 +299,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "prov",
                         "display": "Healthcare Provider"
                     }
@@ -312,7 +318,8 @@ Content-Type: application/json
         {
             "id": "8",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2005/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -333,7 +340,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "prov",
                         "display": "Healthcare Provider"
                     }
@@ -352,7 +359,8 @@ Content-Type: application/json
         {
             "id": "9",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2006/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -373,7 +381,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "prov",
                         "display": "Healthcare Provider"
                     }
@@ -392,7 +400,8 @@ Content-Type: application/json
         {
             "id": "10",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2007/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -413,7 +422,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "prov",
                         "display": "Healthcare Provider"
                     }
@@ -432,7 +441,8 @@ Content-Type: application/json
         {
             "id": "11",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2008/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -453,7 +463,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "govt",
                         "display": "Government"
                     }
@@ -466,13 +476,14 @@ Content-Type: application/json
                 "value": "02 2311 3731"
             },
             "address": {
-                "text": "?臺北市中正區重慶南路1段122號"
+                "text": " 臺北市中正區重慶南路1段122號"
             }
         },
         {
             "id": "12",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2009/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -493,7 +504,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "govt",
                         "display": "Government"
                     }
@@ -512,7 +523,8 @@ Content-Type: application/json
         {
             "id": "13",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2010/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -533,7 +545,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "govt",
                         "display": "Government"
                     }
@@ -552,7 +564,8 @@ Content-Type: application/json
         {
             "id": "14",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2011/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -573,7 +586,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "govt",
                         "display": "Government"
                     }
@@ -592,7 +605,8 @@ Content-Type: application/json
         {
             "id": "15",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2012/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -613,7 +627,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "govt",
                         "display": "Government"
                     }
@@ -632,7 +646,8 @@ Content-Type: application/json
         {
             "id": "16",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2013/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -653,7 +668,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "govt",
                         "display": "Government"
                     }
@@ -672,7 +687,8 @@ Content-Type: application/json
         {
             "id": "17",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2014/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -693,7 +709,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "govt",
                         "display": "Government"
                     }
@@ -712,7 +728,8 @@ Content-Type: application/json
         {
             "id": "18",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2015/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -733,7 +750,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "govt",
                         "display": "Government"
                     }
@@ -752,7 +769,8 @@ Content-Type: application/json
         {
             "id": "19",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2016/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -773,7 +791,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "govt",
                         "display": "Government"
                     }
@@ -792,7 +810,8 @@ Content-Type: application/json
         {
             "id": "20",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2017/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -813,7 +832,7 @@ Content-Type: application/json
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "govt",
                         "display": "Government"
                     }
@@ -832,7 +851,8 @@ Content-Type: application/json
         {
             "id": "21",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2018/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -847,13 +867,13 @@ Content-Type: application/json
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "22099131?"
+                "value": "22099131 "
             },
             "active": true,
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "bus",
                         "display": "Non-Healthcare Business or Corporation"
                     }
@@ -872,7 +892,8 @@ Content-Type: application/json
         {
             "id": "22",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2019/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -887,13 +908,13 @@ Content-Type: application/json
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "22403689?"
+                "value": "22403689 "
             },
             "active": false,
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "bus",
                         "display": "Non-Healthcare Business or Corporation"
                     }
@@ -912,7 +933,8 @@ Content-Type: application/json
         {
             "id": "23",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2020/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -927,13 +949,13 @@ Content-Type: application/json
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "22833203?"
+                "value": "22833203 "
             },
             "active": true,
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "bus",
                         "display": "Non-Healthcare Business or Corporation"
                     }
@@ -952,7 +974,8 @@ Content-Type: application/json
         {
             "id": "24",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2021/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -967,13 +990,13 @@ Content-Type: application/json
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "97311466?"
+                "value": "97311466 "
             },
             "active": true,
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "bus",
                         "display": "Non-Healthcare Business or Corporation"
                     }
@@ -992,7 +1015,8 @@ Content-Type: application/json
         {
             "id": "25",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2022/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -1007,13 +1031,13 @@ Content-Type: application/json
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "23525730?"
+                "value": "23525730 "
             },
             "active": true,
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "bus",
                         "display": "Non-Healthcare Business or Corporation"
                     }
@@ -1032,7 +1056,8 @@ Content-Type: application/json
         {
             "id": "26",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2023/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -1047,13 +1072,13 @@ Content-Type: application/json
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "23060248?"
+                "value": "23060248 "
             },
             "active": true,
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "bus",
                         "display": "Non-Healthcare Business or Corporation"
                     }
@@ -1072,7 +1097,8 @@ Content-Type: application/json
         {
             "id": "27",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2024/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -1087,13 +1113,13 @@ Content-Type: application/json
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "22555003?"
+                "value": "22555003 "
             },
             "active": true,
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "bus",
                         "display": "Non-Healthcare Business or Corporation"
                     }
@@ -1112,7 +1138,8 @@ Content-Type: application/json
         {
             "id": "28",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2025/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -1127,20 +1154,20 @@ Content-Type: application/json
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "27934855?"
+                "value": "27934855 "
             },
             "active": true,
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "bus",
                         "display": "Non-Healthcare Business or Corporation"
                     }
                 ],
                 "text": "公司行號(統一編號)"
             },
-            "name": "美商科高國際有限公司 GOOGLE?INTERNATIONAL LLC",
+            "name": "美商科高國際有限公司 GOOGLE INTERNATIONAL LLC",
             "telecom": {
                 "system": "phone",
                 "value": "02-87296000"
@@ -1152,7 +1179,8 @@ Content-Type: application/json
         {
             "id": "29",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2026/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -1167,13 +1195,13 @@ Content-Type: application/json
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "70472679?"
+                "value": "70472679 "
             },
             "active": true,
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "bus",
                         "display": "Non-Healthcare Business or Corporation"
                     }
@@ -1192,7 +1220,8 @@ Content-Type: application/json
         {
             "id": "30",
             "text": {
-                "status": "empty"
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/2027/xhtml'>空值</div>"
             },
             "identifier": {
                 "use": "official",
@@ -1207,13 +1236,13 @@ Content-Type: application/json
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "82822428?"
+                "value": "82822428 "
             },
             "active": true,
             "type": {
                 "coding": [
                     {
-                        "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
                         "code": "bus",
                         "display": "Non-Healthcare Business or Corporation"
                     }
