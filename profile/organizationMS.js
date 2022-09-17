@@ -23,20 +23,10 @@ module.exports.fields = [
     {
         source: 'text',
         target: 'Organization.text',
-        beforeConvert: (data) => {
-            return {
-                status: data.status // HL7 FHIR官方提供 generated | extensions | additional | empty
-            }
-        }
-    },
-    {
-        source: 'text',
-        target: 'Organization.text',
-        beforeConvert: (data) => {
-            return {
-                div: data.div
-            }
-        }
+        // text已經組合成Object，直接回傳即可，無須再透過beforeConvert:()來處理
+
+        // text.status (data.status)中 HL7 FHIR官方提供 generated | extensions | additional | empty
+
     },
     {
         source: 'identifier',
