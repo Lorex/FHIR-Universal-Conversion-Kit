@@ -18,12 +18,20 @@
         "value": "1101010012"
     },
     "active": "TRUE",
-    "type.coding.system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
-    "type.coding.code": "prov",
-    "type.coding.display": "Healthcare Provider",
-    "type.text": "醫事機構",
+    "type": {
+        "coding": {
+            "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+            "code": "prov",
+            "display": "Healthcare Provider"
+        },
+        "text": "醫事機構"
+    },
     "name": "長庚醫療財團法人台北長庚紀念醫院",
-    "telecom.system": "phone",
-    "telecom.value": "02 2713 5211",
-    "address.text": "台北市松山區敦化北路１９９號"
+    "telecom": {
+        "system": "phone",
+        "value": "02 2713 5211"
+    },
+    "address": {
+        "text": "台北市松山區敦化北路１９９號"
+    }
 }

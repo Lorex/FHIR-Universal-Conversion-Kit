@@ -74,6 +74,46 @@ function csv2json_organizationMS(csvText) {
                 j += 9;// pass the values that already converted
             }
 
+            else if (headers[j] == "type") {// 組合type Object
+                let typeObj = {};
+                let codingObj = {};
+                if (currentLine[j + 2] != "")
+                    codingObj["system"] = currentLine[j + 2];
+                if (currentLine[j + 3] != "")
+                    codingObj["code"] = currentLine[j + 3];
+                if (currentLine[j + 4] != "")
+                    codingObj["display"] = currentLine[j + 4];
+
+                typeObj["coding"] = codingObj;
+                if (currentLine[j + 5] != "")
+                    typeObj["text"] = currentLine[j + 5];
+
+                obj[headers[j]] = typeObj;// export "type" object
+
+                j += 5;// pass the values that already converted
+            }
+
+            else if (headers[j] == "telecom") {
+                let telecomObj = {}
+                if (currentLine[j + 1] != "")
+                    telecomObj["system"] = currentLine[j + 1];
+                if (currentLine[j + 2] != "")
+                    telecomObj["value"] = currentLine[j + 2];
+
+                obj[headers[j]] = telecomObj;// export "telecom" object
+
+                j+=2; // pass the values that alreay converted
+            }
+
+            else if (headers[j] == "address.text") {
+                let addressObj = {};
+
+                if (currentLine[j] != "")
+                    addressObj["text"] = currentLine[j];
+
+                obj["address"] = addressObj;
+            }
+
             else if (currentLine[j] == "");// ignore blank value
 
             else obj[headers[j]] = currentLine[j];
