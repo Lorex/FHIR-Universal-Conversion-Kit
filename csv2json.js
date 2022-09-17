@@ -35,14 +35,17 @@ function csv2json_organizationMS(csvText) {
 
         for (let j = 0; j < currentLine.length; j++) {
             if (headers[j] == "text") {// 組合text Object
-                obj[headers[j]] = {
-                    "status": currentLine[j + 1],
-                    "div": currentLine[j + 2]
-                };
+                let textObj = {};
+                if (currentLine[j + 1] != "")// ignore blank value
+                    textObj["status"] = currentLine[j + 1];
+                if (currentLine[j + 2] != "")// ignore blank value
+                    textObj["div"] = currentLine[j + 2];
+
+                obj[headers[j]] = textObj;
                 j += 2;// pass the values that already converted
             }
             else if (headers[j] == "identifier") {// 組合identifier Object
-                
+
             }
             else if (currentLine[j] == "");// ignore blank value
             else obj[headers[j]] = currentLine[j];
