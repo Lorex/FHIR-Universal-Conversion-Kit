@@ -122,6 +122,14 @@ function csv2json_organizationMS(csvText) {
                 obj["address"] = addressObj;
             }
 
+            else if (headers[j] == "active") {
+                if (currentLine[j] != "") {
+                    let bool = (currentLine[j].toLowerCase() === 'true');
+                    // https://stackoverflow.com/questions/263965/how-can-i-convert-a-string-to-boolean-in-javascript
+                    obj[headers[j]] = bool;
+                }
+            }
+
             else if (currentLine[j] == "");// ignore blank value
 
             else obj[headers[j]] = currentLine[j];

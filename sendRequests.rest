@@ -47,7 +47,7 @@ Content-Type: application/json
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "1101010012"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -83,7 +83,7 @@ Content-Type: application/json
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "10109051704"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -119,7 +119,7 @@ Content-Type: application/json
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "1101010021"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -155,7 +155,7 @@ Content-Type: application/json
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "431270012"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -191,7 +191,7 @@ Content-Type: application/json
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "931100015"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -227,7 +227,7 @@ Content-Type: application/json
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "1531010279"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -263,7 +263,7 @@ Content-Type: application/json
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "1531061230"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -299,7 +299,7 @@ Content-Type: application/json
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "132010014"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -335,7 +335,7 @@ Content-Type: application/json
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "932020025"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -371,7 +371,7 @@ Content-Type: application/json
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "1132070011"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -407,7 +407,7 @@ Content-Type: application/json
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "200000000A000"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -443,7 +443,7 @@ Content-Type: application/json
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "201000000A000"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -479,7 +479,7 @@ Content-Type: application/json
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "301000000A000"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -515,7 +515,7 @@ Content-Type: application/json
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "313520500K000"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -551,7 +551,7 @@ Content-Type: application/json
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "301020900G000"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -587,7 +587,7 @@ Content-Type: application/json
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "301021000G000"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -623,7 +623,7 @@ Content-Type: application/json
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "307190000N000"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -659,7 +659,7 @@ Content-Type: application/json
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "307250000N000"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -695,7 +695,7 @@ Content-Type: application/json
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "313000000G000"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -731,7 +731,7 @@ Content-Type: application/json
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "313310000K000"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -767,7 +767,7 @@ Content-Type: application/json
                 "system": "https://findbiz.nat.gov.tw",
                 "value": "22099131?"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -803,7 +803,7 @@ Content-Type: application/json
                 "system": "https://findbiz.nat.gov.tw",
                 "value": "22403689?"
             },
-            "active": "FALSE",
+            "active": false,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -839,7 +839,7 @@ Content-Type: application/json
                 "system": "https://findbiz.nat.gov.tw",
                 "value": "22833203?"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -875,7 +875,7 @@ Content-Type: application/json
                 "system": "https://findbiz.nat.gov.tw",
                 "value": "97311466?"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -911,7 +911,7 @@ Content-Type: application/json
                 "system": "https://findbiz.nat.gov.tw",
                 "value": "23525730?"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -947,7 +947,7 @@ Content-Type: application/json
                 "system": "https://findbiz.nat.gov.tw",
                 "value": "23060248?"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -983,7 +983,7 @@ Content-Type: application/json
                 "system": "https://findbiz.nat.gov.tw",
                 "value": "22555003?"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -1019,7 +1019,7 @@ Content-Type: application/json
                 "system": "https://findbiz.nat.gov.tw",
                 "value": "27934855?"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -1055,7 +1055,7 @@ Content-Type: application/json
                 "system": "https://findbiz.nat.gov.tw",
                 "value": "70472679?"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
@@ -1091,7 +1091,7 @@ Content-Type: application/json
                 "system": "https://findbiz.nat.gov.tw",
                 "value": "82822428?"
             },
-            "active": "TRUE",
+            "active": true,
             "type": {
                 "coding": {
                     "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
