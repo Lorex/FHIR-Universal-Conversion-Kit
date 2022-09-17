@@ -7,9 +7,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CSV to JSON轉換器</title>
         <style>
+            body {
+                text-align: center;
+                background-color: black;
+                color: white;
+            }
+
             textarea {
                 margin: 2%;
                 width: 96%;
+                background-color: #232321;
+                color: white;
+            }
+
+            h1 {
+                text-shadow: 3px 3px 3px lightgray;
+            }
+
+            button {
+                border: none;
+                border-radius: 36px;
+                padding-left: 18px;
+                padding-right: 18px;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                background-color: lightgoldenrodyellow;
+                box-shadow: 0px 9px 1px #95957d;
+                font-size: larger;
+
+            }
+
+            button:hover {
+                background-color: #e3e3bf;
+            }
+            /* https://www.w3schools.com/howto/howto_css_animate_buttons.asp */
+            button:active {
+                background-color: #e3e3bf;
+                box-shadow: 0 5px 1px #666;
+                transform: translateY(6px);
             }
         </style>
     </head>
@@ -20,7 +55,7 @@
         <h3>請在下方貼上您的CSV檔案文字內容</h3>
         <textarea name="csvText" id="csvTextArea" rows="10"></textarea>
         <button onclick="convertAndOutput()">開始轉換</button>
-        <hr>
+        <br><br><hr>
         <h3>JSON轉換輸出結果</h3>
         <textarea name="outputText" id="outputTextArea" rows="30"></textarea>
     </body>
