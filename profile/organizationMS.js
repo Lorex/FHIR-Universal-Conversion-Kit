@@ -25,25 +25,16 @@ module.exports.fields = [
         target: 'Organization.text',
         beforeConvert: (data) => {
             return {
-                // 忽略text紀載的內容，使用Narrative子項目來組合
+                status: data.status // HL7 FHIR官方提供 generated | extensions | additional | empty
             }
         }
     },
     {
-        source: 'text.status',
+        source: 'text',
         target: 'Organization.text',
         beforeConvert: (data) => {
             return {
-                status: data // HL7 FHIR官方提供 generated | extensions | additional | empty
-            }
-        }
-    },
-    {
-        source: 'text.div',
-        target: 'Organization.text',
-        beforeConvert: (data) => {
-            return {
-                div: data
+                div: data.div
             }
         }
     },
@@ -54,102 +45,23 @@ module.exports.fields = [
         // 若照上述方法，則無需使用beforeConvert來處理傳入的資料
     },
     {
-        source: 'identifier.use',
-        target: 'Organization.identifier',
-        beforeConvert: (data) => {
-            return {
-                use: data, //HL7 FHIR 提供以下選項usual | official | temp | secondary | old (If known)
-            }
-        }
+        source: 'active',
+        target: 'Organization.active'
     },
     {
-        source: 'identifier.type',
-        target: 'Organization.identifier',
-        beforeConvert: (data) => {
-            return {
-                // 忽略identifier.type紀載的內容，使用CodeableConcept子項目來組合
-            }
-        }
+        source: 'type',
+        target: 'Organization.type'
     },
     {
-        source: 'identifier.type.coding',
-        target: 'Organization.identifier',
-        beforeConvert: (data) => {
-            return {
-                type: {
-                    coding: {
-                        // 忽略identifier.type.coding紀載的內容，使用Coding子項目來組合
-                    }
-                }
-            }
-        }
+        source: 'name',
+        target: 'Organization.name'
     },
     {
-        source: 'identifier.type.coding.system',
-        target: 'Organization.identifier',
-        beforeConvert: (data) => {
-            return {
-                type: {
-                    coding: {
-                        system: data
-                    }
-                }
-            }
-        }
+        source: 'telecom',
+        target: 'Organization.telecom'
     },
     {
-        source: 'identifier.type.coding.code',
-        target: 'Organization.identifier',
-        beforeConvert: (data) => {
-            return {
-                type: {
-                    coding: {
-                        code: data
-                    }
-                }
-            }
-        }
-    },
-    {
-        source: 'identifier.type.coding.display',
-        target: 'Organization.identifier',
-        beforeConvert: (data) => {
-            return {
-                type: {
-                    coding: {
-                        display: data
-                    }
-                }
-            }
-        }
-    },
-    {
-        source: 'identifier.type.text',
-        target: 'Organization.identifier',
-        beforeConvert: (data) => {
-            return {
-                type: {
-                    text: data
-                }
-            }
-        }
-    },
-    {
-        source: 'identifier.system',
-        target: 'Organization.identifier',
-        beforeConvert: (data) => {
-            return {
-                system: data
-            }
-        }
-    },
-    {
-        source: 'identifier.value',
-        target: 'Organization.identifier',
-        beforeConvert: (data) => {
-            return {
-                value: data
-            }
-        }
-    },
+        source: 'address',
+        target: 'Organization.address'
+    }
 ]
