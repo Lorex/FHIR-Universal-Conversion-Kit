@@ -34,11 +34,17 @@ function csv2json_organizationMS(csvText) {
         var currentLine = lines[i].split(",");
 
         for (let j = 0; j < currentLine.length; j++) {
-            if (currentLine[j] == "");// ignore blank value
-            else if(headers[j] == "identifier"){
-                // 根據identifier自定義轉換規則
-
+            if (headers[j] == "text") {// 組合text Object
+                obj[headers[j]] = {
+                    "status": currentLine[j + 1],
+                    "div": currentLine[j + 2]
+                };
+                j += 2;// pass the values that already converted
             }
+            else if (headers[j] == "identifier") {// 組合identifier Object
+                
+            }
+            else if (currentLine[j] == "");// ignore blank value
             else obj[headers[j]] = currentLine[j];
         }
         resultJSON.push(obj);
