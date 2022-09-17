@@ -59,7 +59,10 @@ function csv2json_organizationMS(csvText) {
                 if (currentLine[j + 6] != "")
                     codingObj["display"] = currentLine[j + 6];
 
-                typeObj["coding"] = codingObj;
+                let codingArray = [codingObj];
+                // FHIR validator says "coding" should be an array
+
+                typeObj["coding"] = codingArray;
                 if (currentLine[j + 7] != "")
                     typeObj["text"] = currentLine[j + 7];
 
@@ -84,7 +87,9 @@ function csv2json_organizationMS(csvText) {
                 if (currentLine[j + 4] != "")
                     codingObj["display"] = currentLine[j + 4];
 
-                typeObj["coding"] = codingObj;
+                let codingArray = [codingObj];
+
+                typeObj["coding"] = codingArray;
                 if (currentLine[j + 5] != "")
                     typeObj["text"] = currentLine[j + 5];
 
