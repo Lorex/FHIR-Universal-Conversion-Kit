@@ -102,14 +102,22 @@ function csv2json_organizationMS(csvText) {
 
                 obj[headers[j]] = telecomObj;// export "telecom" object
 
-                j+=2; // pass the values that alreay converted
+                j += 2; // pass the values that alreay converted
             }
 
-            else if (headers[j] == "address.text") {
+            else if (headers[j].includes("address")) {
+                // https://www.w3schools.com/jsref/jsref_includes.asp
                 let addressObj = {};
 
-                if (currentLine[j] != "")
-                    addressObj["text"] = currentLine[j];
+                while (headers[j].includes("address")) {
+                    if (currentLine[j] != "") {
+                        let keyValue = headers[j].replace("address.", "");
+                        // https://www.w3schools.com/jsref/jsref_replace.asp
+
+                        addressObj[keyValue] = currentLine[j];
+                    }
+                    if (j < currentLine.length) j++;
+                }
 
                 obj["address"] = addressObj;
             }
