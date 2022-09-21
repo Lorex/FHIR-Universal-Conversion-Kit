@@ -40,6 +40,7 @@
             button:hover {
                 background-color: #e3e3bf;
             }
+
             /* https://www.w3schools.com/howto/howto_css_animate_buttons.asp */
             button:active {
                 background-color: #e3e3bf;
@@ -55,7 +56,8 @@
         <h3>請在下方貼上您的CSV檔案文字內容</h3>
         <textarea name="csvText" id="csvTextArea" rows="10"></textarea>
         <button onclick="convertAndOutput()">開始轉換</button>
-        <br><br><hr>
+        <br><br>
+        <hr>
         <h3>JSON轉換輸出結果</h3>
         <textarea name="outputText" id="outputTextArea" rows="30"></textarea>
     </body>
@@ -69,5 +71,8 @@
             outputArea.value = csv2json_organizationMS(csvText);
         }
     </script>
+
+    <!-- https://www.npmjs.com/package/csvtojson#browser-usage -->
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
 
 </html>
