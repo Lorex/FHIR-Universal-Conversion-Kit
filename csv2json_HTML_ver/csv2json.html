@@ -47,6 +47,17 @@
                 box-shadow: 0 5px 1px #666;
                 transform: translateY(6px);
             }
+
+            select {
+                padding: 18px;
+                margin: 12px;
+                border: none;
+                box-shadow: 3px 3px 1px gold;
+                background-color: rgb(36, 36, 36);
+                color: azure;
+                border-radius: 18px;
+                font-size: medium;
+            }
         </style>
     </head>
 
@@ -55,6 +66,11 @@
         <hr>
         <h3>請在下方貼上您的CSV檔案文字內容</h3>
         <textarea name="csvText" id="csvTextArea" rows="10"></textarea>
+        <select name="converter" id="converterSelection">
+            <option value="csv2json_npm">NPM通用CSV強大轉換套件</option>
+            <option value="csv2json_selfDefine">基礎CSV通用轉換程式</option>
+            <option value="csv2json_organizationMS">自定義Organization轉換程式</option>
+        </select>
         <button onclick="convertAndOutput()">開始轉換</button>
         <br><br>
         <hr>
