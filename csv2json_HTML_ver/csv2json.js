@@ -1,6 +1,18 @@
-// https://stackoverflow.com/questions/27979002/convert-csv-data-into-json-format-using-javascript
+async function csvtojsonNPM(csvText) {
+    console.log("NPM cav2json called");
 
+    // https://www.npmjs.com/package/csvtojson#browser-usage
+    await csv({ output: "json" })
+        .fromString("a,b,c\n1,2,3")
+        .then(function (result) {
+            console.log("Result:" + JSON.stringify(result));
+            return JSON.stringify(result);
+        })
+}
+
+// https://stackoverflow.com/questions/27979002/convert-csv-data-into-json-format-using-javascript
 function csv2json(csvText) {
+    console.log("Self Define csv2json called");
     var lines = csvText.split("\n");
 
     var resultJSON = [];
@@ -22,6 +34,7 @@ function csv2json(csvText) {
 }
 
 function csv2json_organizationMS(csvText) {
+    console.log("Self Define csv2json_organizationMS called");
     // 根據不同FHIR profile來自定義csv轉換JSON的轉換邏輯
     var lines = csvText.split("\n");
 
