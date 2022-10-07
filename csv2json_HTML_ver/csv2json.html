@@ -82,14 +82,21 @@
     <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
     <script src="./csv2json.js"></script>
     <script>
-        async function convertAndOutput() {
+        function convertAndOutput() {
             let csvText = document.getElementById("csvTextArea").value;
 
             let outputArea = document.getElementById("outputTextArea");
             let selectedOption = document.getElementById("converterSelection").value;
 
             if (selectedOption == "csv2json_npm") {
-                outputArea.value = await csvtojsonNPM(csvText);
+                console.log("NPM cav2json called");
+
+                // https://www.npmjs.com/package/csvtojson#browser-usage
+                csv({ output: "json" })
+                    .fromString(csvText)
+                    .then(function (result) {
+                        outputArea.value = JSON.stringify(result);
+                    })
             }
             else if (selectedOption == "csv2json_selfDefine") {
                 outputArea.value = csv2json(csvText);

@@ -1,15 +1,3 @@
-async function csvtojsonNPM(csvText) {
-    console.log("NPM cav2json called");
-
-    // https://www.npmjs.com/package/csvtojson#browser-usage
-    await csv({ output: "json" })
-        .fromString("a,b,c\n1,2,3")
-        .then(function (result) {
-            console.log("Result:" + JSON.stringify(result));
-            return JSON.stringify(result);
-        })
-}
-
 // https://stackoverflow.com/questions/27979002/convert-csv-data-into-json-format-using-javascript
 function csv2json(csvText) {
     console.log("Self Define csv2json called");
