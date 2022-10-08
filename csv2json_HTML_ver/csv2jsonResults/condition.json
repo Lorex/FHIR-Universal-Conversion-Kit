@@ -57,7 +57,9 @@
         "onsetDateTime": "2021-08-11",
         "abatementDateTime": "2022-06-27",
         "asserter": "",
-        "note": ""
+        "note": {
+            "text": "關於此Condition的附加資訊"
+        }
     },
     {
         "id": "2",
@@ -117,7 +119,9 @@
         "onsetDateTime": "2021-05-07",
         "abatementDateTime": "2022-07-28",
         "asserter": "",
-        "note": ""
+        "note": {
+            "text": "關於此Condition的附加資訊"
+        }
     },
     {
         "id": "3",
@@ -177,7 +181,9 @@
         "onsetDateTime": "2021-01-20",
         "abatementDateTime": "2022-11-14",
         "asserter": "",
-        "note": ""
+        "note": {
+            "text": "關於此Condition的附加資訊"
+        }
     },
     {
         "id": "4",
@@ -237,7 +243,9 @@
         "onsetDateTime": "2021-11-28",
         "abatementDateTime": "2022-07-02",
         "asserter": "",
-        "note": ""
+        "note": {
+            "text": "關於此Condition的附加資訊"
+        }
     },
     {
         "id": "5",
@@ -297,7 +305,9 @@
         "onsetDateTime": "2021-10-07",
         "abatementDateTime": "2022-11-25",
         "asserter": "",
-        "note": ""
+        "note": {
+            "text": "關於此Condition的附加資訊"
+        }
     },
     {
         "id": "6",
@@ -357,7 +367,9 @@
         "onsetDateTime": "2021-11-06",
         "abatementDateTime": "2022-05-20",
         "asserter": "",
-        "note": ""
+        "note": {
+            "text": "關於此Condition的附加資訊"
+        }
     },
     {
         "id": "7",
@@ -417,7 +429,9 @@
         "onsetDateTime": "2021-07-21",
         "abatementDateTime": "2022-01-11",
         "asserter": "",
-        "note": ""
+        "note": {
+            "text": "關於此Condition的附加資訊"
+        }
     },
     {
         "id": "8",
@@ -477,7 +491,9 @@
         "onsetDateTime": "2021-11-19",
         "abatementDateTime": "2022-09-14",
         "asserter": "",
-        "note": ""
+        "note": {
+            "text": "關於此Condition的附加資訊"
+        }
     },
     {
         "id": "9",
@@ -537,7 +553,9 @@
         "onsetDateTime": "2021-05-28",
         "abatementDateTime": "2022-11-01",
         "asserter": "",
-        "note": ""
+        "note": {
+            "text": "關於此Condition的附加資訊"
+        }
     },
     {
         "id": "10",
@@ -597,6 +615,8 @@
         "onsetDateTime": "2021-04-03",
         "abatementDateTime": "2022-07-19",
         "asserter": "",
-        "note": ""
+        "note": {
+            "text": "關於此Condition的附加資訊"
+        }
     }
 ]
