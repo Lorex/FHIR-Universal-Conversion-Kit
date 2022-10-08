@@ -2,7 +2,7 @@
     {
         "id": "1",
         "text": {
-            "status": "霍亂",
+            "status": "generated",
             "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>應該放一些關於此機構的資訊或是FHIR定義的text.div之類的值，但是我尚且不清楚規範，剩下的都丟空值來測試吧!</p></div>"
         },
         "clinicalStatus": {
@@ -54,25 +54,15 @@
             "text": "icd10-cm-2021"
         },
         "subject": "",
-        "onset[x]": "",
-        "onset": {
-            "x": {
-                "onsetDateTime": "2021-08-11"
-            }
-        },
-        "abatement[x]": "",
-        "abatement": {
-            "x": {
-                "abatementDateTime": "2022-06-27"
-            }
-        },
+        "onsetDateTime": "2021-08-11",
+        "abatementDateTime": "2022-06-27",
         "asserter": "",
         "note": ""
     },
     {
         "id": "2",
         "text": {
-            "status": "血清型01 cholerae霍亂弧菌所致之霍亂",
+            "status": "empty",
             "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
         },
         "clinicalStatus": {
@@ -124,26 +114,16 @@
             "text": "icd10-cm-2021"
         },
         "subject": "",
-        "onset[x]": "",
-        "onset": {
-            "x": {
-                "onsetDateTime": "2021-05-07"
-            }
-        },
-        "abatement[x]": "",
-        "abatement": {
-            "x": {
-                "abatementDateTime": "2022-07-28"
-            }
-        },
+        "onsetDateTime": "2021-05-07",
+        "abatementDateTime": "2022-07-28",
         "asserter": "",
         "note": ""
     },
     {
         "id": "3",
         "text": {
-            "status": "\t血清型01 eltor霍亂弧菌所致之霍亂",
-            "div": "<div xmlns='http://www.w3.org/2000/xhtml'>空值</div>"
+            "status": "empty",
+            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
         },
         "clinicalStatus": {
             "coding": {
@@ -194,26 +174,16 @@
             "text": "icd10-cm-2021"
         },
         "subject": "",
-        "onset[x]": "",
-        "onset": {
-            "x": {
-                "onsetDateTime": "2021-01-20"
-            }
-        },
-        "abatement[x]": "",
-        "abatement": {
-            "x": {
-                "abatementDateTime": "2022-11-14"
-            }
-        },
+        "onsetDateTime": "2021-01-20",
+        "abatementDateTime": "2022-11-14",
         "asserter": "",
         "note": ""
     },
     {
         "id": "4",
         "text": {
-            "status": "霍亂",
-            "div": "<div xmlns='http://www.w3.org/2001/xhtml'>空值</div>"
+            "status": "empty",
+            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
         },
         "clinicalStatus": {
             "coding": {
@@ -264,26 +234,16 @@
             "text": "icd10-cm-2021"
         },
         "subject": "",
-        "onset[x]": "",
-        "onset": {
-            "x": {
-                "onsetDateTime": "2021-11-28"
-            }
-        },
-        "abatement[x]": "",
-        "abatement": {
-            "x": {
-                "abatementDateTime": "2022-07-02"
-            }
-        },
+        "onsetDateTime": "2021-11-28",
+        "abatementDateTime": "2022-07-02",
         "asserter": "",
         "note": ""
     },
     {
         "id": "5",
         "text": {
-            "status": "傷寒及副傷寒",
-            "div": "<div xmlns='http://www.w3.org/2002/xhtml'>空值</div>"
+            "status": "empty",
+            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
         },
         "clinicalStatus": {
             "coding": {
@@ -334,26 +294,16 @@
             "text": "icd10-cm-2021"
         },
         "subject": "",
-        "onset[x]": "",
-        "onset": {
-            "x": {
-                "onsetDateTime": "2021-10-07"
-            }
-        },
-        "abatement[x]": "",
-        "abatement": {
-            "x": {
-                "abatementDateTime": "2022-11-25"
-            }
-        },
+        "onsetDateTime": "2021-10-07",
+        "abatementDateTime": "2022-11-25",
         "asserter": "",
         "note": ""
     },
     {
         "id": "6",
         "text": {
-            "status": "傷寒",
-            "div": "<div xmlns='http://www.w3.org/2003/xhtml'>空值</div>"
+            "status": "empty",
+            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
         },
         "clinicalStatus": {
             "coding": {
@@ -404,26 +354,16 @@
             "text": "icd10-cm-2021"
         },
         "subject": "",
-        "onset[x]": "",
-        "onset": {
-            "x": {
-                "onsetDateTime": "2021-11-06"
-            }
-        },
-        "abatement[x]": "",
-        "abatement": {
-            "x": {
-                "abatementDateTime": "2022-05-20"
-            }
-        },
+        "onsetDateTime": "2021-11-06",
+        "abatementDateTime": "2022-05-20",
         "asserter": "",
         "note": ""
     },
     {
         "id": "7",
         "text": {
-            "status": "霍亂",
-            "div": "<div xmlns='http://www.w3.org/2004/xhtml'>空值</div>"
+            "status": "empty",
+            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
         },
         "clinicalStatus": {
             "coding": {
@@ -474,26 +414,16 @@
             "text": "icd10-cm-2014"
         },
         "subject": "",
-        "onset[x]": "",
-        "onset": {
-            "x": {
-                "onsetDateTime": "2021-07-21"
-            }
-        },
-        "abatement[x]": "",
-        "abatement": {
-            "x": {
-                "abatementDateTime": "2022-01-11"
-            }
-        },
+        "onsetDateTime": "2021-07-21",
+        "abatementDateTime": "2022-01-11",
         "asserter": "",
         "note": ""
     },
     {
         "id": "8",
         "text": {
-            "status": "Cardiac defibrillator in situ (finding)",
-            "div": "<div xmlns='http://www.w3.org/2005/xhtml'>空值</div>"
+            "status": "empty",
+            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
         },
         "clinicalStatus": {
             "coding": {
@@ -544,26 +474,16 @@
             "text": "problemGPSCode"
         },
         "subject": "",
-        "onset[x]": "",
-        "onset": {
-            "x": {
-                "onsetDateTime": "2021-11-19"
-            }
-        },
-        "abatement[x]": "",
-        "abatement": {
-            "x": {
-                "abatementDateTime": "2022-09-14"
-            }
-        },
+        "onsetDateTime": "2021-11-19",
+        "abatementDateTime": "2022-09-14",
         "asserter": "",
         "note": ""
     },
     {
         "id": "9",
         "text": {
-            "status": "No information about current problems",
-            "div": "<div xmlns='http://www.w3.org/2006/xhtml'>空值</div>"
+            "status": "empty",
+            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
         },
         "clinicalStatus": {
             "coding": {
@@ -614,26 +534,16 @@
             "text": "absentOrUnknownProblem"
         },
         "subject": "",
-        "onset[x]": "",
-        "onset": {
-            "x": {
-                "onsetDateTime": "2021-05-28"
-            }
-        },
-        "abatement[x]": "",
-        "abatement": {
-            "x": {
-                "abatementDateTime": "2022-11-01"
-            }
-        },
+        "onsetDateTime": "2021-05-28",
+        "abatementDateTime": "2022-11-01",
         "asserter": "",
         "note": ""
     },
     {
         "id": "10",
         "text": {
-            "status": "Clinical finding (finding)",
-            "div": "<div xmlns='http://www.w3.org/2007/xhtml'>空值</div>"
+            "status": "empty",
+            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
         },
         "clinicalStatus": {
             "coding": {
@@ -684,18 +594,8 @@
             "text": "sct"
         },
         "subject": "",
-        "onset[x]": "",
-        "onset": {
-            "x": {
-                "onsetDateTime": "2021-04-03"
-            }
-        },
-        "abatement[x]": "",
-        "abatement": {
-            "x": {
-                "abatementDateTime": "2022-07-19"
-            }
-        },
+        "onsetDateTime": "2021-04-03",
+        "abatementDateTime": "2022-07-19",
         "asserter": "",
         "note": ""
     }

@@ -54,12 +54,12 @@ module.exports.fields = [
         target: 'Condition.subject'
     },
     {
-        source: 'onset[x]',
-        target: 'Condition.onset[x]'
+        source: 'onsetDateTime',
+        target: 'Condition.onsetDateTime'
     },
     {
-        source: 'abatement[x]',
-        target: 'Condition.abatement[x]'
+        source: 'abatementDateTime',
+        target: 'Condition.abatementDateTime'
     },
     {
         source: 'asserter',
