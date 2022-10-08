@@ -40,19 +40,43 @@ module.exports.fields = [
     },
     {
         source: 'verificationStatus',
-        target: 'Condition.verificationStatus'
+        target: 'Condition.verificationStatus',
+        beforeConvert: (data) => {
+            let verificationStatus = data;
+            verificationStatus.coding = [verificationStatus.coding];// 把coding按照FHIR Definition包成Array
+
+            return verificationStatus;
+        }
     },
     {
         source: 'category',
-        target: 'Condition.category'
+        target: 'Condition.category',
+        beforeConvert: (data) => {
+            let category = data;
+            category.coding = [category.coding];// 把coding按照FHIR Definition包成Array
+
+            return category;
+        }
     },
     {
         source: 'severity',
-        target: 'Condition.severity'
+        target: 'Condition.severity',
+        beforeConvert: (data) => {
+            let severity = data;
+            severity.coding = [severity.coding];// 把coding按照FHIR Definition包成Array
+
+            return severity;
+        }
     },
     {
         source: 'bodySite',
-        target: 'Condition.bodySite'
+        target: 'Condition.bodySite',
+        beforeConvert: (data) => {
+            let bodySite = data;
+            bodySite.coding = [bodySite.coding];// 把coding按照FHIR Definition包成Array
+
+            return bodySite;
+        }
     },
     {
         source: 'subject',
