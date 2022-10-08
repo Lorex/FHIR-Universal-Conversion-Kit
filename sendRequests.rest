@@ -1,6 +1,6 @@
 GET http://localhost:1337
 
-### https://youtu.be/Ud5xKCYQTjM?t=267
+### https: //youtu.be/Ud5xKCYQTjM?t=267
 
 POST http://localhost:1337
 Content-Type: application/json
@@ -1889,6 +1889,767 @@ Content-Type: application/json
             "note": {
                 "text": "關於此Condition的附加資訊"
             }
+        }
+    ]
+}
+
+###
+
+POST http://localhost:1337
+Content-Type: application/json
+
+{
+    "profile": "encounterMS",
+    "data": [
+        {
+            "id": "1",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>應該放一些關於此Resouce的資訊或是FHIR定義的text.div之類的值，但是我尚且不清楚規範，剩下的都丟空值來測試吧!</p></div>"
+            },
+            "identifier": {
+                "system": "http://healthcare.example.org/identifiers/enocunter",
+                "value": "E22081702"
+            },
+            "status": "finished",
+            "class": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "AMB",
+                "display": "ambulatory"
+            },
+            "serviceType": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/service-type",
+                    "code": "1",
+                    "display": "\tAdoption/Permanent Care Info/Support"
+                },
+                "text": "Adoption & permanent care information/support"
+            },
+            "priority": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+                    "code": "A",
+                    "display": "ASAP"
+                },
+                "text": "As soon as possible, next highest priority after stat."
+            },
+            "subject": "",
+            "participant": {
+                "type": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                        "code": "ADM",
+                        "display": "admitter"
+                    },
+                    "text": "The practitioner who is responsible for admitting a patient to a patient encounter."
+                },
+                "period": {
+                    "start": "2022-07-31",
+                    "end": "2022-07-31"
+                },
+                "individual": ""
+            },
+            "period": {
+                "start": "2022-07-31",
+                "end": "2022-07-31"
+            },
+            "reasonCode": {
+                "coding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "109006",
+                    "display": "Anxiety disorder of childhood OR adolescence"
+                },
+                "text": ""
+            },
+            "hospitalization": {
+                "dischargeDisposition": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                        "code": "home",
+                        "display": "Home"
+                    },
+                    "text": "The patient was dicharged and has indicated that they are going to return home afterwards."
+                }
+            },
+            "location": {
+                "location": ""
+            },
+            "serviceProvider": ""
+        },
+        {
+            "id": "2",
+            "text": {
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+            },
+            "identifier": {
+                "system": "http://healthcare.example.org/identifiers/enocunter",
+                "value": "A091563427"
+            },
+            "status": "finished",
+            "class": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "EMER",
+                "display": "emergency"
+            },
+            "serviceType": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/service-type",
+                    "code": "2",
+                    "display": "\tAged Care Assessment"
+                },
+                "text": "Aged care assessment"
+            },
+            "priority": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+                    "code": "A",
+                    "display": "ASAP"
+                },
+                "text": "As soon as possible, next highest priority after stat."
+            },
+            "subject": "",
+            "participant": {
+                "type": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v4-ParticipationType",
+                        "code": "ESC",
+                        "display": "escort"
+                    },
+                    "text": "Only with Transportation services. A person who escorts the patient."
+                },
+                "period": {
+                    "start": "2012-06-25",
+                    "end": "2012-06-26"
+                },
+                "individual": ""
+            },
+            "period": {
+                "start": "2012-06-25",
+                "end": "2013-08-24"
+            },
+            "reasonCode": {
+                "coding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "122003",
+                    "display": "Choroidal hemorrhage"
+                },
+                "text": ""
+            },
+            "hospitalization": {
+                "dischargeDisposition": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                        "code": "long",
+                        "display": "Long-term care"
+                    },
+                    "text": "The patient has been discharged into long-term care where is likely to be monitored through an ongoing episode-of-care."
+                }
+            },
+            "location": {
+                "location": ""
+            },
+            "serviceProvider": ""
+        },
+        {
+            "id": "3",
+            "text": {
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+            },
+            "identifier": {
+                "system": "http://healthcare.example.org/identifiers/enocunter",
+                "value": "A480863424"
+            },
+            "status": "finished",
+            "class": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "FLD",
+                "display": "field"
+            },
+            "serviceType": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/service-type",
+                    "code": "3",
+                    "display": "Aged Care Information/Referral"
+                },
+                "text": "\tAged Care information/referral"
+            },
+            "priority": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+                    "code": "A",
+                    "display": "ASAP"
+                },
+                "text": "As soon as possible, next highest priority after stat."
+            },
+            "subject": "",
+            "participant": {
+                "type": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v5-ParticipationType",
+                        "code": "ATND",
+                        "display": "attender"
+                    },
+                    "text": "The practitioner that has responsibility for overseeing a patient's care during a patient encounter."
+                },
+                "period": {
+                    "start": "2013-08-25",
+                    "end": "2013-08-25"
+                },
+                "individual": ""
+            },
+            "period": {
+                "start": "2013-08-25",
+                "end": "2014-07-09"
+            },
+            "reasonCode": {
+                "coding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "127009",
+                    "display": "Spontaneous abortion with laceration of cervix"
+                },
+                "text": ""
+            },
+            "hospitalization": {
+                "dischargeDisposition": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                        "code": "home",
+                        "display": "Home"
+                    },
+                    "text": "The patient was dicharged and has indicated that they are going to return home afterwards."
+                }
+            },
+            "location": {
+                "location": ""
+            },
+            "serviceProvider": ""
+        },
+        {
+            "id": "4",
+            "text": {
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+            },
+            "identifier": {
+                "system": "http://healthcare.example.org/identifiers/enocunter",
+                "value": "A867851910"
+            },
+            "status": "finished",
+            "class": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "HH",
+                "display": "home health"
+            },
+            "serviceType": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/service-type",
+                    "code": "4",
+                    "display": "Aged Residential Care"
+                },
+                "text": "Aged Residential Care"
+            },
+            "priority": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+                    "code": "A",
+                    "display": "ASAP"
+                },
+                "text": "As soon as possible, next highest priority after stat."
+            },
+            "subject": "",
+            "participant": {
+                "type": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v6-ParticipationType",
+                        "code": "ESC",
+                        "display": "escort"
+                    },
+                    "text": "Only with Transportation services. A person who escorts the patient."
+                },
+                "period": {
+                    "start": "2012-06-25",
+                    "end": "2012-06-25"
+                },
+                "individual": ""
+            },
+            "period": {
+                "start": "2012-06-25",
+                "end": "2013-08-26"
+            },
+            "reasonCode": {
+                "coding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "129007",
+                    "display": "Homoiothermia"
+                },
+                "text": ""
+            },
+            "hospitalization": {
+                "dischargeDisposition": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                        "code": "home",
+                        "display": "Home"
+                    },
+                    "text": "The patient was dicharged and has indicated that they are going to return home afterwards."
+                }
+            },
+            "location": {
+                "location": ""
+            },
+            "serviceProvider": ""
+        },
+        {
+            "id": "5",
+            "text": {
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+            },
+            "identifier": {
+                "system": "http://healthcare.example.org/identifiers/enocunter",
+                "value": "H181870513"
+            },
+            "status": "finished",
+            "class": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "IMP",
+                "display": "inpatient encounter"
+            },
+            "serviceType": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/service-type",
+                    "code": "5",
+                    "display": "\tCase Management for Older Persons"
+                },
+                "text": "Case management for older persons"
+            },
+            "priority": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+                    "code": "A",
+                    "display": "ASAP"
+                },
+                "text": "As soon as possible, next highest priority after stat."
+            },
+            "subject": "",
+            "participant": {
+                "type": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v7-ParticipationType",
+                        "code": "ADM",
+                        "display": "admitter"
+                    },
+                    "text": "The practitioner who is responsible for admitting a patient to a patient encounter."
+                },
+                "period": {
+                    "start": "2013-08-25",
+                    "end": "2013-08-27"
+                },
+                "individual": ""
+            },
+            "period": {
+                "start": "2013-08-25",
+                "end": "2014-07-28"
+            },
+            "reasonCode": {
+                "coding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "134006",
+                    "display": "\tDecreased hair growth"
+                },
+                "text": ""
+            },
+            "hospitalization": {
+                "dischargeDisposition": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                        "code": "long",
+                        "display": "Long-term care"
+                    },
+                    "text": "The patient has been discharged into long-term care where is likely to be monitored through an ongoing episode-of-care."
+                }
+            },
+            "location": {
+                "location": ""
+            },
+            "serviceProvider": ""
+        },
+        {
+            "id": "6",
+            "text": {
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+            },
+            "identifier": {
+                "system": "http://healthcare.example.org/identifiers/enocunter",
+                "value": "H573091974"
+            },
+            "status": "finished",
+            "class": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "ACUTE",
+                "display": "inpatient acute"
+            },
+            "serviceType": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/service-type",
+                    "code": "6",
+                    "display": "Delivered Meals (Meals On Wheels)"
+                },
+                "text": "Delivered meals (meals on wheels)"
+            },
+            "priority": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+                    "code": "CR",
+                    "display": "callback results"
+                },
+                "text": "Filler should contact the placer as soon as results are available, even for preliminary results. (Was \"C\" in HL7 version 2.3's reporting priority.)"
+            },
+            "subject": "",
+            "participant": {
+                "type": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v8-ParticipationType",
+                        "code": "CALLBCK",
+                        "display": "callback contact"
+                    },
+                    "text": "A person or organization who should be contacted for follow-up questions about the act in place of the author."
+                },
+                "period": {
+                    "start": "2012-06-25",
+                    "end": "2012-06-25"
+                },
+                "individual": ""
+            },
+            "period": {
+                "start": "2012-06-25",
+                "end": "2013-08-26"
+            },
+            "reasonCode": {
+                "coding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "140004",
+                    "display": "Chronic pharyngitis"
+                },
+                "text": ""
+            },
+            "hospitalization": {
+                "dischargeDisposition": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                        "code": "home",
+                        "display": "Home"
+                    },
+                    "text": "The patient was dicharged and has indicated that they are going to return home afterwards."
+                }
+            },
+            "location": {
+                "location": ""
+            },
+            "serviceProvider": ""
+        },
+        {
+            "id": "7",
+            "text": {
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+            },
+            "identifier": {
+                "system": "http://healthcare.example.org/identifiers/enocunter",
+                "value": "H845611983"
+            },
+            "status": "finished",
+            "class": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "NONAC",
+                "display": "inpatient non-acute"
+            },
+            "serviceType": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/service-type",
+                    "code": "7",
+                    "display": "Friendly Visiting"
+                },
+                "text": "Friendly visiting"
+            },
+            "priority": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+                    "code": "EL",
+                    "display": "\telective"
+                },
+                "text": "\tBeneficial to the patient but not essential for survival."
+            },
+            "subject": "",
+            "participant": {
+                "type": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v9-ParticipationType",
+                        "code": "ESC",
+                        "display": "escort"
+                    },
+                    "text": "Only with Transportation services. A person who escorts the patient."
+                },
+                "period": {
+                    "start": "2022-1-15",
+                    "end": "2022-1-20"
+                },
+                "individual": ""
+            },
+            "period": {
+                "start": "2022-1-15",
+                "end": "2022-10-04"
+            },
+            "reasonCode": {
+                "coding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "144008",
+                    "display": "Normal peripheral vision"
+                },
+                "text": ""
+            },
+            "hospitalization": {
+                "dischargeDisposition": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                        "code": "oth",
+                        "display": "Other"
+                    },
+                    "text": "The discharge disposition has not otherwise defined."
+                }
+            },
+            "location": {
+                "location": ""
+            },
+            "serviceProvider": ""
+        },
+        {
+            "id": "8",
+            "text": {
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+            },
+            "identifier": {
+                "system": "http://healthcare.example.org/identifiers/enocunter",
+                "value": "K148938878"
+            },
+            "status": "finished",
+            "class": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "AMB",
+                "display": "ambulatory"
+            },
+            "serviceType": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/service-type",
+                    "code": "8",
+                    "display": "Home Care/Housekeeping Assistance"
+                },
+                "text": "Home care/housekeeping assistance"
+            },
+            "priority": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+                    "code": "EL",
+                    "display": "\telective"
+                },
+                "text": "\tBeneficial to the patient but not essential for survival."
+            },
+            "subject": "",
+            "participant": {
+                "type": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v10-ParticipationType",
+                        "code": "ATND",
+                        "display": "attender"
+                    },
+                    "text": "The practitioner that has responsibility for overseeing a patient's care during a patient encounter."
+                },
+                "period": {
+                    "start": "2022-2-15",
+                    "end": "2022-2-18"
+                },
+                "individual": ""
+            },
+            "period": {
+                "start": "2022-2-15",
+                "end": "2022-10-05"
+            },
+            "reasonCode": {
+                "coding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "147001",
+                    "display": "Superficial foreign body of scrotum without major open wound but with infection"
+                },
+                "text": ""
+            },
+            "hospitalization": {
+                "dischargeDisposition": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                        "code": "home",
+                        "display": "Home"
+                    },
+                    "text": "The patient was dicharged and has indicated that they are going to return home afterwards."
+                }
+            },
+            "location": {
+                "location": ""
+            },
+            "serviceProvider": ""
+        },
+        {
+            "id": "9",
+            "text": {
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+            },
+            "identifier": {
+                "system": "http://healthcare.example.org/identifiers/enocunter",
+                "value": "K646007288"
+            },
+            "status": "arrived",
+            "class": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "AMB",
+                "display": "ambulatory"
+            },
+            "serviceType": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/service-type",
+                    "code": "9",
+                    "display": "\tHome Maintenance and Repair"
+                },
+                "text": "\tHome maintenance and repair"
+            },
+            "priority": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+                    "code": "CR",
+                    "display": "callback results"
+                },
+                "text": "Filler should contact the placer as soon as results are available, even for preliminary results. (Was \"C\" in HL7 version 2.3's reporting priority.)"
+            },
+            "subject": "",
+            "participant": {
+                "type": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/participant-type",
+                        "code": "translator",
+                        "display": "Translator"
+                    },
+                    "text": "A translator who is facilitating communication with the patient during the encounter."
+                },
+                "period": {
+                    "start": "2022-4-15",
+                    "end": "2022-4-15"
+                },
+                "individual": ""
+            },
+            "period": {
+                "start": "2022-4-15",
+                "end": "2022-10-06"
+            },
+            "reasonCode": {
+                "coding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "150003",
+                    "display": "Abnormal bladder continence"
+                },
+                "text": ""
+            },
+            "hospitalization": {
+                "dischargeDisposition": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                        "code": "alt-home",
+                        "display": "Alternative home"
+                    },
+                    "text": "The patient was discharged and has indicated that they are going to return home afterwards, but not the patient's home - e.g. a family member's home."
+                }
+            },
+            "location": {
+                "location": ""
+            },
+            "serviceProvider": ""
+        },
+        {
+            "id": "10",
+            "text": {
+                "status": "empty",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+            },
+            "identifier": {
+                "system": "http://healthcare.example.org/identifiers/enocunter",
+                "value": "K715575475"
+            },
+            "status": "arrived",
+            "class": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "AMB",
+                "display": "ambulatory"
+            },
+            "serviceType": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/service-type",
+                    "code": "10",
+                    "display": "Personal Alarms/Alerts"
+                },
+                "text": "\tPersonal alarms/alerts"
+            },
+            "priority": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActPriority",
+                    "code": "CR",
+                    "display": "callback results"
+                },
+                "text": "Filler should contact the placer as soon as results are available, even for preliminary results. (Was \"C\" in HL7 version 2.3's reporting priority.)"
+            },
+            "subject": "",
+            "participant": {
+                "type": {
+                    "coding": {
+                        "system": "http://terminology.hl8.org/CodeSystem/participant-type",
+                        "code": "emergency",
+                        "display": "Emergency"
+                    },
+                    "text": "A person to be contacted in case of an emergency during the encounter."
+                },
+                "period": {
+                    "start": "2022-10-15",
+                    "end": "2022-10-31"
+                },
+                "individual": ""
+            },
+            "period": {
+                "start": "2022-10-15",
+                "end": "2022-10-20"
+            },
+            "reasonCode": {
+                "coding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "151004",
+                    "display": "Meningitis due to gonococcus"
+                },
+                "text": ""
+            },
+            "hospitalization": {
+                "dischargeDisposition": {
+                    "coding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/discharge-disposition",
+                        "code": "alt-home",
+                        "display": "Alternative home"
+                    },
+                    "text": "The patient was discharged and has indicated that they are going to return home afterwards, but not the patient's home - e.g. a family member's home."
+                }
+            },
+            "location": {
+                "location": ""
+            },
+            "serviceProvider": ""
         }
     ]
 }
