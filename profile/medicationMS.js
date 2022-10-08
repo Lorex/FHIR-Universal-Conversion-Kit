@@ -30,10 +30,21 @@ module.exports.fields = [
     {
         source: 'code',
         target: 'Medication.code',
-        beforeConvert()
+        beforeConvert: (data) => {
+            let code = data;
+            code.coding = [code.coding];// 把coding按照FHIR Definition包成Array
+
+            return code;
+        }
     },
     {
         source: 'form',
         target: 'Medication.form',
+        beforeConvert: (data) => {
+            let form = data;
+            form.coding = [form.coding];
+
+            return form;
+        }
     },
 ]
