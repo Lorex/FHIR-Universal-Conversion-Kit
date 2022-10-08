@@ -29,9 +29,14 @@ module.exports.fields = [
     },
     {
         source: 'clinicalStatus',
-        target: 'Condition.clinicalStatus'
-        // 嘗試額外寫js直接把identifier組成Object傳入
-        // 若照上述方法，則無需使用beforeConvert來處理傳入的資料
+        target: 'Condition.clinicalStatus',
+        beforeConvert: (data) => {
+            let clinicalStatus = data;
+            clinicalStatus.coding = [clinicalStatus.coding];// 把coding按照FHIR Definition包成Array
+
+            return clinicalStatus;
+            // 直接以Object方式回傳 不用`${}`才不會被當成字串OAO而出現\"
+        }
     },
     {
         source: 'verificationStatus',
