@@ -2653,3 +2653,254 @@ Content-Type: application/json
         }
     ]
 }
+
+###
+
+POST http://localhost:1337
+Content-Type: application/json
+
+{
+    "profile": "medicationMS",
+    "data": [
+        {
+            "id": "1",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>衛署藥輸字第025484號</p></div>"
+            },
+            "code": {
+                "coding": {
+                    "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-fda-tw",
+                    "code": "衛署藥輸字第025484號",
+                    "display": "尼什枸寧"
+                },
+                "text": "衛署藥輸字第025484號 尼什枸寧"
+            },
+            "form": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                    "code": "TAB",
+                    "display": "Tablet"
+                },
+                "text": "A solid dosage form containing medicinal substances with or without suitable diluents."
+            },
+            "fhirjson": ".\\json\\medication\\1.json"
+        },
+        {
+            "id": "2",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>衛署藥輸字第025485號</p></div>"
+            },
+            "code": {
+                "coding": {
+                    "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-fda-tw",
+                    "code": "衛署藥輸字第025485號",
+                    "display": "阿立批挫"
+                },
+                "text": "衛署藥輸字第025485號 阿立批挫"
+            },
+            "form": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                    "code": "POWD",
+                    "display": "Powder"
+                },
+                "text": "An intimate mixture of dry, finely divided drugs and/or chemicals that may be intended for internal or external use."
+            },
+            "fhirjson": ""
+        },
+        {
+            "id": "3",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>衛署藥輸字第025486號</p></div>"
+            },
+            "code": {
+                "coding": {
+                    "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-fda-tw",
+                    "code": "衛署藥輸字第025486號",
+                    "display": "釋癲平膜衣錠300毫克"
+                },
+                "text": "衛署藥輸字第025486號 釋癲平膜衣錠300毫克"
+            },
+            "form": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                    "code": "TAB",
+                    "display": "Tablet"
+                },
+                "text": "A solid dosage form containing medicinal substances with or without suitable diluents."
+            },
+            "fhirjson": ""
+        },
+        {
+            "id": "4",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>衛署藥輸字第025487號</p></div>"
+            },
+            "code": {
+                "coding": {
+                    "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-fda-tw",
+                    "code": "衛署藥輸字第025487號",
+                    "display": "鹽酸服拉沃塞"
+                },
+                "text": "衛署藥輸字第025487號 鹽酸服拉沃塞"
+            },
+            "form": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                    "code": "POWD",
+                    "display": "Powder"
+                },
+                "text": "An intimate mixture of dry, finely divided drugs and/or chemicals that may be intended for internal or external use."
+            },
+            "fhirjson": ""
+        },
+        {
+            "id": "5",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>衛署藥輸字第025488號</p></div>"
+            },
+            "code": {
+                "coding": {
+                    "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-fda-tw",
+                    "code": "衛署藥輸字第025488號",
+                    "display": "拉特樂斯"
+                },
+                "text": "衛署藥輸字第025488號 拉特樂斯"
+            },
+            "form": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                    "code": "_Liquid",
+                    "display": "Liquid"
+                },
+                "text": "A state of substance that is an intermediate one entered into as matter goes from solid to gas; liquids are also intermediate in that they have neither the orderliness of a crystal nor the randomness of a gas. (Note: This term should not be used to describe solutions, only pure chemicals in their liquid state.)"
+            },
+            "fhirjson": ""
+        },
+        {
+            "id": "6",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>衛署藥輸字第025489號</p></div>"
+            },
+            "code": {
+                "coding": {
+                    "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-fda-tw",
+                    "code": "衛署藥輸字第025489號",
+                    "display": "維諾拜注射液"
+                },
+                "text": "衛署藥輸字第025489號 維諾拜注射液"
+            },
+            "form": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                    "code": "IVSOL",
+                    "display": "Intravenous Solution"
+                },
+                "text": ""
+            },
+            "fhirjson": ""
+        },
+        {
+            "id": "7",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>衛署藥輸字第025490號</p></div>"
+            },
+            "code": {
+                "coding": {
+                    "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-fda-tw",
+                    "code": "衛署藥輸字第025490號",
+                    "display": "西他普蘭氫溴酸鹽"
+                },
+                "text": "衛署藥輸字第025490號 西他普蘭氫溴酸鹽"
+            },
+            "form": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                    "code": "POWD",
+                    "display": "Powder"
+                },
+                "text": "An intimate mixture of dry, finely divided drugs and/or chemicals that may be intended for internal or external use."
+            },
+            "fhirjson": ""
+        },
+        {
+            "id": "8",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>衛署藥輸字第025491號</p></div>"
+            },
+            "code": {
+                "coding": {
+                    "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-fda-tw",
+                    "code": "衛署藥輸字第025491號",
+                    "display": "易達平"
+                },
+                "text": "衛署藥輸字第025491號 易達平"
+            },
+            "form": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                    "code": "POWD",
+                    "display": "Powder"
+                },
+                "text": "An intimate mixture of dry, finely divided drugs and/or chemicals that may be intended for internal or external use."
+            },
+            "fhirjson": ""
+        },
+        {
+            "id": "9",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>衛署藥輸字第025492號</p></div>"
+            },
+            "code": {
+                "coding": {
+                    "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-fda-tw",
+                    "code": "衛署藥輸字第025492號",
+                    "display": "舒脈優膜衣錠20/5/12.5毫克"
+                },
+                "text": "衛署藥輸字第025492號 舒脈優膜衣錠20/5/12.5毫克"
+            },
+            "form": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                    "code": "TAB",
+                    "display": "Tablet"
+                },
+                "text": "A solid dosage form containing medicinal substances with or without suitable diluents."
+            },
+            "fhirjson": ""
+        },
+        {
+            "id": "10",
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>衛署藥輸字第025493號</p></div>"
+            },
+            "code": {
+                "coding": {
+                    "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-fda-tw",
+                    "code": "衛署藥輸字第025493號",
+                    "display": "舒脈優膜衣錠40/5/25毫克"
+                },
+                "text": "衛署藥輸字第025493號 舒脈優膜衣錠40/5/25毫克"
+            },
+            "form": {
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                    "code": "TAB",
+                    "display": "Tablet"
+                },
+                "text": "A solid dosage form containing medicinal substances with or without suitable diluents."
+            },
+            "fhirjson": ""
+        }
+    ]
+}
