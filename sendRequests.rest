@@ -22,6 +22,9 @@ Content-Type: application/json
 
 ###
 
+GET https://hapi.fhir.tw/fhir/Organization
+
+###
 POST http://localhost:1337
 Content-Type: application/json
 
