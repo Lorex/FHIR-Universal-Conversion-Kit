@@ -42,18 +42,18 @@ module.exports.fields = [
         source: 'subject',
         target: 'Observation.subject',
     },
-    {
-        source: 'effective',
-        target: 'Observation.effective',
-    },
+    // {
+    //     source: 'effective',
+    //     target: 'Observation.effective',
+    // },
     {
         source: 'performer',
         target: 'Observation.performer',
     },
-    {
-        source: 'value',
-        target: 'Observation.value',
-    },
+    // {
+    //     source: 'value',
+    //     target: 'Observation.value',
+    // },
     {
         source: 'component',
         target: 'Observation.component',
