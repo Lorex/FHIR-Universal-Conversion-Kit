@@ -37,27 +37,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "HOI",
-                            "display": "Healthcare Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "HOI",
+                        "display": "Healthcare Organization Identifier"
+                    },
                     "text": "醫事機構代碼(Healthcare Organization Identifier number)"
                 },
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "1101010012"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "prov",
-                        "display": "Healthcare Provider"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "prov",
+                    "display": "Healthcare Provider"
+                },
                 "text": "醫事機構"
             },
             "name": "長庚醫療財團法人台北長庚紀念醫院",
@@ -78,27 +74,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "HOI",
-                            "display": "Healthcare Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "HOI",
+                        "display": "Healthcare Organization Identifier"
+                    },
                     "text": "醫事機構代碼(Healthcare Organization Identifier number)"
                 },
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "10109051704"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "prov",
-                        "display": "Healthcare Provider"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "prov",
+                    "display": "Healthcare Provider"
+                },
                 "text": "醫事機構"
             },
             "name": "臺北市立聯合醫院忠孝院區",
@@ -119,27 +111,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "HOI",
-                            "display": "Healthcare Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "HOI",
+                        "display": "Healthcare Organization Identifier"
+                    },
                     "text": "醫事機構代碼(Healthcare Organization Identifier number)"
                 },
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "1101010021"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "prov",
-                        "display": "Healthcare Provider"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "prov",
+                    "display": "Healthcare Provider"
+                },
                 "text": "醫事機構"
             },
             "name": "基督復臨安息日會醫療財團法人臺安醫院",
@@ -160,27 +148,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "HOI",
-                            "display": "Healthcare Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "HOI",
+                        "display": "Healthcare Organization Identifier"
+                    },
                     "text": "醫事機構代碼(Healthcare Organization Identifier number)"
                 },
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "431270012"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "prov",
-                        "display": "Healthcare Provider"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "prov",
+                    "display": "Healthcare Provider"
+                },
                 "text": "醫事機構"
             },
             "name": "國立臺灣大學醫學院附設醫院金山分院",
@@ -201,27 +185,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "HOI",
-                            "display": "Healthcare Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "HOI",
+                        "display": "Healthcare Organization Identifier"
+                    },
                     "text": "醫事機構代碼(Healthcare Organization Identifier number)"
                 },
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "931100015"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "prov",
-                        "display": "Healthcare Provider"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "prov",
+                    "display": "Healthcare Provider"
+                },
                 "text": "醫事機構"
             },
             "name": "北新醫療社團法人北新醫院",
@@ -242,27 +222,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "HOI",
-                            "display": "Healthcare Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "HOI",
+                        "display": "Healthcare Organization Identifier"
+                    },
                     "text": "醫事機構代碼(Healthcare Organization Identifier number)"
                 },
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "1531010279"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "prov",
-                        "display": "Healthcare Provider"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "prov",
+                    "display": "Healthcare Provider"
+                },
                 "text": "醫事機構"
             },
             "name": "板橋中興醫院",
@@ -283,27 +259,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "HOI",
-                            "display": "Healthcare Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "HOI",
+                        "display": "Healthcare Organization Identifier"
+                    },
                     "text": "醫事機構代碼(Healthcare Organization Identifier number)"
                 },
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "1531061230"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "prov",
-                        "display": "Healthcare Provider"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "prov",
+                    "display": "Healthcare Provider"
+                },
                 "text": "醫事機構"
             },
             "name": "益民醫院",
@@ -324,27 +296,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "HOI",
-                            "display": "Healthcare Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "HOI",
+                        "display": "Healthcare Organization Identifier"
+                    },
                     "text": "醫事機構代碼(Healthcare Organization Identifier number)"
                 },
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "132010014"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "prov",
-                        "display": "Healthcare Provider"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "prov",
+                    "display": "Healthcare Provider"
+                },
                 "text": "醫事機構"
             },
             "name": "衛生福利部桃園醫院",
@@ -365,27 +333,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "HOI",
-                            "display": "Healthcare Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "HOI",
+                        "display": "Healthcare Organization Identifier"
+                    },
                     "text": "醫事機構代碼(Healthcare Organization Identifier number)"
                 },
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "932020025"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "prov",
-                        "display": "Healthcare Provider"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "prov",
+                    "display": "Healthcare Provider"
+                },
                 "text": "醫事機構"
             },
             "name": "天成醫療社團法人天晟醫院",
@@ -406,27 +370,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "HOI",
-                            "display": "Healthcare Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "HOI",
+                        "display": "Healthcare Organization Identifier"
+                    },
                     "text": "醫事機構代碼(Healthcare Organization Identifier number)"
                 },
                 "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
                 "value": "1132070011"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "prov",
-                        "display": "Healthcare Provider"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "prov",
+                    "display": "Healthcare Provider"
+                },
                 "text": "醫事機構"
             },
             "name": "長庚醫療財團法人林口長庚紀念醫院",
@@ -447,27 +407,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GOI",
-                            "display": "Government Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GOI",
+                        "display": "Government Organization Identifier"
+                    },
                     "text": "政府機關代碼(Government Organization Identifier number)"
                 },
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "200000000A000"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "govt",
-                        "display": "Government"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "govt",
+                    "display": "Government"
+                },
                 "text": "政府機關"
             },
             "name": "總統府",
@@ -476,7 +432,7 @@ Content-Type: application/json
                 "value": "02 2311 3731"
             },
             "address": {
-                "text": " 臺北市中正區重慶南路1段122號"
+                "text": "臺北市中正區重慶南路1段122號"
             }
         },
         {
@@ -488,27 +444,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GOI",
-                            "display": "Government Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GOI",
+                        "display": "Government Organization Identifier"
+                    },
                     "text": "政府機關代碼(Government Organization Identifier number)"
                 },
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "201000000A000"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "govt",
-                        "display": "Government"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "govt",
+                    "display": "Government"
+                },
                 "text": "政府機關"
             },
             "name": "中央研究院",
@@ -529,27 +481,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GOI",
-                            "display": "Government Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GOI",
+                        "display": "Government Organization Identifier"
+                    },
                     "text": "政府機關代碼(Government Organization Identifier number)"
                 },
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "301000000A000"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "govt",
-                        "display": "Government"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "govt",
+                    "display": "Government"
+                },
                 "text": "政府機關"
             },
             "name": "內政部",
@@ -570,27 +518,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GOI",
-                            "display": "Government Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GOI",
+                        "display": "Government Organization Identifier"
+                    },
                     "text": "政府機關代碼(Government Organization Identifier number)"
                 },
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "313520500K000"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "govt",
-                        "display": "Government"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "govt",
+                    "display": "Government"
+                },
                 "text": "政府機關"
             },
             "name": "台灣自來水股份有限公司第五區管理處",
@@ -611,27 +555,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GOI",
-                            "display": "Government Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GOI",
+                        "display": "Government Organization Identifier"
+                    },
                     "text": "政府機關代碼(Government Organization Identifier number)"
                 },
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "301020900G000"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "govt",
-                        "display": "Government"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "govt",
+                    "display": "Government"
+                },
                 "text": "政府機關"
             },
             "name": "玉山國家公園管理處",
@@ -652,27 +592,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GOI",
-                            "display": "Government Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GOI",
+                        "display": "Government Organization Identifier"
+                    },
                     "text": "政府機關代碼(Government Organization Identifier number)"
                 },
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "301021000G000"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "govt",
-                        "display": "Government"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "govt",
+                    "display": "Government"
+                },
                 "text": "政府機關"
             },
             "name": "陽明山國家公園管理處",
@@ -693,27 +629,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GOI",
-                            "display": "Government Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GOI",
+                        "display": "Government Organization Identifier"
+                    },
                     "text": "政府機關代碼(Government Organization Identifier number)"
                 },
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "307190000N000"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "govt",
-                        "display": "Government"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "govt",
+                    "display": "Government"
+                },
                 "text": "政府機關"
             },
             "name": "中央存款保險股份有限公司",
@@ -734,27 +666,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GOI",
-                            "display": "Government Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GOI",
+                        "display": "Government Organization Identifier"
+                    },
                     "text": "政府機關代碼(Government Organization Identifier number)"
                 },
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "307250000N000"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "govt",
-                        "display": "Government"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "govt",
+                    "display": "Government"
+                },
                 "text": "政府機關"
             },
             "name": "臺灣金融控股股份有限公司",
@@ -775,27 +703,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GOI",
-                            "display": "Government Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GOI",
+                        "display": "Government Organization Identifier"
+                    },
                     "text": "政府機關代碼(Government Organization Identifier number)"
                 },
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "313000000G000"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "govt",
-                        "display": "Government"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "govt",
+                    "display": "Government"
+                },
                 "text": "政府機關"
             },
             "name": "經濟部",
@@ -816,27 +740,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GOI",
-                            "display": "Government Organization Identifier"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GOI",
+                        "display": "Government Organization Identifier"
+                    },
                     "text": "政府機關代碼(Government Organization Identifier number)"
                 },
                 "system": "https://pts.fnp.gov.tw/APNPA/common/gorga.do?method=showChooseSearch&modeType=25",
                 "value": "313310000K000"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "govt",
-                        "display": "Government"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "govt",
+                    "display": "Government"
+                },
                 "text": "政府機關"
             },
             "name": "台灣電力股份有限公司",
@@ -857,27 +777,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GUI",
-                            "display": "Government Uniform Invoice"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GUI",
+                        "display": "Government Uniform Invoice"
+                    },
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "22099131 "
+                "value": "22099131"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "bus",
-                        "display": "Non-Healthcare Business or Corporation"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "bus",
+                    "display": "Non-Healthcare Business or Corporation"
+                },
                 "text": "公司行號(統一編號)"
             },
             "name": "台灣積體電路製造股份有限公司",
@@ -898,27 +814,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GUI",
-                            "display": "Government Uniform Invoice"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GUI",
+                        "display": "Government Uniform Invoice"
+                    },
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "22403689 "
+                "value": "22403689"
             },
-            "active": false,
+            "active": "FALSE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "bus",
-                        "display": "Non-Healthcare Business or Corporation"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "bus",
+                    "display": "Non-Healthcare Business or Corporation"
+                },
                 "text": "公司行號(統一編號)"
             },
             "name": "台晟鋼鐵股份有限公司",
@@ -939,27 +851,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GUI",
-                            "display": "Government Uniform Invoice"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GUI",
+                        "display": "Government Uniform Invoice"
+                    },
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "22833203 "
+                "value": "22833203"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "bus",
-                        "display": "Non-Healthcare Business or Corporation"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "bus",
+                    "display": "Non-Healthcare Business or Corporation"
+                },
                 "text": "公司行號(統一編號)"
             },
             "name": "台有化學有限公司",
@@ -980,27 +888,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GUI",
-                            "display": "Government Uniform Invoice"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GUI",
+                        "display": "Government Uniform Invoice"
+                    },
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "97311466 "
+                "value": "97311466"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "bus",
-                        "display": "Non-Healthcare Business or Corporation"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "bus",
+                    "display": "Non-Healthcare Business or Corporation"
+                },
                 "text": "公司行號(統一編號)"
             },
             "name": "精誠資訊股份有限公司",
@@ -1021,27 +925,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GUI",
-                            "display": "Government Uniform Invoice"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GUI",
+                        "display": "Government Uniform Invoice"
+                    },
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "23525730 "
+                "value": "23525730"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "bus",
-                        "display": "Non-Healthcare Business or Corporation"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "bus",
+                    "display": "Non-Healthcare Business or Corporation"
+                },
                 "text": "公司行號(統一編號)"
             },
             "name": "台灣微軟股份有限公司",
@@ -1062,27 +962,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GUI",
-                            "display": "Government Uniform Invoice"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GUI",
+                        "display": "Government Uniform Invoice"
+                    },
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "23060248 "
+                "value": "23060248"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "bus",
-                        "display": "Non-Healthcare Business or Corporation"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "bus",
+                    "display": "Non-Healthcare Business or Corporation"
+                },
                 "text": "公司行號(統一編號)"
             },
             "name": "全家便利商店股份有限公司",
@@ -1103,27 +999,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GUI",
-                            "display": "Government Uniform Invoice"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GUI",
+                        "display": "Government Uniform Invoice"
+                    },
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "22555003 "
+                "value": "22555003"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "bus",
-                        "display": "Non-Healthcare Business or Corporation"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "bus",
+                    "display": "Non-Healthcare Business or Corporation"
+                },
                 "text": "公司行號(統一編號)"
             },
             "name": "統一超商股份有限公司",
@@ -1144,27 +1036,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GUI",
-                            "display": "Government Uniform Invoice"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GUI",
+                        "display": "Government Uniform Invoice"
+                    },
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "27934855 "
+                "value": "27934855"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "bus",
-                        "display": "Non-Healthcare Business or Corporation"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "bus",
+                    "display": "Non-Healthcare Business or Corporation"
+                },
                 "text": "公司行號(統一編號)"
             },
             "name": "美商科高國際有限公司 GOOGLE INTERNATIONAL LLC",
@@ -1185,27 +1073,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GUI",
-                            "display": "Government Uniform Invoice"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GUI",
+                        "display": "Government Uniform Invoice"
+                    },
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "70472679 "
+                "value": "70472679"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "bus",
-                        "display": "Non-Healthcare Business or Corporation"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "bus",
+                    "display": "Non-Healthcare Business or Corporation"
+                },
                 "text": "公司行號(統一編號)"
             },
             "name": "八方雲集國際股份有限公司",
@@ -1226,27 +1110,23 @@ Content-Type: application/json
             "identifier": {
                 "use": "official",
                 "type": {
-                    "coding": [
-                        {
-                            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
-                            "code": "GUI",
-                            "display": "Government Uniform Invoice"
-                        }
-                    ],
+                    "coding": {
+                        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                        "code": "GUI",
+                        "display": "Government Uniform Invoice"
+                    },
                     "text": "公司行號(Government Uniform Invoice number)"
                 },
                 "system": "https://findbiz.nat.gov.tw",
-                "value": "82822428 "
+                "value": "82822428"
             },
-            "active": true,
+            "active": "TRUE",
             "type": {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                        "code": "bus",
-                        "display": "Non-Healthcare Business or Corporation"
-                    }
-                ],
+                "coding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "bus",
+                    "display": "Non-Healthcare Business or Corporation"
+                },
                 "text": "公司行號(統一編號)"
             },
             "name": "康統醫學科技股份有限公司",
@@ -1257,8 +1137,7 @@ Content-Type: application/json
             "address": {
                 "text": "臺北市中正區北平東路16號8樓"
             }
-        },
-        {}
+        }
     ]
 }
 
