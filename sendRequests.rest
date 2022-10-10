@@ -3029,11 +3029,14 @@ Content-Type: application/json
             "subject": {
                 "reference": "Patient/pat-1"
             },
-            "effective": "2022-06-24",
+            "effectiveDateTime": "2022-06-24",
             "performer": {
                 "reference": "Organization/org-1"
             },
-            "value": "檢驗檢查的實際結果，可為String",
+            "valueQuantity": {
+                "value": "16.6",
+                "unit": "mg/dL"
+            },
             "component": {
                 "value": "組成之檢驗檢查的實際結果，可為String"
             }
