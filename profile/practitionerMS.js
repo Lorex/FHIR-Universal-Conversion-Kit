@@ -31,7 +31,7 @@ module.exports.fields = [
         target: 'Practitioner.identifier',
         beforeConvert: (data) => {
             let identifier = data;
-            identifier.coding = [identifier.coding];// 把coding按照FHIR Definition包成Array
+            identifier.type.coding = [identifier.type.coding];// 把coding按照FHIR Definition包成Array
 
             return identifier;
         }
