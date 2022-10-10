@@ -31,14 +31,19 @@ module.exports.fields = [
     },
     {
         source: 'identifier',
-        target: 'Organization.identifier'
-        // 嘗試額外寫js直接把identifier組成Object傳入
-        // 若照上述方法，則無需使用beforeConvert來處理傳入的資料
+        target: 'Organization.identifier',
+        beforeConvert: (data) => {
+            let identifier = data;
+            identifier.type.coding = [identifier.type.coding];
+            // 把coding按照FHIR Definition包成Array
+
+            return identifier;
+        }
     },
     {
         source: 'active',
         target: 'Organization.active',
-        beforeConvert: (data)=>{
+        beforeConvert: (data) => {
             // https://stackoverflow.com/questions/263965/how-can-i-convert-a-string-to-boolean-in-javascript
             let booleanValue = (data.toString().toLowerCase() === "true");
 
@@ -47,7 +52,14 @@ module.exports.fields = [
     },
     {
         source: 'type',
-        target: 'Organization.type'
+        target: 'Organization.type',
+        beforeConvert: (data) => {
+            let type = data;
+            type.coding = [type.coding];
+            // 把coding按照FHIR Definition包成Array
+
+            return type;
+        }
     },
     {
         source: 'name',
