@@ -10,7 +10,6 @@ module.exports.profile = {
 module.exports.globalResource = {
     // Should be resource name
     Organization: {
-        active: true,
     }
 }
 
@@ -38,7 +37,13 @@ module.exports.fields = [
     },
     {
         source: 'active',
-        target: 'Organization.active'
+        target: 'Organization.active',
+        beforeConvert: (data)=>{
+            // https://stackoverflow.com/questions/263965/how-can-i-convert-a-string-to-boolean-in-javascript
+            let booleanValue = (data.toString().toLowerCase() === "true");
+
+            return booleanValue;
+        }
     },
     {
         source: 'type',
