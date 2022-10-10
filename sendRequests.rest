@@ -3091,7 +3091,7 @@ Content-Type: application/json
                 "text": "桃園市桃園區五福五街31號"
             },
             "gender": "male",
-            "birthDate": "1980/11/11",
+            "birthDate": "1980-11-11",
             "photo": {
                 "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s400/doctor.png"
             }
@@ -3135,7 +3135,7 @@ Content-Type: application/json
                 "text": "高雄市鳥松區興華街31號"
             },
             "gender": "female",
-            "birthDate": "1990/12/10",
+            "birthDate": "1990-12-10",
             "photo": {
                 "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s401/doctor.png"
             }
@@ -3179,7 +3179,7 @@ Content-Type: application/json
                 "text": "桃園市桃園區宏昌二街18號"
             },
             "gender": "female",
-            "birthDate": "1991/1/12",
+            "birthDate": "1991-01-12",
             "photo": {
                 "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s402/doctor.png"
             }
@@ -3223,7 +3223,7 @@ Content-Type: application/json
                 "text": "嘉義市西區健康十一街13號"
             },
             "gender": "male",
-            "birthDate": "1992/2/14",
+            "birthDate": "1992-02-14",
             "photo": {
                 "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s403/doctor.png"
             }
@@ -3267,7 +3267,7 @@ Content-Type: application/json
                 "text": "新竹縣新埔鎮大魯閣路33號"
             },
             "gender": "female",
-            "birthDate": "1993/3/18",
+            "birthDate": "1993-03-18",
             "photo": {
                 "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s404/doctor.png"
             }
@@ -3311,7 +3311,7 @@ Content-Type: application/json
                 "text": "屏東縣屏東市瑞中街31號"
             },
             "gender": "male",
-            "birthDate": "1994/4/17",
+            "birthDate": "1994-04-17",
             "photo": {
                 "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s405/doctor.png"
             }
@@ -3355,7 +3355,7 @@ Content-Type: application/json
                 "text": "臺北市中山區大直街31號"
             },
             "gender": "male",
-            "birthDate": "1900/7/17",
+            "birthDate": "1900-07-17",
             "photo": {
                 "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s406/doctor.png"
             }
@@ -3399,7 +3399,7 @@ Content-Type: application/json
                 "text": "臺南市安南區工明南二路8號"
             },
             "gender": "male",
-            "birthDate": "2001/5/20",
+            "birthDate": "2001-05-20",
             "photo": {
                 "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s407/doctor.png"
             }
@@ -3443,7 +3443,7 @@ Content-Type: application/json
                 "text": "桃園市觀音區富源五路18號"
             },
             "gender": "other",
-            "birthDate": "2011/8/21",
+            "birthDate": "1969-08-26",
             "photo": {
                 "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s408/doctor.png"
             }
@@ -3487,7 +3487,7 @@ Content-Type: application/json
                 "text": "臺中市西區梅亭街26號"
             },
             "gender": "unknown",
-            "birthDate": "2021/9/22",
+            "birthDate": "1996-06-09",
             "photo": {
                 "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s409/doctor.png"
             }
