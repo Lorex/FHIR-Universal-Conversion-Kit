@@ -39,6 +39,13 @@ module.exports.fields = [
     {
         source: 'active',
         target: 'Practitioner.active',
+        beforeConvert: (data) => {
+            // https://stackoverflow.com/questions/263965/how-can-i-convert-a-string-to-boolean-in-javascript
+            let booleanValue = (data.toString().toLowerCase() === "true");
+            // https://www.w3schools.com/JSREF/jsref_tolowercase.asp
+
+            return booleanValue;
+        }
     },
     {
         source: 'name',
