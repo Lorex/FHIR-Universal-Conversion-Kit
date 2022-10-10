@@ -29,6 +29,12 @@ module.exports.fields = [
     {
         source: 'identifier',
         target: 'Practitioner.identifier',
+        beforeConvert: (data) => {
+            let identifier = data;
+            identifier.coding = [identifier.coding];// 把coding按照FHIR Definition包成Array
+
+            return identifier;
+        }
     },
     {
         source: 'active',
@@ -37,6 +43,12 @@ module.exports.fields = [
     {
         source: 'name',
         target: 'Practitioner.name',
+        beforeConvert: (data) => {
+            let name = data;
+            name.given = [name.given];// 把name.given按照FHIR Definition包成Array
+
+            return name;
+        }
     },
     {
         source: 'telecom',
