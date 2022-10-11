@@ -3376,3 +3376,47 @@ Content-Type: application/json
         }
     ]
 }
+
+###
+
+POST http://localhost:1337
+Content-Type: application/json
+
+{
+    "profile": "DiagnosticReport",
+    "data": [
+  {
+    "id": "1",
+    "status": "final",
+    "category": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+        "code": "RAD",
+        "display": ""
+      }
+    },
+    "code": "",
+    "subject": {
+      "reference": "Patient/siimsally"
+    },
+    "encounter": "",
+    "effective": "2008/4/19",
+    "issued": "2008-04-19T09:23:00+10:00",
+    "performer": {
+      "reference": "Organization/siim",
+      "display": "Society of Imaging Informatics in Medicine"
+    },
+    "resultInterpreter": "",
+    "specimen": "",
+    "result": "",
+    "imagingStudy": {
+      "reference": "ImagingStudy/is-a085557173658239-MR"
+    },
+    "media": {
+      "comment": "",
+      "link": ""
+    },
+    "conclusion": "Impression: LEFT BREAST: Expected post treatment changes. Benign. BI-RADS 2. Recommend routine screening mammography in 1 year. RIGHT BREAST: Negative. BI-RADS 1. Recommend routine screening mammography in 1 year. OVERALL BI-RADS 2 (Benign)",
+    "conclusionCode": ""
+  }]
+}
