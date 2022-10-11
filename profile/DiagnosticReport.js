@@ -60,8 +60,8 @@ module.exports.fields = [
         }
     },
     {
-        source: 'effective',
-        target: 'DiagnosticReport.effective',
+        source: 'effectiveDateTime',
+        target: 'DiagnosticReport.effectiveDateTime',
         beforeConvert: (data) => {
             return data;
         }

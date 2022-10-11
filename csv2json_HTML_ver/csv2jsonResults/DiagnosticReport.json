@@ -14,7 +14,7 @@
       "reference": "Patient/siimsally"
     },
     "encounter": "",
-    "effective": "2008/4/19",
+    "effectiveDateTime": "2008/4/19",
     "issued": "2008-04-19T09:23:00+10:00",
     "performer": {
       "reference": "Organization/siim",
@@ -48,7 +48,7 @@
       "reference": "Patient/siimneela"
     },
     "encounter": "",
-    "effective": "1996/5/14",
+    "effectiveDateTime": "1996/5/14",
     "issued": "1996-05-14T09:23:00+10:00",
     "performer": {
       "reference": "Organization/siim",
@@ -82,7 +82,7 @@
       "reference": "Patient/siimsally"
     },
     "encounter": "",
-    "effective": "1986/9/28",
+    "effectiveDateTime": "1986/9/28",
     "issued": "1986-09-28T09:23:00+10:00",
     "performer": {
       "reference": "Organization/siim",
@@ -116,7 +116,7 @@
       "reference": "Patient/siimjoe"
     },
     "encounter": "",
-    "effective": "1986/3/30",
+    "effectiveDateTime": "1986/3/30",
     "issued": "1986-03-30T09:23:00+10:00",
     "performer": {
       "reference": "Organization/siim",
@@ -150,7 +150,7 @@
       "reference": "Patient/siimjoe"
     },
     "encounter": "",
-    "effective": "2008/4/12",
+    "effectiveDateTime": "2008/4/12",
     "issued": "2008-04-12T09:23:00+10:00",
     "performer": {
       "reference": "Organization/siim",
@@ -184,7 +184,7 @@
       "reference": "Patient/siimsally"
     },
     "encounter": "",
-    "effective": "2008/4/19",
+    "effectiveDateTime": "2008/4/19",
     "issued": "2008-04-19T09:23:00+10:00",
     "performer": {
       "reference": "Organization/siim",
@@ -218,7 +218,7 @@
       "reference": "Patient/siimandy"
     },
     "encounter": "",
-    "effective": "2000/2/11",
+    "effectiveDateTime": "2000/2/11",
     "issued": "2000-02-11T18:23:00+10:00",
     "performer": {
       "reference": "Organization/siim",
@@ -252,7 +252,7 @@
       "reference": "Patient/siimandy"
     },
     "encounter": "",
-    "effective": "2000/2/23",
+    "effectiveDateTime": "2000/2/23",
     "issued": "2000-02-23T09:23:00+10:00",
     "performer": {
       "reference": "Organization/siim",
@@ -286,7 +286,7 @@
       "reference": "Patient/siimandy"
     },
     "encounter": "",
-    "effective": "2000/1/28",
+    "effectiveDateTime": "2000/1/28",
     "issued": "2000-01-28T09:23:00+10:00",
     "performer": {
       "reference": "Organization/siim",
@@ -320,7 +320,7 @@
       "reference": "Patient/siim"
     },
     "encounter": "",
-    "effective": "1996/4/28",
+    "effectiveDateTime": "1996/4/28",
     "issued": "1996-04-28T09:23:00+10:00",
     "performer": {
       "reference": "Organization/siim",
