@@ -3,20 +3,20 @@
 FHIR Universal Conversion Kit (F.U.C.K.) is a super awesome and sexy kit that can convert albitary data to HL7 FHIR data. 
 
 ## TODO for RedpandaV2(2022 MI-TW FHIR Creator Task)
-- [ ] Create Medication F.U.C.K convert profile
-- [ ] Create MedicationRequest F.U.C.K convert profile
-- [ ] Create Observation F.U.C.K convert profile
-- [ ] Create Patient F.U.C.K convert profile
-- [ ] Create Practitioner F.U.C.K convert profile
+- [x] Create Medication F.U.C.K convert profile
+- [x] Create MedicationRequest F.U.C.K convert profile
+- [x] Create Observation F.U.C.K convert profile
+- [x] Create Patient F.U.C.K convert profile
+- [x] Create Practitioner F.U.C.K convert profile
 - [ ] Create Procedure F.U.C.K convert profile
 
 - [ ] Validate Encounter converted FHIR JSON
-- [ ] Validate Medication converted FHIR JSON
+- [x] Validate Medication converted FHIR JSON
 - [ ] Validate MedicationRequest converted FHIR JSON
 - [ ] Validate Observation converted FHIR JSON
+- [x] Validate Organization converted FHIR JSON
 - [ ] Validate Patient converted FHIR JSON
-- [ ] Validate Medication converted FHIR JSON
-- [ ] Validate Practitioner converted FHIR JSON
+- [x] Validate Practitioner converted FHIR JSON
 - [ ] Validate Procedure converted FHIR JSON
 
 - [ ] Update FHIR Resources with References
