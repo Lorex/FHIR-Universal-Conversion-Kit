@@ -2687,7 +2687,7 @@ Content-Type: application/json
           "code": "IVSOL",
           "display": "Intravenous Solution"
         },
-        "text": ""
+        "text": "Intravenous Solution"
       },
       "fhirjson": ""
     },
