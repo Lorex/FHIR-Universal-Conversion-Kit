@@ -1,39 +1,39 @@
 [
-    {
-        "id": "1",
-        "text": {
-            "status": "generated",
-            "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>應該放一些關於此機構的資訊或是FHIR定義的text.div之類的值，但是我尚且不清楚規範，剩下的都丟空值來測試吧!</p></div>"
-        },
-        "status": "registered",
-        "category": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory"
-            },
-            "text": "Laboratory"
-        },
-        "code": {
-            "coding": {
-                "system": "http://loinc.org",
-                "code": "100156-9",
-                "display": "SARS-CoV-2 (COVID-19) variant [Type] in Specimen by NAA with probe detection"
-            },
-            "text": "SARS-CoV-2 (COVID-19) variant [Type] in Specimen by NAA with probe detection"
-        },
-        "subject": {
-            "reference": "Patient/pat-1"
-        },
-        "effectiveDateTime": "2022-06-24",
-        "performer": {
-            "reference": "Organization/org-1"
-        },
-        "valueQuantity": {
-            "value": "16.6",
-            "unit": "mg/dL"
-        },
-        "component": {
-            "value": "組成之檢驗檢查的實際結果，可為String"
-        }
+  {
+    "id": "1",
+    "text": {
+      "status": "generated",
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>應該放一些關於此機構的資訊或是FHIR定義的text.div之類的值，但是我尚且不清楚規範，剩下的都丟空值來測試吧!</p></div>"
+    },
+    "status": "registered",
+    "category": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "laboratory"
+      },
+      "text": "Laboratory"
+    },
+    "code": {
+      "coding": {
+        "system": "http://loinc.org",
+        "code": "100156-9",
+        "display": "SARS-CoV-2 (COVID-19) variant [Type] in Specimen by NAA with probe detection"
+      },
+      "text": "SARS-CoV-2 (COVID-19) variant [Type] in Specimen by NAA with probe detection"
+    },
+    "subject": {
+      "reference": "Patient/pat-1"
+    },
+    "effectiveDateTime": "2022-06-24",
+    "performer": {
+      "reference": "Organization/org-1"
+    },
+    "valueQuantity": {
+      "value": "16.6",
+      "unit": "mg/dL"
+    },
+    "component": {
+      "value": "組成之檢驗檢查的實際結果，可為String"
     }
+  }
 ]

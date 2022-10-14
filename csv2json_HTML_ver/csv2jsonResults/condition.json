@@ -1,622 +1,622 @@
 [
-    {
-        "id": "1",
-        "text": {
-            "status": "generated",
-            "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>應該放一些關於此機構的資訊或是FHIR定義的text.div之類的值，但是我尚且不清楚規範，剩下的都丟空值來測試吧!</p></div>"
-        },
-        "clinicalStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                "code": "active",
-                "display": "Active"
-            },
-            "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
-        },
-        "verificationStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-                "code": "confirmed",
-                "display": "Confirmed"
-            },
-            "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
-        },
-        "category": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "encounter-diagnosis",
-                "display": "Encounter Diagnosis"
-            },
-            "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
-        },
-        "severity": {
-            "coding": {
-                "system": "http://loinc.org",
-                "code": "LA6752-5",
-                "display": "Mild"
-            },
-            "text": ""
-        },
-        "code": {
-            "coding": {
-                "system": "http://snomed.info/sct",
-                "code": "109006",
-                "display": "Anxiety disorder of childhood OR adolescence"
-            },
-            "text": ""
-        },
-        "bodySite": {
-            "coding": {
-                "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
-                "code": "A00.0",
-                "display": "霍亂"
-            },
-            "text": "icd10-cm-2021"
-        },
-        "subject": "",
-        "onsetDateTime": "2021-08-11",
-        "abatementDateTime": "2022-06-27",
-        "asserter": "",
-        "note": {
-            "text": "關於此Condition的附加資訊"
-        }
+  {
+    "id": "1",
+    "text": {
+      "status": "generated",
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>應該放一些關於此機構的資訊或是FHIR定義的text.div之類的值，但是我尚且不清楚規範，剩下的都丟空值來測試吧!</p></div>"
     },
-    {
-        "id": "2",
-        "text": {
-            "status": "empty",
-            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
-        },
-        "clinicalStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                "code": "recurrence\t",
-                "display": "Recurrence"
-            },
-            "text": "The subject is experiencing a re-occurence or repeating of a previously resolved condition, e.g. urinary tract infection, pancreatitis, cholangitis, conjunctivitis."
-        },
-        "verificationStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-                "code": "provisional",
-                "display": "Provisional"
-            },
-            "text": "This is a tentative diagnosis - still a candidate that is under consideration."
-        },
-        "category": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "problem-list-item",
-                "display": "Problem List Item"
-            },
-            "text": "An item on a problem list that can be managed over time and can be expressed by a practitioner (e.g. physician, nurse), patient, or related person."
-        },
-        "severity": {
-            "coding": {
-                "system": "http://loinc.org",
-                "code": "LA6751-7\t",
-                "display": "Moderate"
-            },
-            "text": ""
-        },
-        "code": {
-            "coding": {
-                "system": "http://snomed.info/sct",
-                "code": "122003",
-                "display": "Choroidal hemorrhage"
-            },
-            "text": ""
-        },
-        "bodySite": {
-            "coding": {
-                "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
-                "code": "A00.1",
-                "display": "血清型01 cholerae霍亂弧菌所致之霍亂"
-            },
-            "text": "icd10-cm-2021"
-        },
-        "subject": "",
-        "onsetDateTime": "2021-05-07",
-        "abatementDateTime": "2022-07-28",
-        "asserter": "",
-        "note": {
-            "text": "關於此Condition的附加資訊"
-        }
+    "clinicalStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      },
+      "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
     },
-    {
-        "id": "3",
-        "text": {
-            "status": "empty",
-            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
-        },
-        "clinicalStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                "code": "active",
-                "display": "Active"
-            },
-            "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
-        },
-        "verificationStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-                "code": "confirmed",
-                "display": "Confirmed"
-            },
-            "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
-        },
-        "category": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "encounter-diagnosis",
-                "display": "Encounter Diagnosis"
-            },
-            "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
-        },
-        "severity": {
-            "coding": {
-                "system": "http://loinc.org",
-                "code": "LA6752-5",
-                "display": "Mild"
-            },
-            "text": ""
-        },
-        "code": {
-            "coding": {
-                "system": "http://snomed.info/sct",
-                "code": "127009",
-                "display": "Spontaneous abortion with laceration of cervix"
-            },
-            "text": ""
-        },
-        "bodySite": {
-            "coding": {
-                "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
-                "code": "A00.9",
-                "display": "\t血清型01 eltor霍亂弧菌所致之霍亂"
-            },
-            "text": "icd10-cm-2021"
-        },
-        "subject": "",
-        "onsetDateTime": "2021-01-20",
-        "abatementDateTime": "2022-11-14",
-        "asserter": "",
-        "note": {
-            "text": "關於此Condition的附加資訊"
-        }
+    "verificationStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed",
+        "display": "Confirmed"
+      },
+      "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
     },
-    {
-        "id": "4",
-        "text": {
-            "status": "empty",
-            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
-        },
-        "clinicalStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                "code": "active",
-                "display": "Active"
-            },
-            "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
-        },
-        "verificationStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-                "code": "confirmed",
-                "display": "Confirmed"
-            },
-            "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
-        },
-        "category": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "encounter-diagnosis",
-                "display": "Encounter Diagnosis"
-            },
-            "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
-        },
-        "severity": {
-            "coding": {
-                "system": "http://loinc.org",
-                "code": "LA6752-5",
-                "display": "Mild"
-            },
-            "text": ""
-        },
-        "code": {
-            "coding": {
-                "system": "http://snomed.info/sct",
-                "code": "129007",
-                "display": "Homoiothermia"
-            },
-            "text": ""
-        },
-        "bodySite": {
-            "coding": {
-                "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
-                "code": "A01",
-                "display": "霍亂"
-            },
-            "text": "icd10-cm-2021"
-        },
-        "subject": "",
-        "onsetDateTime": "2021-11-28",
-        "abatementDateTime": "2022-07-02",
-        "asserter": "",
-        "note": {
-            "text": "關於此Condition的附加資訊"
-        }
+    "category": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      },
+      "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
     },
-    {
-        "id": "5",
-        "text": {
-            "status": "empty",
-            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
-        },
-        "clinicalStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                "code": "active",
-                "display": "Active"
-            },
-            "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
-        },
-        "verificationStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-                "code": "confirmed",
-                "display": "Confirmed"
-            },
-            "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
-        },
-        "category": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "encounter-diagnosis",
-                "display": "Encounter Diagnosis"
-            },
-            "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
-        },
-        "severity": {
-            "coding": {
-                "system": "http://loinc.org",
-                "code": "LA6752-5",
-                "display": "Mild"
-            },
-            "text": ""
-        },
-        "code": {
-            "coding": {
-                "system": "http://snomed.info/sct",
-                "code": "134006",
-                "display": "\tDecreased hair growth"
-            },
-            "text": ""
-        },
-        "bodySite": {
-            "coding": {
-                "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
-                "code": "A01.0",
-                "display": "傷寒及副傷寒"
-            },
-            "text": "icd10-cm-2021"
-        },
-        "subject": "",
-        "onsetDateTime": "2021-10-07",
-        "abatementDateTime": "2022-11-25",
-        "asserter": "",
-        "note": {
-            "text": "關於此Condition的附加資訊"
-        }
+    "severity": {
+      "coding": {
+        "system": "http://loinc.org",
+        "code": "LA6752-5",
+        "display": "Mild"
+      },
+      "text": ""
     },
-    {
-        "id": "6",
-        "text": {
-            "status": "empty",
-            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
-        },
-        "clinicalStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                "code": "active",
-                "display": "Active"
-            },
-            "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
-        },
-        "verificationStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-                "code": "confirmed",
-                "display": "Confirmed"
-            },
-            "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
-        },
-        "category": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "encounter-diagnosis",
-                "display": "Encounter Diagnosis"
-            },
-            "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
-        },
-        "severity": {
-            "coding": {
-                "system": "http://loinc.org",
-                "code": "LA6752-5",
-                "display": "Mild"
-            },
-            "text": ""
-        },
-        "code": {
-            "coding": {
-                "system": "http://snomed.info/sct",
-                "code": "140004",
-                "display": "Chronic pharyngitis"
-            },
-            "text": ""
-        },
-        "bodySite": {
-            "coding": {
-                "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
-                "code": "A01.00",
-                "display": "傷寒"
-            },
-            "text": "icd10-cm-2021"
-        },
-        "subject": "",
-        "onsetDateTime": "2021-11-06",
-        "abatementDateTime": "2022-05-20",
-        "asserter": "",
-        "note": {
-            "text": "關於此Condition的附加資訊"
-        }
+    "code": {
+      "coding": {
+        "system": "http://snomed.info/sct",
+        "code": "109006",
+        "display": "Anxiety disorder of childhood OR adolescence"
+      },
+      "text": ""
     },
-    {
-        "id": "7",
-        "text": {
-            "status": "empty",
-            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
-        },
-        "clinicalStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                "code": "active",
-                "display": "Active"
-            },
-            "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
-        },
-        "verificationStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-                "code": "confirmed",
-                "display": "Confirmed"
-            },
-            "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
-        },
-        "category": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "encounter-diagnosis",
-                "display": "Encounter Diagnosis"
-            },
-            "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
-        },
-        "severity": {
-            "coding": {
-                "system": "http://loinc.org",
-                "code": "LA6752-5",
-                "display": "Mild"
-            },
-            "text": ""
-        },
-        "code": {
-            "coding": {
-                "system": "http://snomed.info/sct",
-                "code": "144008",
-                "display": "Normal peripheral vision"
-            },
-            "text": ""
-        },
-        "bodySite": {
-            "coding": {
-                "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
-                "code": "A00",
-                "display": "霍亂"
-            },
-            "text": "icd10-cm-2014"
-        },
-        "subject": "",
-        "onsetDateTime": "2021-07-21",
-        "abatementDateTime": "2022-01-11",
-        "asserter": "",
-        "note": {
-            "text": "關於此Condition的附加資訊"
-        }
+    "bodySite": {
+      "coding": {
+        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
+        "code": "A00.0",
+        "display": "霍亂"
+      },
+      "text": "icd10-cm-2021"
     },
-    {
-        "id": "8",
-        "text": {
-            "status": "empty",
-            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
-        },
-        "clinicalStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                "code": "active",
-                "display": "Active"
-            },
-            "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
-        },
-        "verificationStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-                "code": "unconfirmed",
-                "display": "Confirmed"
-            },
-            "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
-        },
-        "category": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "encounter-diagnosis",
-                "display": "Encounter Diagnosis"
-            },
-            "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
-        },
-        "severity": {
-            "coding": {
-                "system": "http://loinc.org",
-                "code": "LA6752-5",
-                "display": "Mild"
-            },
-            "text": ""
-        },
-        "code": {
-            "coding": {
-                "system": "http://snomed.info/sct",
-                "code": "147001",
-                "display": "Superficial foreign body of scrotum without major open wound but with infection"
-            },
-            "text": ""
-        },
-        "bodySite": {
-            "coding": {
-                "system": "http://snomed.info/sct",
-                "code": "441769002\t",
-                "display": "Cardiac defibrillator in situ (finding)"
-            },
-            "text": "problemGPSCode"
-        },
-        "subject": "",
-        "onsetDateTime": "2021-11-19",
-        "abatementDateTime": "2022-09-14",
-        "asserter": "",
-        "note": {
-            "text": "關於此Condition的附加資訊"
-        }
-    },
-    {
-        "id": "9",
-        "text": {
-            "status": "empty",
-            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
-        },
-        "clinicalStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                "code": "active",
-                "display": "Active"
-            },
-            "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
-        },
-        "verificationStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-                "code": "unconfirmed",
-                "display": "Confirmed"
-            },
-            "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
-        },
-        "category": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "encounter-diagnosis",
-                "display": "Encounter Diagnosis"
-            },
-            "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
-        },
-        "severity": {
-            "coding": {
-                "system": "http://loinc.org",
-                "code": "LA6752-5",
-                "display": "Mild"
-            },
-            "text": ""
-        },
-        "code": {
-            "coding": {
-                "system": "http://snomed.info/sct",
-                "code": "150003",
-                "display": "Abnormal bladder continence"
-            },
-            "text": ""
-        },
-        "bodySite": {
-            "coding": {
-                "system": "http://hl7.org/fhir/uv/ips/CodeSystem/absent-unknown-uv-ips",
-                "code": "no-problem-info",
-                "display": "No information about current problems"
-            },
-            "text": "absentOrUnknownProblem"
-        },
-        "subject": "",
-        "onsetDateTime": "2021-05-28",
-        "abatementDateTime": "2022-11-01",
-        "asserter": "",
-        "note": {
-            "text": "關於此Condition的附加資訊"
-        }
-    },
-    {
-        "id": "10",
-        "text": {
-            "status": "empty",
-            "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
-        },
-        "clinicalStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
-                "code": "resolved",
-                "display": "Resolved"
-            },
-            "text": "The subject is no longer experiencing the symptoms of the condition and there is a negligible perceived risk of the symptoms returning."
-        },
-        "verificationStatus": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-                "code": "refuted",
-                "display": "Refuted"
-            },
-            "text": "This condition has been ruled out by diagnostic and clinical evidence."
-        },
-        "category": {
-            "coding": {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "problem-list-item",
-                "display": "Problem List Item"
-            },
-            "text": "\tAn item on a problem list that can be managed over time and can be expressed by a practitioner (e.g. physician, nurse), patient, or related person."
-        },
-        "severity": {
-            "coding": {
-                "system": "http://loinc.org",
-                "code": "LA6750-9\t",
-                "display": "Severe"
-            },
-            "text": ""
-        },
-        "code": {
-            "coding": {
-                "system": "http://snomed.info/sct",
-                "code": "151004",
-                "display": "Meningitis due to gonococcus"
-            },
-            "text": ""
-        },
-        "bodySite": {
-            "coding": {
-                "system": "http://snomed.info/sct",
-                "code": "404684003\t",
-                "display": "Clinical finding (finding)"
-            },
-            "text": "sct"
-        },
-        "subject": "",
-        "onsetDateTime": "2021-04-03",
-        "abatementDateTime": "2022-07-19",
-        "asserter": "",
-        "note": {
-            "text": "關於此Condition的附加資訊"
-        }
+    "subject": "",
+    "onsetDateTime": "2021-08-11",
+    "abatementDateTime": "2022-06-27",
+    "asserter": "",
+    "note": {
+      "text": "關於此Condition的附加資訊"
     }
+  },
+  {
+    "id": "2",
+    "text": {
+      "status": "empty",
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+    },
+    "clinicalStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "recurrence\t",
+        "display": "Recurrence"
+      },
+      "text": "The subject is experiencing a re-occurence or repeating of a previously resolved condition, e.g. urinary tract infection, pancreatitis, cholangitis, conjunctivitis."
+    },
+    "verificationStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "provisional",
+        "display": "Provisional"
+      },
+      "text": "This is a tentative diagnosis - still a candidate that is under consideration."
+    },
+    "category": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      },
+      "text": "An item on a problem list that can be managed over time and can be expressed by a practitioner (e.g. physician, nurse), patient, or related person."
+    },
+    "severity": {
+      "coding": {
+        "system": "http://loinc.org",
+        "code": "LA6751-7\t",
+        "display": "Moderate"
+      },
+      "text": ""
+    },
+    "code": {
+      "coding": {
+        "system": "http://snomed.info/sct",
+        "code": "122003",
+        "display": "Choroidal hemorrhage"
+      },
+      "text": ""
+    },
+    "bodySite": {
+      "coding": {
+        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
+        "code": "A00.1",
+        "display": "血清型01 cholerae霍亂弧菌所致之霍亂"
+      },
+      "text": "icd10-cm-2021"
+    },
+    "subject": "",
+    "onsetDateTime": "2021-05-07",
+    "abatementDateTime": "2022-07-28",
+    "asserter": "",
+    "note": {
+      "text": "關於此Condition的附加資訊"
+    }
+  },
+  {
+    "id": "3",
+    "text": {
+      "status": "empty",
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+    },
+    "clinicalStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      },
+      "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
+    },
+    "verificationStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed",
+        "display": "Confirmed"
+      },
+      "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
+    },
+    "category": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      },
+      "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
+    },
+    "severity": {
+      "coding": {
+        "system": "http://loinc.org",
+        "code": "LA6752-5",
+        "display": "Mild"
+      },
+      "text": ""
+    },
+    "code": {
+      "coding": {
+        "system": "http://snomed.info/sct",
+        "code": "127009",
+        "display": "Spontaneous abortion with laceration of cervix"
+      },
+      "text": ""
+    },
+    "bodySite": {
+      "coding": {
+        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
+        "code": "A00.9",
+        "display": "\t血清型01 eltor霍亂弧菌所致之霍亂"
+      },
+      "text": "icd10-cm-2021"
+    },
+    "subject": "",
+    "onsetDateTime": "2021-01-20",
+    "abatementDateTime": "2022-11-14",
+    "asserter": "",
+    "note": {
+      "text": "關於此Condition的附加資訊"
+    }
+  },
+  {
+    "id": "4",
+    "text": {
+      "status": "empty",
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+    },
+    "clinicalStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      },
+      "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
+    },
+    "verificationStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed",
+        "display": "Confirmed"
+      },
+      "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
+    },
+    "category": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      },
+      "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
+    },
+    "severity": {
+      "coding": {
+        "system": "http://loinc.org",
+        "code": "LA6752-5",
+        "display": "Mild"
+      },
+      "text": ""
+    },
+    "code": {
+      "coding": {
+        "system": "http://snomed.info/sct",
+        "code": "129007",
+        "display": "Homoiothermia"
+      },
+      "text": ""
+    },
+    "bodySite": {
+      "coding": {
+        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
+        "code": "A01",
+        "display": "霍亂"
+      },
+      "text": "icd10-cm-2021"
+    },
+    "subject": "",
+    "onsetDateTime": "2021-11-28",
+    "abatementDateTime": "2022-07-02",
+    "asserter": "",
+    "note": {
+      "text": "關於此Condition的附加資訊"
+    }
+  },
+  {
+    "id": "5",
+    "text": {
+      "status": "empty",
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+    },
+    "clinicalStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      },
+      "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
+    },
+    "verificationStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed",
+        "display": "Confirmed"
+      },
+      "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
+    },
+    "category": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      },
+      "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
+    },
+    "severity": {
+      "coding": {
+        "system": "http://loinc.org",
+        "code": "LA6752-5",
+        "display": "Mild"
+      },
+      "text": ""
+    },
+    "code": {
+      "coding": {
+        "system": "http://snomed.info/sct",
+        "code": "134006",
+        "display": "\tDecreased hair growth"
+      },
+      "text": ""
+    },
+    "bodySite": {
+      "coding": {
+        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
+        "code": "A01.0",
+        "display": "傷寒及副傷寒"
+      },
+      "text": "icd10-cm-2021"
+    },
+    "subject": "",
+    "onsetDateTime": "2021-10-07",
+    "abatementDateTime": "2022-11-25",
+    "asserter": "",
+    "note": {
+      "text": "關於此Condition的附加資訊"
+    }
+  },
+  {
+    "id": "6",
+    "text": {
+      "status": "empty",
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+    },
+    "clinicalStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      },
+      "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
+    },
+    "verificationStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed",
+        "display": "Confirmed"
+      },
+      "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
+    },
+    "category": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      },
+      "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
+    },
+    "severity": {
+      "coding": {
+        "system": "http://loinc.org",
+        "code": "LA6752-5",
+        "display": "Mild"
+      },
+      "text": ""
+    },
+    "code": {
+      "coding": {
+        "system": "http://snomed.info/sct",
+        "code": "140004",
+        "display": "Chronic pharyngitis"
+      },
+      "text": ""
+    },
+    "bodySite": {
+      "coding": {
+        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
+        "code": "A01.00",
+        "display": "傷寒"
+      },
+      "text": "icd10-cm-2021"
+    },
+    "subject": "",
+    "onsetDateTime": "2021-11-06",
+    "abatementDateTime": "2022-05-20",
+    "asserter": "",
+    "note": {
+      "text": "關於此Condition的附加資訊"
+    }
+  },
+  {
+    "id": "7",
+    "text": {
+      "status": "empty",
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+    },
+    "clinicalStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      },
+      "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
+    },
+    "verificationStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "confirmed",
+        "display": "Confirmed"
+      },
+      "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
+    },
+    "category": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      },
+      "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
+    },
+    "severity": {
+      "coding": {
+        "system": "http://loinc.org",
+        "code": "LA6752-5",
+        "display": "Mild"
+      },
+      "text": ""
+    },
+    "code": {
+      "coding": {
+        "system": "http://snomed.info/sct",
+        "code": "144008",
+        "display": "Normal peripheral vision"
+      },
+      "text": ""
+    },
+    "bodySite": {
+      "coding": {
+        "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
+        "code": "A00",
+        "display": "霍亂"
+      },
+      "text": "icd10-cm-2014"
+    },
+    "subject": "",
+    "onsetDateTime": "2021-07-21",
+    "abatementDateTime": "2022-01-11",
+    "asserter": "",
+    "note": {
+      "text": "關於此Condition的附加資訊"
+    }
+  },
+  {
+    "id": "8",
+    "text": {
+      "status": "empty",
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+    },
+    "clinicalStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      },
+      "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
+    },
+    "verificationStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "unconfirmed",
+        "display": "Confirmed"
+      },
+      "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
+    },
+    "category": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      },
+      "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
+    },
+    "severity": {
+      "coding": {
+        "system": "http://loinc.org",
+        "code": "LA6752-5",
+        "display": "Mild"
+      },
+      "text": ""
+    },
+    "code": {
+      "coding": {
+        "system": "http://snomed.info/sct",
+        "code": "147001",
+        "display": "Superficial foreign body of scrotum without major open wound but with infection"
+      },
+      "text": ""
+    },
+    "bodySite": {
+      "coding": {
+        "system": "http://snomed.info/sct",
+        "code": "441769002\t",
+        "display": "Cardiac defibrillator in situ (finding)"
+      },
+      "text": "problemGPSCode"
+    },
+    "subject": "",
+    "onsetDateTime": "2021-11-19",
+    "abatementDateTime": "2022-09-14",
+    "asserter": "",
+    "note": {
+      "text": "關於此Condition的附加資訊"
+    }
+  },
+  {
+    "id": "9",
+    "text": {
+      "status": "empty",
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+    },
+    "clinicalStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "active",
+        "display": "Active"
+      },
+      "text": "The subject is currently experiencing the symptoms of the condition or there is evidence of the condition."
+    },
+    "verificationStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "unconfirmed",
+        "display": "Confirmed"
+      },
+      "text": "There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."
+    },
+    "category": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+        "code": "encounter-diagnosis",
+        "display": "Encounter Diagnosis"
+      },
+      "text": "A point in time diagnosis (e.g. from a physician or nurse) in context of an encounter."
+    },
+    "severity": {
+      "coding": {
+        "system": "http://loinc.org",
+        "code": "LA6752-5",
+        "display": "Mild"
+      },
+      "text": ""
+    },
+    "code": {
+      "coding": {
+        "system": "http://snomed.info/sct",
+        "code": "150003",
+        "display": "Abnormal bladder continence"
+      },
+      "text": ""
+    },
+    "bodySite": {
+      "coding": {
+        "system": "http://hl7.org/fhir/uv/ips/CodeSystem/absent-unknown-uv-ips",
+        "code": "no-problem-info",
+        "display": "No information about current problems"
+      },
+      "text": "absentOrUnknownProblem"
+    },
+    "subject": "",
+    "onsetDateTime": "2021-05-28",
+    "abatementDateTime": "2022-11-01",
+    "asserter": "",
+    "note": {
+      "text": "關於此Condition的附加資訊"
+    }
+  },
+  {
+    "id": "10",
+    "text": {
+      "status": "empty",
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+    },
+    "clinicalStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "code": "resolved",
+        "display": "Resolved"
+      },
+      "text": "The subject is no longer experiencing the symptoms of the condition and there is a negligible perceived risk of the symptoms returning."
+    },
+    "verificationStatus": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "code": "refuted",
+        "display": "Refuted"
+      },
+      "text": "This condition has been ruled out by diagnostic and clinical evidence."
+    },
+    "category": {
+      "coding": {
+        "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+        "code": "problem-list-item",
+        "display": "Problem List Item"
+      },
+      "text": "\tAn item on a problem list that can be managed over time and can be expressed by a practitioner (e.g. physician, nurse), patient, or related person."
+    },
+    "severity": {
+      "coding": {
+        "system": "http://loinc.org",
+        "code": "LA6750-9\t",
+        "display": "Severe"
+      },
+      "text": ""
+    },
+    "code": {
+      "coding": {
+        "system": "http://snomed.info/sct",
+        "code": "151004",
+        "display": "Meningitis due to gonococcus"
+      },
+      "text": ""
+    },
+    "bodySite": {
+      "coding": {
+        "system": "http://snomed.info/sct",
+        "code": "404684003\t",
+        "display": "Clinical finding (finding)"
+      },
+      "text": "sct"
+    },
+    "subject": "",
+    "onsetDateTime": "2021-04-03",
+    "abatementDateTime": "2022-07-19",
+    "asserter": "",
+    "note": {
+      "text": "關於此Condition的附加資訊"
+    }
+  }
 ]
