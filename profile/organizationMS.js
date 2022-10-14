@@ -1,10 +1,10 @@
 module.exports.profile = {
     name: 'organizationMS',
     version: '1.0.0',
-    // fhirServerBaseUrl: 'https://hapi.fhir.tw/fhir',
-    // action: 'upload', // return, upload
-    fhirServerBaseUrl: 'https://acadsys.ntunhs.edu.tw/hapiFHIR/fhir',
-    action: 'upload',
+    fhirServerBaseUrl: 'https://hapi.fhir.tw/fhir',
+    action: 'upload', // return, upload
+    // fhirServerBaseUrl: 'http://192.168.50.6:8082/fhir',
+    // action: 'return',
 }
 
 module.exports.globalResource = {
