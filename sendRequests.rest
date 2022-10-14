@@ -1,6 +1,6 @@
 GET http://localhost:1337
 
-### https: //youtu.be/Ud5xKCYQTjM?t=267
+### https://youtu.be/Ud5xKCYQTjM?t=267
 
 POST http://localhost:1337
 Content-Type: application/json
@@ -109,7 +109,7 @@ Content-Type: application/json
       "id": "3",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2000/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -146,7 +146,7 @@ Content-Type: application/json
       "id": "4",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2001/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -183,7 +183,7 @@ Content-Type: application/json
       "id": "5",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2002/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -220,7 +220,7 @@ Content-Type: application/json
       "id": "6",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2003/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -257,7 +257,7 @@ Content-Type: application/json
       "id": "7",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2004/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -294,7 +294,7 @@ Content-Type: application/json
       "id": "8",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2005/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -331,7 +331,7 @@ Content-Type: application/json
       "id": "9",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2006/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -368,7 +368,7 @@ Content-Type: application/json
       "id": "10",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2007/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -405,7 +405,7 @@ Content-Type: application/json
       "id": "11",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2008/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -442,7 +442,7 @@ Content-Type: application/json
       "id": "12",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2009/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -479,7 +479,7 @@ Content-Type: application/json
       "id": "13",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2010/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -516,7 +516,7 @@ Content-Type: application/json
       "id": "14",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2011/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -553,7 +553,7 @@ Content-Type: application/json
       "id": "15",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2012/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -590,7 +590,7 @@ Content-Type: application/json
       "id": "16",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2013/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -627,7 +627,7 @@ Content-Type: application/json
       "id": "17",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2014/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -664,7 +664,7 @@ Content-Type: application/json
       "id": "18",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2015/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -701,7 +701,7 @@ Content-Type: application/json
       "id": "19",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2016/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -738,7 +738,7 @@ Content-Type: application/json
       "id": "20",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2017/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -775,7 +775,7 @@ Content-Type: application/json
       "id": "21",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2018/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -812,7 +812,7 @@ Content-Type: application/json
       "id": "22",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2019/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -849,7 +849,7 @@ Content-Type: application/json
       "id": "23",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2020/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -886,7 +886,7 @@ Content-Type: application/json
       "id": "24",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2021/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -923,7 +923,7 @@ Content-Type: application/json
       "id": "25",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2022/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -960,7 +960,7 @@ Content-Type: application/json
       "id": "26",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2023/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -997,7 +997,7 @@ Content-Type: application/json
       "id": "27",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2024/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -1034,7 +1034,7 @@ Content-Type: application/json
       "id": "28",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2025/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -1071,7 +1071,7 @@ Content-Type: application/json
       "id": "29",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2026/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -1108,7 +1108,7 @@ Content-Type: application/json
       "id": "30",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2027/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -1146,6 +1146,9 @@ Content-Type: application/json
 
 ###
 
+GET https://hapi.fhir.tw/fhir/Organization/org-1
+
+###
 POST http://localhost:1337
 Content-Type: application/json
 

@@ -2,8 +2,8 @@
   {
     "id": "1",
     "text": {
-      "status": "generated",
-      "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>應該放一些關於此機構的資訊或是FHIR定義的text.div之類的值，但是我尚且不清楚規範，剩下的都丟空值來測試吧!</p></div>"
+      "status": "empty",
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -77,7 +77,7 @@
     "id": "3",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2000/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -114,7 +114,7 @@
     "id": "4",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2001/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -151,7 +151,7 @@
     "id": "5",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2002/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -188,7 +188,7 @@
     "id": "6",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2003/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -225,7 +225,7 @@
     "id": "7",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2004/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -262,7 +262,7 @@
     "id": "8",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2005/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -299,7 +299,7 @@
     "id": "9",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2006/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -336,7 +336,7 @@
     "id": "10",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2007/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -373,7 +373,7 @@
     "id": "11",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2008/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -410,7 +410,7 @@
     "id": "12",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2009/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -447,7 +447,7 @@
     "id": "13",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2010/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -484,7 +484,7 @@
     "id": "14",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2011/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -521,7 +521,7 @@
     "id": "15",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2012/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -558,7 +558,7 @@
     "id": "16",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2013/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -595,7 +595,7 @@
     "id": "17",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2014/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -632,7 +632,7 @@
     "id": "18",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2015/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -669,7 +669,7 @@
     "id": "19",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2016/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -706,7 +706,7 @@
     "id": "20",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2017/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -743,7 +743,7 @@
     "id": "21",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2018/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -780,7 +780,7 @@
     "id": "22",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2019/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -817,7 +817,7 @@
     "id": "23",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2020/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -854,7 +854,7 @@
     "id": "24",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2021/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -891,7 +891,7 @@
     "id": "25",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2022/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -928,7 +928,7 @@
     "id": "26",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2023/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -965,7 +965,7 @@
     "id": "27",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2024/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -1002,7 +1002,7 @@
     "id": "28",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2025/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -1039,7 +1039,7 @@
     "id": "29",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2026/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
@@ -1076,7 +1076,7 @@
     "id": "30",
     "text": {
       "status": "empty",
-      "div": "<div xmlns='http://www.w3.org/2027/xhtml'>空值</div>"
+      "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
     },
     "identifier": {
       "use": "official",
