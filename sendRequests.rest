@@ -2574,8 +2574,8 @@ Content-Type: application/json
     {
       "id": "2",
       "text": {
-        "status": "generated",
-        "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>衛署藥輸字第025485號</p></div>"
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>empty</div>"
       },
       "code": {
         "coding": {
@@ -2787,6 +2787,27 @@ Content-Type: application/json
       },
       "fhirjson": ""
     }
+  ]
+}
+
+###
+
+POST http://localhost:1337
+Content-Type: application/json
+
+{
+  "profile":"medicationMS",
+  "data":[
+    {"id":"1","text":{"status":"generated","div":"<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>衛署藥輸字第025484號</p></div>"},"code":{"coding":{"system":"https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-fda-tw","code":"衛署藥輸字第025484號","display":"尼什枸寧"},"text":"衛署藥輸字第025484號 尼什枸寧"},"form":{"coding":{"system":"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm","code":"TAB","display":"Tablet"},"text":"A solid dosage form containing medicinal substances with or without suitable diluents."},"field16":""},
+    {"id":"nhi-A000420100","text":{"status":"empty","div":"<div xmlns='http://www.w3.org/1999/xhtml'>empty</div>"},"code":{"coding":{"system":"https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-nhi-tw","code":"A000420100","display":"REIZER S.C. TABLETS 100 MG \"F.Y.\""},"text":"nhi-A000420100 REIZER S.C. TABLETS 100 MG \"F.Y.\""},"form":{"coding":{"system":"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm","code":"TAB","display":"Tablet"},"text":"A solid dosage form containing medicinal substances with or without suitable diluents."},"field16":""},
+    {"id":"nhi-A000639100","text":{"status":"empty","div":"<div xmlns='http://www.w3.org/1999/xhtml'>empty</div>"},"code":{"coding":{"system":"https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-nhi-tw","code":"A000639100","display":"TRYNOL S.C. TABLETS 25MG \"JOHNSON\""},"text":"nhi-A000639100 TRYNOL S.C. TABLETS 25MG \"JOHNSON\""},"form":{"coding":{"system":"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm","code":"TAB","display":"Tablet"},"text":"A solid dosage form containing medicinal substances with or without suitable diluents."},"field16":""},
+    {"id":"nhi-A0006391G0","text":{"status":"empty","div":"<div xmlns='http://www.w3.org/1999/xhtml'>empty</div>"},"code":{"coding":{"system":"https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-nhi-tw","code":"A0006391G0","display":"TRYNOL S.C. TABLETS 25MG \"JOHNSON\"(瓶裝/84粒/瓶) (鋁箔/膠箔)"},"text":"nhi-A0006391G0 TRYNOL S.C. TABLETS 25MG \"JOHNSON\"(瓶裝/84粒/瓶) (鋁箔/膠箔)"},"form":{"coding":{"system":"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm","code":"TAB","display":"Tablet"},"text":"A solid dosage form containing medicinal substances with or without suitable diluents."},"field16":""},
+    {"id":"nhi-A000649100","text":{"status":"empty","div":"<div xmlns='http://www.w3.org/1999/xhtml'>empty</div>"},"code":{"coding":{"system":"https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-nhi-tw","code":"A000649100","display":"TRYNOL S.C. TABLETS 10MG"},"text":"nhi-A000649100 TRYNOL S.C. TABLETS 10MG"},"form":{"coding":{"system":"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm","code":"TAB","display":"Tablet"},"text":"A solid dosage form containing medicinal substances with or without suitable diluents."},"field16":""},
+    {"id":"nhi-A001577100","text":{"status":"empty","div":"<div xmlns='http://www.w3.org/1999/xhtml'>empty</div>"},"code":{"coding":{"system":"https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-nhi-tw","code":"A001577100","display":"TRIPYLINE TABLETS 25MG\"HL\""},"text":"nhi-A001577100 TRIPYLINE TABLETS 25MG\"HL\""},"form":{"coding":{"system":"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm","code":"TAB","display":"Tablet"},"text":"A solid dosage form containing medicinal substances with or without suitable diluents."},"field16":""},
+    {"id":"nhi-A002558100","text":{"status":"empty","div":"<div xmlns='http://www.w3.org/1999/xhtml'>empty</div>"},"code":{"coding":{"system":"https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-nhi-tw","code":"A002558100","display":"THIOZIN S.C. TABLETS 25MG"},"text":"nhi-A002558100 THIOZIN S.C. TABLETS 25MG"},"form":{"coding":{"system":"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm","code":"TAB","display":"Tablet"},"text":"A solid dosage form containing medicinal substances with or without suitable diluents."},"field16":""},
+    {"id":"nhi-A003173100","text":{"status":"empty","div":"<div xmlns='http://www.w3.org/1999/xhtml'>empty</div>"},"code":{"coding":{"system":"https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-nhi-tw","code":"A003173100","display":"FETIRIN S.C. TABLETS 10MG"},"text":"nhi-A003173100 FETIRIN S.C. TABLETS 10MG"},"form":{"coding":{"system":"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm","code":"TAB","display":"Tablet"},"text":"A solid dosage form containing medicinal substances with or without suitable diluents."},"field16":""},
+    {"id":"nhi-A003174100","text":{"status":"empty","div":"<div xmlns='http://www.w3.org/1999/xhtml'>empty</div>"},"code":{"coding":{"system":"https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-nhi-tw","code":"A003174100","display":"FETIRIN S.C. TABLETS 5MG"},"text":"nhi-A003174100 FETIRIN S.C. TABLETS 5MG"},"form":{"coding":{"system":"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm","code":"TAB","display":"Tablet"},"text":"A solid dosage form containing medicinal substances with or without suitable diluents."},"field16":""},
+    {"id":"nhi-A003291100","text":{"status":"empty","div":"<div xmlns='http://www.w3.org/1999/xhtml'>empty</div>"},"code":{"coding":{"system":"https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-nhi-tw","code":"A003291100","display":"PINSAUN TABLETS \"YU SHENG\""},"text":"nhi-A003291100 PINSAUN TABLETS \"YU SHENG\""},"form":{"coding":{"system":"http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm","code":"TAB","display":"Tablet"},"text":"A solid dosage form containing medicinal substances with or without suitable diluents."},"field16":""}
   ]
 }
 
