@@ -3,7 +3,7 @@ module.exports.profile = {
     version: '1.0.0',
     fhirServerBaseUrl: 'https://hapi.fhir.tw/fhir',
     action: 'upload', // return, upload
-    // fhirServerBaseUrl: 'http://192.168.50.6:8082/fhir',
+    // fhirServerBaseUrl: 'http://140.131.93.149:8080/fhir',
     // action: 'return',
 }
 
