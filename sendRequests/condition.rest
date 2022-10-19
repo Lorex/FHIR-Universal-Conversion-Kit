@@ -59,12 +59,12 @@ Content-Type: application/json
         "text": "icd10-cm-2021"
       },
       "subject": {
-        "reference": "Patient/pat-1"
+        "reference": "Patient/36"
       },
       "onsetDateTime": "2021-08-11",
       "abatementDateTime": "2022-06-27",
       "asserter": {
-        "reference": "Practitioner/pra-1"
+        "reference": "Practitioner/Practitioner-0101"
       },
       "note": {
         "text": "關於此Condition的附加資訊"
@@ -103,7 +103,7 @@ Content-Type: application/json
       "severity": {
         "coding": {
           "system": "http://loinc.org",
-          "code": "LA6751-7\t",
+          "code": "LA6751-7",
           "display": "Moderate"
         },
         "text": "Moderate"
@@ -125,12 +125,12 @@ Content-Type: application/json
         "text": "icd10-cm-2021"
       },
       "subject": {
-        "reference": "Patient/pat-2"
+        "reference": "Patient/36"
       },
       "onsetDateTime": "2021-05-07",
       "abatementDateTime": "2022-07-28",
       "asserter": {
-        "reference": "Practitioner/pra-2"
+        "reference": "Practitioner/Practitioner-0101"
       },
       "note": {
         "text": "關於此Condition的附加資訊"
@@ -186,17 +186,17 @@ Content-Type: application/json
         "coding": {
           "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
           "code": "A00.9",
-          "display": "\t血清型01 eltor霍亂弧菌所致之霍亂"
+          "display": "血清型01 eltor霍亂弧菌所致之霍亂"
         },
         "text": "icd10-cm-2021"
       },
       "subject": {
-        "reference": "Patient/pat-3"
+        "reference": "Patient/36"
       },
       "onsetDateTime": "2021-01-20",
       "abatementDateTime": "2022-11-14",
       "asserter": {
-        "reference": "Practitioner/pra-3"
+        "reference": "Practitioner/Practitioner-0101"
       },
       "note": {
         "text": "關於此Condition的附加資訊"
@@ -257,12 +257,12 @@ Content-Type: application/json
         "text": "icd10-cm-2021"
       },
       "subject": {
-        "reference": "Patient/pat-4"
+        "reference": "Patient/36"
       },
       "onsetDateTime": "2021-11-28",
       "abatementDateTime": "2022-07-02",
       "asserter": {
-        "reference": "Practitioner/pra-4"
+        "reference": "Practitioner/Practitioner-0101"
       },
       "note": {
         "text": "關於此Condition的附加資訊"
@@ -310,7 +310,7 @@ Content-Type: application/json
         "coding": {
           "system": "http://snomed.info/sct",
           "code": "134006",
-          "display": "\tDecreased hair growth"
+          "display": "Decreased hair growth"
         },
         "text": ""
       },
@@ -323,12 +323,12 @@ Content-Type: application/json
         "text": "icd10-cm-2021"
       },
       "subject": {
-        "reference": "Patient/pat-5"
+        "reference": "Patient/36"
       },
       "onsetDateTime": "2021-10-07",
       "abatementDateTime": "2022-11-25",
       "asserter": {
-        "reference": "Practitioner/pra-5"
+        "reference": "Practitioner/Practitioner-0101"
       },
       "note": {
         "text": "關於此Condition的附加資訊"
@@ -389,12 +389,12 @@ Content-Type: application/json
         "text": "icd10-cm-2021"
       },
       "subject": {
-        "reference": "Patient/pat-6"
+        "reference": "Patient/36"
       },
       "onsetDateTime": "2021-11-06",
       "abatementDateTime": "2022-05-20",
       "asserter": {
-        "reference": "Practitioner/pra-6"
+        "reference": "Practitioner/Practitioner-0101"
       },
       "note": {
         "text": "關於此Condition的附加資訊"
@@ -455,12 +455,12 @@ Content-Type: application/json
         "text": "icd10-cm-2014"
       },
       "subject": {
-        "reference": "Patient/pat-7"
+        "reference": "Patient/36"
       },
       "onsetDateTime": "2021-07-21",
       "abatementDateTime": "2022-01-11",
       "asserter": {
-        "reference": "Practitioner/pra-7"
+        "reference": "Practitioner/Practitioner-0101"
       },
       "note": {
         "text": "關於此Condition的附加資訊"
@@ -515,18 +515,18 @@ Content-Type: application/json
       "bodySite": {
         "coding": {
           "system": "http://snomed.info/sct",
-          "code": "441769002\t",
+          "code": "441769002",
           "display": "Cardiac defibrillator in situ (finding)"
         },
         "text": "problemGPSCode"
       },
       "subject": {
-        "reference": "Patient/pat-8"
+        "reference": "Patient/36"
       },
       "onsetDateTime": "2021-11-19",
       "abatementDateTime": "2022-09-14",
       "asserter": {
-        "reference": "Practitioner/pra-8"
+        "reference": "Practitioner/Practitioner-0101"
       },
       "note": {
         "text": "關於此Condition的附加資訊"
@@ -573,26 +573,26 @@ Content-Type: application/json
       "code": {
         "coding": {
           "system": "http://snomed.info/sct",
-          "code": "150003",
-          "display": "Abnormal bladder continence"
+          "code": "134006",
+          "display": "Decreased hair growth"
         },
         "text": ""
       },
       "bodySite": {
         "coding": {
-          "system": "http://hl7.org/fhir/uv/ips/CodeSystem/absent-unknown-uv-ips",
-          "code": "no-problem-info",
-          "display": "No information about current problems"
+          "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/icd-10-cm-2021-tw",
+          "code": "A01.0",
+          "display": "傷寒及副傷寒"
         },
-        "text": "absentOrUnknownProblem"
+        "text": "icd10-cm-2021"
       },
       "subject": {
-        "reference": "Patient/pat-9"
+        "reference": "Patient/36"
       },
       "onsetDateTime": "2021-05-28",
       "abatementDateTime": "2022-11-01",
       "asserter": {
-        "reference": "Practitioner/pra-9"
+        "reference": "Practitioner/Practitioner-0101"
       },
       "note": {
         "text": "關於此Condition的附加資訊"
@@ -626,12 +626,12 @@ Content-Type: application/json
           "code": "problem-list-item",
           "display": "Problem List Item"
         },
-        "text": "\tAn item on a problem list that can be managed over time and can be expressed by a practitioner (e.g. physician, nurse), patient, or related person."
+        "text": "An item on a problem list that can be managed over time and can be expressed by a practitioner (e.g. physician, nurse), patient, or related person."
       },
       "severity": {
         "coding": {
           "system": "http://loinc.org",
-          "code": "LA6750-9\t",
+          "code": "LA6750-9",
           "display": "Severe"
         },
         "text": "Severe"
@@ -647,18 +647,18 @@ Content-Type: application/json
       "bodySite": {
         "coding": {
           "system": "http://snomed.info/sct",
-          "code": "404684003\t",
+          "code": "404684003",
           "display": "Clinical finding (finding)"
         },
         "text": "sct"
       },
       "subject": {
-        "reference": "Patient/pat-10"
+        "reference": "Patient/36"
       },
       "onsetDateTime": "2021-04-03",
       "abatementDateTime": "2022-07-19",
       "asserter": {
-        "reference": "Practitioner/pra-10"
+        "reference": "Practitioner/Practitioner-0101"
       },
       "note": {
         "text": "關於此Condition的附加資訊"
