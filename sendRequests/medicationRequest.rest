@@ -1,0 +1,90 @@
+###
+
+POST http://localhost:1337
+Content-Type: application/json
+
+{
+  "profile": "medicationRequestMS",
+  "data": [
+    {
+      "id": "1",
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\"><h3><b>藥品處方的詳細資料</b></h3><p><b>藥品處方的識別碼</b>：7077 （http://www.moi.gov.tw/）</p><p><b>藥品處方的狀態</b>：Active <span style=\\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\\">( <a href=\\\"http://terminology.hl7.org/CodeSystem/medicationrequest-status-reason\\\">MedicationRequest Status Reason Codes</a>#clarif)</span></p><p><b>藥品處方的意圖</b>：Order <span style=\\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\\">( <a href=\\\"http://hl7.org/fhir/CodeSystem/medicationrequest-intent\\\">medicationRequest Intent</a>#order)</span></p><p><b>藥品處方的類別</b>：Discharge <span style=\\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\\">( <a href=\\\"http://terminology.hl7.org/CodeSystem/medicationrequest-category\\\">MedicationRequest Category Codes</a>#discharge)</span></p><p><b>藥品</b>：阿立批挫 <span style=\\\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\\\">( <a href=\\\"CodeSystem-medication-fda-tw.html\\\">臺灣藥品及醫療器材代碼值集</a>#衛署藥輸字第025485號)</span></p><p><b>病人</b>：<a href=\\\"Patient-pat-example.html\\\">Patient/pat-example</a> \\\"陳加玲\\\"</p><p><b>就醫事件</b>：<a href=\\\"Encounter-enc-example.html\\\">Encounter/enc-example</a></p><p><b>最初請求時間</b>：2022-08-01 06:00:14-0500</p><p><b>提出藥品處方請求者</b>：<a href=\\\"Practitioner-pra-example.html\\\">Practitioner/pra-example</a> \\\"王依昇\\\"</p><p><b>開立處方的原因</b>：<a href=\\\"Observation-obs-lab-example.html\\\">Observation/obs-lab-example</a></p><p><b>處方可用以配藥的有效期限</b>：2022-08-01 06:00:14-0500 --&gt; 2022-08-08 06:00:14-0500</p></div>"
+      },
+      "identifier": {
+        "use": "official",
+        "type": {
+          "coding": {
+            "system": "",
+            "code": "",
+            "display": ""
+          },
+          "text": ""
+        },
+        "system": "http://www.moi.gov.tw/",
+        "value": "7077"
+      },
+      "status": "active",
+      "intent": "order",
+      "category": {
+        "coding": {
+          "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+          "code": "discharge",
+          "display": ""
+        },
+        "text": ""
+      },
+      "medicationCodeableConcept": {
+        "coding": {
+          "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-fda-tw",
+          "code": "衛署藥輸字第025485號",
+          "display": "阿立批挫"
+        },
+        "text": "阿立批挫"
+      },
+      "subject": {
+        "reference": "Patient/pat-1"
+      },
+      "encounter": {
+        "reference": "Encounter/enc-1"
+      },
+      "authoredOn": "2022-08-01T18:00:14-05:00",
+      "requester": {
+        "reference": "Practitioner/pra-1"
+      },
+      "reasonReference": {
+        "reference": "Observation/obs-1"
+      },
+      "note": {
+        "text": "筆記欄位"
+      },
+      "dosageInstruction": {
+        "text": "三餐飯後，口服",
+        "timing": {
+          "code": {
+            "coding": {
+              "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-frequency-tw",
+              "code": "PC"
+            },
+            "text": "三餐飯後"
+          }
+        },
+        "route": {
+          "coding": {
+            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-path-tw",
+            "code": "PO"
+          }
+        }
+      },
+      "dispenseRequest": {
+        "validityPeriod": {
+          "start": "2022-08-01T18:00:14-05:00",
+          "end": "2022-08-08T18:00:14-05:00"
+        },
+        "numberOfRepeatsAllowed": "1"
+      },
+      "field57": ""
+    }
+  ]
+}
