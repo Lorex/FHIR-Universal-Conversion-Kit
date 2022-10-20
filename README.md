@@ -11,7 +11,7 @@ FHIR Universal Conversion Kit (F.U.C.K.) is a super awesome and sexy kit that ca
 - [ ] Create Procedure F.U.C.K convert profile
 
 - [x] Validate Condition converted FHIR JSON
-- [ ] Validate Encounter converted FHIR JSON
+- [x] Validate Encounter converted FHIR JSON
 - [x] Validate Medication converted FHIR JSON
 - [ ] Validate MedicationRequest converted FHIR JSON
 - [ ] Validate Observation converted FHIR JSON

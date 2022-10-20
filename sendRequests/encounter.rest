@@ -37,7 +37,7 @@ Content-Type: application/json
         "text": "As soon as possible, next highest priority after stat."
       },
       "subject": {
-        "reference": "Patient/pat-1"
+        "reference": "Patient/39"
       },
       "participant": {
         "type": {
@@ -53,7 +53,7 @@ Content-Type: application/json
           "end": "2022-07-31"
         },
         "individual": {
-          "reference": "Practitioner/pra-1"
+          "reference": "Practitioner/366"
         }
       },
       "period": {
@@ -80,7 +80,7 @@ Content-Type: application/json
       },
       "location": {
         "location": {
-          "reference": "Organization/org-1"
+          "reference": "Location/loc-1"
         }
       },
       "serviceProvider": {
@@ -163,7 +163,7 @@ Content-Type: application/json
       },
       "location": {
         "location": {
-          "reference": "Organization/org-2"
+          "reference": "Location/loc-2"
         }
       },
       "serviceProvider": {
@@ -246,7 +246,7 @@ Content-Type: application/json
       },
       "location": {
         "location": {
-          "reference": "Organization/org-3"
+          "reference": "Location/loc-3"
         }
       },
       "serviceProvider": {
@@ -329,7 +329,7 @@ Content-Type: application/json
       },
       "location": {
         "location": {
-          "reference": "Organization/org-4"
+          "reference": "Location/loc-4"
         }
       },
       "serviceProvider": {
@@ -412,7 +412,7 @@ Content-Type: application/json
       },
       "location": {
         "location": {
-          "reference": "Organization/org-5"
+          "reference": "Location/loc-5"
         }
       },
       "serviceProvider": {
@@ -495,7 +495,7 @@ Content-Type: application/json
       },
       "location": {
         "location": {
-          "reference": "Organization/org-6"
+          "reference": "Location/loc-6"
         }
       },
       "serviceProvider": {
@@ -578,7 +578,7 @@ Content-Type: application/json
       },
       "location": {
         "location": {
-          "reference": "Organization/org-7"
+          "reference": "Location/loc-7"
         }
       },
       "serviceProvider": {
@@ -661,7 +661,7 @@ Content-Type: application/json
       },
       "location": {
         "location": {
-          "reference": "Organization/org-8"
+          "reference": "Location/loc-8"
         }
       },
       "serviceProvider": {
@@ -744,7 +744,7 @@ Content-Type: application/json
       },
       "location": {
         "location": {
-          "reference": "Organization/org-9"
+          "reference": "Location/loc-9"
         }
       },
       "serviceProvider": {
@@ -827,7 +827,7 @@ Content-Type: application/json
       },
       "location": {
         "location": {
-          "reference": "Organization/org-10"
+          "reference": "Location/loc-10"
         }
       },
       "serviceProvider": {

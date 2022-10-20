@@ -2,7 +2,7 @@ module.exports.profile = {
   name: 'encounterMS',
   version: '1.0.0',
   fhirServerBaseUrl: 'https://hapi.fhir.tw/fhir',
-  action: 'return', // return, upload
+  action: 'upload', // return, upload
   // fhirServerBaseUrl: 'http://140.131.93.149:8080/fhir',
   // action: 'upload',
 }
