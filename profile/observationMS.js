@@ -33,10 +33,22 @@ module.exports.fields = [
   {
     source: 'category',
     target: 'Observation.category',
+    beforeConvert: (data) => {
+      let category = data;
+      category.coding = [category.coding];
+
+      return category;
+    }
   },
   {
     source: 'code',
     target: 'Observation.code',
+    beforeConvert: (data) => {
+      let code = data;
+      code.coding = [code.coding];
+
+      return code;
+    }
   },
   {
     source: 'subject',
@@ -53,6 +65,12 @@ module.exports.fields = [
   {
     source: 'valueQuantity',
     target: 'Observation.valueQuantity',
+    beforeConvert: (data) => {
+      let valueQuantity = data;
+      valueQuantity.value = parseFloat(valueQuantity.value);
+
+      return valueQuantity;
+    }
   },
   {
     source: 'component',

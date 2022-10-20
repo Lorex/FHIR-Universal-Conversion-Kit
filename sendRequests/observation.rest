@@ -41,7 +41,8 @@ Content-Type: application/json
       },
       "component": {
         "value": "組成之檢驗檢查的實際結果，可為String"
-      }
+      },
+      "field27": ""
     }
   ]
 }
