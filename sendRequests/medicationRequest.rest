@@ -44,17 +44,17 @@ Content-Type: application/json
         "text": "阿立批挫"
       },
       "subject": {
-        "reference": "Patient/pat-1"
+        "reference": "Patient/36"
       },
       "encounter": {
-        "reference": "Encounter/enc-1"
+        "reference": "Encounter/a5888689-7513-41a9-830b-ebd55bdeed59"
       },
       "authoredOn": "2022-08-01T18:00:14-05:00",
       "requester": {
-        "reference": "Practitioner/pra-1"
+        "reference": "Practitioner/366"
       },
       "reasonReference": {
-        "reference": "Observation/obs-1"
+        "reference": "Observation/957"
       },
       "note": {
         "text": "筆記欄位"
