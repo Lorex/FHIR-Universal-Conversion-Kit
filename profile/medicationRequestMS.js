@@ -29,6 +29,12 @@ module.exports.fields = [
   {
     source: 'identifier',
     target: 'MedicationRequest.identifier',
+    beforeConvert: (data) => {
+      identifier = data;
+      identifier.type.coding = [identifier.type.coding];
+
+      return identifier;
+    }
   },
   {
     source: 'status',
@@ -41,10 +47,22 @@ module.exports.fields = [
   {
     source: 'category',
     target: 'MedicationRequest.category',
+    beforeConvert: (data) => {
+      category = data;
+      category.coding = [category.coding];
+
+      return category;
+    }
   },
   {
     source: 'medicationCodeableConcept',
     target: 'MedicationRequest.medicationCodeableConcept',
+    beforeConvert: (data) => {
+      medicationCodeableConcept = data;
+      medicationCodeableConcept.coding = [medicationCodeableConcept.coding];
+
+      return medicationCodeableConcept;
+    }
   },
   {
     source: 'subject',
@@ -69,15 +87,23 @@ module.exports.fields = [
   {
     source: 'dosageInstruction',
     target: 'MedicationRequest.dosageInstruction',
+    beforeConvert: (data) => {
+      dosageInstruction = data;
+      dosageInstruction.timing.code.coding = [dosageInstruction.timing.code.coding];
+
+      dosageInstruction.route.coding = [dosageInstruction.route.coding];
+
+      return dosageInstruction;
+    }
   },
   {
     source: 'dispenseRequest',
     target: 'MedicationRequest.dispenseRequest',
-    // beforeConvert: (data) => {
-    //     let dispenseRequest = data;
-    //     dispenseRequest.validityPeriod = [dispenseRequest.validityPeriod];
+    beforeConvert: (data) => {
+        let dispenseRequest = data;
+        dispenseRequest.numberOfRepeatsAllowed = parseInt(dispenseRequest.numberOfRepeatsAllowed);
 
-    //     return dispenseRequest;
-    // }
+        return dispenseRequest;
+    }
   },
 ]
