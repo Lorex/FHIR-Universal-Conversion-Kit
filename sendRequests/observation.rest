@@ -29,7 +29,7 @@ Content-Type: application/json
         "text": "SARS-CoV-2 (COVID-19) variant [Type] in Specimen by NAA with probe detection"
       },
       "subject": {
-        "reference": "Patient/pat-1"
+        "reference": "Patient/36"
       },
       "effectiveDateTime": "2022-06-24",
       "performer": {
