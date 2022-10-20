@@ -10,7 +10,6 @@ module.exports.profile = {
 module.exports.globalResource = {
   // Should be resource name
   Encounter: {
-    active: true
   }
 }
 
@@ -42,10 +41,22 @@ module.exports.fields = [
   {
     source: 'serviceType',
     target: 'Encounter.serviceType',
+    beforeConvert: (data) => {
+      let serviceType = data;
+      serviceType.coding = [serviceType.coding];
+
+      return serviceType;
+    }
   },
   {
     source: 'priority',
     target: 'Encounter.priority',
+    beforeConvert: (data) => {
+      let priority = data;
+      priority.coding = [priority.coding];
+
+      return priority;
+    }
   },
   {
     source: 'subject',
@@ -53,7 +64,14 @@ module.exports.fields = [
   },
   {
     source: 'participant',
-    target: 'Encounter.participant'
+    target: 'Encounter.participant',
+    beforeConvert: (data) => {
+      let participant = data;
+      participant.type.coding = [participant.type.coding];
+      participant.type = [participant.type];
+
+      return participant;
+    }
   },
   {
     source: 'period',
@@ -61,11 +79,23 @@ module.exports.fields = [
   },
   {
     source: 'reasonCode',
-    target: 'Encounter.reasonCode'
+    target: 'Encounter.reasonCode',
+    beforeConvert: (data) => {
+      let reasonCode = data;
+      reasonCode.coding = [reasonCode.coding];
+
+      return reasonCode;
+    }
   },
   {
     source: 'hospitalization',
-    target: 'Encounter.hospitalization'
+    target: 'Encounter.hospitalization',
+    beforeConvert: (data) => {
+      let hospitalization = data;
+      hospitalization.dischargeDisposition.coding = [hospitalization.dischargeDisposition.coding];
+
+      return hospitalization;
+    }
   },
   {
     source: 'location',
