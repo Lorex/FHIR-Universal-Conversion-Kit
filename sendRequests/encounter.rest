@@ -36,7 +36,9 @@ Content-Type: application/json
         },
         "text": "As soon as possible, next highest priority after stat."
       },
-      "subject": "",
+      "subject": {
+        "reference": "Patient/pat-1"
+      },
       "participant": {
         "type": {
           "coding": {
@@ -50,7 +52,9 @@ Content-Type: application/json
           "start": "2022-07-31",
           "end": "2022-07-31"
         },
-        "individual": ""
+        "individual": {
+          "reference": "Practitioner/pra-1"
+        }
       },
       "period": {
         "start": "2022-07-31",
@@ -62,7 +66,7 @@ Content-Type: application/json
           "code": "109006",
           "display": "Anxiety disorder of childhood OR adolescence"
         },
-        "text": ""
+        "text": "診斷資訊如display所示，亦可詳細記載於此(概念的文字表示法)"
       },
       "hospitalization": {
         "dischargeDisposition": {
@@ -75,9 +79,13 @@ Content-Type: application/json
         }
       },
       "location": {
-        "location": ""
+        "location": {
+          "reference": "Organization/org-1"
+        }
       },
-      "serviceProvider": ""
+      "serviceProvider": {
+        "reference": "Organization/org-1"
+      }
     },
     {
       "id": "2",
@@ -111,11 +119,13 @@ Content-Type: application/json
         },
         "text": "As soon as possible, next highest priority after stat."
       },
-      "subject": "",
+      "subject": {
+        "reference": "Patient/pat-2"
+      },
       "participant": {
         "type": {
           "coding": {
-            "system": "http://terminology.hl7.org/CodeSystem/v4-ParticipationType",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
             "code": "ESC",
             "display": "escort"
           },
@@ -125,7 +135,9 @@ Content-Type: application/json
           "start": "2012-06-25",
           "end": "2012-06-26"
         },
-        "individual": ""
+        "individual": {
+          "reference": "Practitioner/pra-2"
+        }
       },
       "period": {
         "start": "2012-06-25",
@@ -137,7 +149,7 @@ Content-Type: application/json
           "code": "122003",
           "display": "Choroidal hemorrhage"
         },
-        "text": ""
+        "text": "診斷資訊如display所示，亦可詳細記載於此(概念的文字表示法)"
       },
       "hospitalization": {
         "dischargeDisposition": {
@@ -150,9 +162,13 @@ Content-Type: application/json
         }
       },
       "location": {
-        "location": ""
+        "location": {
+          "reference": "Organization/org-2"
+        }
       },
-      "serviceProvider": ""
+      "serviceProvider": {
+        "reference": "Organization/org-2"
+      }
     },
     {
       "id": "3",
@@ -186,11 +202,13 @@ Content-Type: application/json
         },
         "text": "As soon as possible, next highest priority after stat."
       },
-      "subject": "",
+      "subject": {
+        "reference": "Patient/pat-3"
+      },
       "participant": {
         "type": {
           "coding": {
-            "system": "http://terminology.hl7.org/CodeSystem/v5-ParticipationType",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
             "code": "ATND",
             "display": "attender"
           },
@@ -200,7 +218,9 @@ Content-Type: application/json
           "start": "2013-08-25",
           "end": "2013-08-25"
         },
-        "individual": ""
+        "individual": {
+          "reference": "Practitioner/pra-3"
+        }
       },
       "period": {
         "start": "2013-08-25",
@@ -212,7 +232,7 @@ Content-Type: application/json
           "code": "127009",
           "display": "Spontaneous abortion with laceration of cervix"
         },
-        "text": ""
+        "text": "診斷資訊如display所示，亦可詳細記載於此(概念的文字表示法)"
       },
       "hospitalization": {
         "dischargeDisposition": {
@@ -225,9 +245,13 @@ Content-Type: application/json
         }
       },
       "location": {
-        "location": ""
+        "location": {
+          "reference": "Organization/org-3"
+        }
       },
-      "serviceProvider": ""
+      "serviceProvider": {
+        "reference": "Organization/org-3"
+      }
     },
     {
       "id": "4",
@@ -261,11 +285,13 @@ Content-Type: application/json
         },
         "text": "As soon as possible, next highest priority after stat."
       },
-      "subject": "",
+      "subject": {
+        "reference": "Patient/pat-4"
+      },
       "participant": {
         "type": {
           "coding": {
-            "system": "http://terminology.hl7.org/CodeSystem/v6-ParticipationType",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
             "code": "ESC",
             "display": "escort"
           },
@@ -275,7 +301,9 @@ Content-Type: application/json
           "start": "2012-06-25",
           "end": "2012-06-25"
         },
-        "individual": ""
+        "individual": {
+          "reference": "Practitioner/pra-4"
+        }
       },
       "period": {
         "start": "2012-06-25",
@@ -287,7 +315,7 @@ Content-Type: application/json
           "code": "129007",
           "display": "Homoiothermia"
         },
-        "text": ""
+        "text": "診斷資訊如display所示，亦可詳細記載於此(概念的文字表示法)"
       },
       "hospitalization": {
         "dischargeDisposition": {
@@ -300,9 +328,13 @@ Content-Type: application/json
         }
       },
       "location": {
-        "location": ""
+        "location": {
+          "reference": "Organization/org-4"
+        }
       },
-      "serviceProvider": ""
+      "serviceProvider": {
+        "reference": "Organization/org-4"
+      }
     },
     {
       "id": "5",
@@ -336,11 +368,13 @@ Content-Type: application/json
         },
         "text": "As soon as possible, next highest priority after stat."
       },
-      "subject": "",
+      "subject": {
+        "reference": "Patient/pat-5"
+      },
       "participant": {
         "type": {
           "coding": {
-            "system": "http://terminology.hl7.org/CodeSystem/v7-ParticipationType",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
             "code": "ADM",
             "display": "admitter"
           },
@@ -350,7 +384,9 @@ Content-Type: application/json
           "start": "2013-08-25",
           "end": "2013-08-27"
         },
-        "individual": ""
+        "individual": {
+          "reference": "Practitioner/pra-5"
+        }
       },
       "period": {
         "start": "2013-08-25",
@@ -362,7 +398,7 @@ Content-Type: application/json
           "code": "134006",
           "display": "\tDecreased hair growth"
         },
-        "text": ""
+        "text": "診斷資訊如display所示，亦可詳細記載於此(概念的文字表示法)"
       },
       "hospitalization": {
         "dischargeDisposition": {
@@ -375,9 +411,13 @@ Content-Type: application/json
         }
       },
       "location": {
-        "location": ""
+        "location": {
+          "reference": "Organization/org-5"
+        }
       },
-      "serviceProvider": ""
+      "serviceProvider": {
+        "reference": "Organization/org-5"
+      }
     },
     {
       "id": "6",
@@ -411,11 +451,13 @@ Content-Type: application/json
         },
         "text": "Filler should contact the placer as soon as results are available, even for preliminary results. (Was \"C\" in HL7 version 2.3's reporting priority.)"
       },
-      "subject": "",
+      "subject": {
+        "reference": "Patient/pat-6"
+      },
       "participant": {
         "type": {
           "coding": {
-            "system": "http://terminology.hl7.org/CodeSystem/v8-ParticipationType",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
             "code": "CALLBCK",
             "display": "callback contact"
           },
@@ -425,7 +467,9 @@ Content-Type: application/json
           "start": "2012-06-25",
           "end": "2012-06-25"
         },
-        "individual": ""
+        "individual": {
+          "reference": "Practitioner/pra-6"
+        }
       },
       "period": {
         "start": "2012-06-25",
@@ -437,7 +481,7 @@ Content-Type: application/json
           "code": "140004",
           "display": "Chronic pharyngitis"
         },
-        "text": ""
+        "text": "診斷資訊如display所示，亦可詳細記載於此(概念的文字表示法)"
       },
       "hospitalization": {
         "dischargeDisposition": {
@@ -450,9 +494,13 @@ Content-Type: application/json
         }
       },
       "location": {
-        "location": ""
+        "location": {
+          "reference": "Organization/org-6"
+        }
       },
-      "serviceProvider": ""
+      "serviceProvider": {
+        "reference": "Organization/org-6"
+      }
     },
     {
       "id": "7",
@@ -486,11 +534,13 @@ Content-Type: application/json
         },
         "text": "\tBeneficial to the patient but not essential for survival."
       },
-      "subject": "",
+      "subject": {
+        "reference": "Patient/pat-7"
+      },
       "participant": {
         "type": {
           "coding": {
-            "system": "http://terminology.hl7.org/CodeSystem/v9-ParticipationType",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
             "code": "ESC",
             "display": "escort"
           },
@@ -500,7 +550,9 @@ Content-Type: application/json
           "start": "2022-1-15",
           "end": "2022-1-20"
         },
-        "individual": ""
+        "individual": {
+          "reference": "Practitioner/pra-7"
+        }
       },
       "period": {
         "start": "2022-1-15",
@@ -512,7 +564,7 @@ Content-Type: application/json
           "code": "144008",
           "display": "Normal peripheral vision"
         },
-        "text": ""
+        "text": "診斷資訊如display所示，亦可詳細記載於此(概念的文字表示法)"
       },
       "hospitalization": {
         "dischargeDisposition": {
@@ -525,9 +577,13 @@ Content-Type: application/json
         }
       },
       "location": {
-        "location": ""
+        "location": {
+          "reference": "Organization/org-7"
+        }
       },
-      "serviceProvider": ""
+      "serviceProvider": {
+        "reference": "Organization/org-7"
+      }
     },
     {
       "id": "8",
@@ -561,11 +617,13 @@ Content-Type: application/json
         },
         "text": "\tBeneficial to the patient but not essential for survival."
       },
-      "subject": "",
+      "subject": {
+        "reference": "Patient/pat-8"
+      },
       "participant": {
         "type": {
           "coding": {
-            "system": "http://terminology.hl7.org/CodeSystem/v10-ParticipationType",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
             "code": "ATND",
             "display": "attender"
           },
@@ -575,7 +633,9 @@ Content-Type: application/json
           "start": "2022-2-15",
           "end": "2022-2-18"
         },
-        "individual": ""
+        "individual": {
+          "reference": "Practitioner/pra-8"
+        }
       },
       "period": {
         "start": "2022-2-15",
@@ -587,7 +647,7 @@ Content-Type: application/json
           "code": "147001",
           "display": "Superficial foreign body of scrotum without major open wound but with infection"
         },
-        "text": ""
+        "text": "診斷資訊如display所示，亦可詳細記載於此(概念的文字表示法)"
       },
       "hospitalization": {
         "dischargeDisposition": {
@@ -600,9 +660,13 @@ Content-Type: application/json
         }
       },
       "location": {
-        "location": ""
+        "location": {
+          "reference": "Organization/org-8"
+        }
       },
-      "serviceProvider": ""
+      "serviceProvider": {
+        "reference": "Organization/org-8"
+      }
     },
     {
       "id": "9",
@@ -636,11 +700,13 @@ Content-Type: application/json
         },
         "text": "Filler should contact the placer as soon as results are available, even for preliminary results. (Was \"C\" in HL7 version 2.3's reporting priority.)"
       },
-      "subject": "",
+      "subject": {
+        "reference": "Patient/pat-9"
+      },
       "participant": {
         "type": {
           "coding": {
-            "system": "http://terminology.hl7.org/CodeSystem/participant-type",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
             "code": "translator",
             "display": "Translator"
           },
@@ -650,7 +716,9 @@ Content-Type: application/json
           "start": "2022-4-15",
           "end": "2022-4-15"
         },
-        "individual": ""
+        "individual": {
+          "reference": "Practitioner/pra-9"
+        }
       },
       "period": {
         "start": "2022-4-15",
@@ -662,7 +730,7 @@ Content-Type: application/json
           "code": "150003",
           "display": "Abnormal bladder continence"
         },
-        "text": ""
+        "text": "診斷資訊如display所示，亦可詳細記載於此(概念的文字表示法)"
       },
       "hospitalization": {
         "dischargeDisposition": {
@@ -675,9 +743,13 @@ Content-Type: application/json
         }
       },
       "location": {
-        "location": ""
+        "location": {
+          "reference": "Organization/org-9"
+        }
       },
-      "serviceProvider": ""
+      "serviceProvider": {
+        "reference": "Organization/org-9"
+      }
     },
     {
       "id": "10",
@@ -711,11 +783,13 @@ Content-Type: application/json
         },
         "text": "Filler should contact the placer as soon as results are available, even for preliminary results. (Was \"C\" in HL7 version 2.3's reporting priority.)"
       },
-      "subject": "",
+      "subject": {
+        "reference": "Patient/pat-10"
+      },
       "participant": {
         "type": {
           "coding": {
-            "system": "http://terminology.hl8.org/CodeSystem/participant-type",
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
             "code": "emergency",
             "display": "Emergency"
           },
@@ -725,7 +799,9 @@ Content-Type: application/json
           "start": "2022-10-15",
           "end": "2022-10-31"
         },
-        "individual": ""
+        "individual": {
+          "reference": "Practitioner/pra-10"
+        }
       },
       "period": {
         "start": "2022-10-15",
@@ -737,7 +813,7 @@ Content-Type: application/json
           "code": "151004",
           "display": "Meningitis due to gonococcus"
         },
-        "text": ""
+        "text": "診斷資訊如display所示，亦可詳細記載於此(概念的文字表示法)"
       },
       "hospitalization": {
         "dischargeDisposition": {
@@ -750,9 +826,13 @@ Content-Type: application/json
         }
       },
       "location": {
-        "location": ""
+        "location": {
+          "reference": "Organization/org-10"
+        }
       },
-      "serviceProvider": ""
+      "serviceProvider": {
+        "reference": "Organization/org-10"
+      }
     }
   ]
 }
