@@ -39,9 +39,6 @@ Content-Type: application/json
         "value": "16.6",
         "unit": "mg/dL"
       },
-      "component": {
-        "value": "組成之檢驗檢查的實際結果，可為String"
-      },
       "field27": ""
     }
   ]
