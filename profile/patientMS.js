@@ -33,14 +33,32 @@ module.exports.fields = [
   {
     source: 'identifier',
     target: 'Patient.identifier',
+    beforeConvert: (data) => {
+      let identifier = data;
+      identifier.type.coding = [identifier.type.coding];
+
+      return identifier;
+    }
   },
   {
     source: 'active',
     target: 'Patient.active',
+    beforeConvert: (data) => {
+      // https://stackoverflow.com/questions/263965/how-can-i-convert-a-string-to-boolean-in-javascript
+      let booleanValue = (data.toString().toLowerCase() === "true");
+
+      return booleanValue;
+    }
   },
   {
     source: 'name',
     target: 'Patient.name',
+    beforeConvert: (data) => {
+      let name = data;
+      name.given = [name.given];
+
+      return name;
+    }
   },
   {
     source: 'telecom',
@@ -61,6 +79,12 @@ module.exports.fields = [
   {
     source: 'maritalStatus',
     target: 'Patient.maritalStatus',
+    beforeConvert: (data) => {
+      let maritalStatus = data;
+      maritalStatus.coding = [maritalStatus.coding];
+
+      return maritalStatus;
+    }
   },
   {
     source: 'photo',
@@ -69,10 +93,28 @@ module.exports.fields = [
   {
     source: 'contact',
     target: 'Patient.contact',
+    beforeConvert: (data) => {
+      let contact = data;
+      contact.relationship.coding = [contact.relationship.coding];
+
+      contact.relationship = [contact.relationship];
+
+      contact.name.given = [contact.name.given];
+
+      contact.telecom = [contact.telecom];
+
+      return contact;
+    }
   },
   {
     source: 'communication',
     target: 'Patient.communication',
+    beforeConvert: (data) => {
+      let communication = data;
+      communication.language.coding = [communication.language.coding];
+
+      return communication;
+    }
   },
   {
     source: 'managingOrganization',
