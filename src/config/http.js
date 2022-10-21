@@ -49,11 +49,13 @@ module.exports.http = {
     *                                                                          *
     ***************************************************************************/
 
-    // bodyParser: (function _configureBodyParser(){
-    //   var skipper = require('skipper');
-    //   var middlewareFn = skipper({ strict: true });
-    //   return middlewareFn;
-    // })(),
+    //  https://stackoverflow.com/questions/27906740/change-http-request-limit-in-sailsjs
+    bodyParser: (function _configureBodyParser(){
+      var skipper = require('skipper');
+      var middlewareFn = skipper({ limit: "69mb" });
+      // https://github.com/balderdashy/sails/issues/2653
+      return middlewareFn;
+    })(),
 
   },
 
