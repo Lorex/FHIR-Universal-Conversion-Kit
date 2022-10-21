@@ -58,7 +58,11 @@ Content-Type: application/json
       },
       "contact": {
         "relationship": {
-          "coding": "C",
+          "coding": {
+            "code": "C",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+            "display": "Emergency Contact"
+          },
           "text": "Emergency Contact"
         },
         "name": {
@@ -80,7 +84,7 @@ Content-Type: application/json
       "communication": {
         "language": {
           "coding": {
-            "system": "http://hl7.org/fhir/ValueSet/languages",
+            "system": "urn:ietf:bcp:47",
             "code": "zh-TW",
             "display": "Chinese (Taiwan)"
           },
@@ -144,7 +148,11 @@ Content-Type: application/json
       },
       "contact": {
         "relationship": {
-          "coding": "C",
+          "coding": {
+            "code": "C",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+            "display": "Emergency Contact"
+          },
           "text": "Emergency Contact"
         },
         "name": {
@@ -166,7 +174,7 @@ Content-Type: application/json
       "communication": {
         "language": {
           "coding": {
-            "system": "http://hl7.org/fhir/ValueSet/languages",
+            "system": "urn:ietf:bcp:47",
             "code": "zh-TW",
             "display": "Chinese (Taiwan)"
           },
@@ -230,7 +238,11 @@ Content-Type: application/json
       },
       "contact": {
         "relationship": {
-          "coding": "C",
+          "coding": {
+            "code": "C",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+            "display": "Emergency Contact"
+          },
           "text": "Emergency Contact"
         },
         "name": {
@@ -252,7 +264,7 @@ Content-Type: application/json
       "communication": {
         "language": {
           "coding": {
-            "system": "http://hl7.org/fhir/ValueSet/languages",
+            "system": "urn:ietf:bcp:47",
             "code": "zh-TW",
             "display": "Chinese (Taiwan)"
           },
@@ -316,7 +328,11 @@ Content-Type: application/json
       },
       "contact": {
         "relationship": {
-          "coding": "C",
+          "coding": {
+            "code": "C",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+            "display": "Emergency Contact"
+          },
           "text": "Emergency Contact"
         },
         "name": {
@@ -338,7 +354,7 @@ Content-Type: application/json
       "communication": {
         "language": {
           "coding": {
-            "system": "http://hl7.org/fhir/ValueSet/languages",
+            "system": "urn:ietf:bcp:47",
             "code": "zh-TW",
             "display": "Chinese (Taiwan)"
           },
@@ -402,7 +418,11 @@ Content-Type: application/json
       },
       "contact": {
         "relationship": {
-          "coding": "C",
+          "coding": {
+            "code": "C",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+            "display": "Emergency Contact"
+          },
           "text": "Emergency Contact"
         },
         "name": {
@@ -424,7 +444,7 @@ Content-Type: application/json
       "communication": {
         "language": {
           "coding": {
-            "system": "http://hl7.org/fhir/ValueSet/languages",
+            "system": "urn:ietf:bcp:47",
             "code": "zh-TW",
             "display": "Chinese (Taiwan)"
           },
@@ -488,7 +508,11 @@ Content-Type: application/json
       },
       "contact": {
         "relationship": {
-          "coding": "C",
+          "coding": {
+            "code": "C",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+            "display": "Emergency Contact"
+          },
           "text": "Emergency Contact"
         },
         "name": {
@@ -510,7 +534,7 @@ Content-Type: application/json
       "communication": {
         "language": {
           "coding": {
-            "system": "http://hl7.org/fhir/ValueSet/languages",
+            "system": "urn:ietf:bcp:47",
             "code": "zh-TW",
             "display": "Chinese (Taiwan)"
           },
@@ -574,7 +598,11 @@ Content-Type: application/json
       },
       "contact": {
         "relationship": {
-          "coding": "C",
+          "coding": {
+            "code": "C",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+            "display": "Emergency Contact"
+          },
           "text": "Emergency Contact"
         },
         "name": {
@@ -596,7 +624,7 @@ Content-Type: application/json
       "communication": {
         "language": {
           "coding": {
-            "system": "http://hl7.org/fhir/ValueSet/languages",
+            "system": "urn:ietf:bcp:47",
             "code": "zh-TW",
             "display": "Chinese (Taiwan)"
           },
@@ -660,7 +688,11 @@ Content-Type: application/json
       },
       "contact": {
         "relationship": {
-          "coding": "C",
+          "coding": {
+            "code": "C",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+            "display": "Emergency Contact"
+          },
           "text": "Emergency Contact"
         },
         "name": {
@@ -682,7 +714,7 @@ Content-Type: application/json
       "communication": {
         "language": {
           "coding": {
-            "system": "http://hl7.org/fhir/ValueSet/languages",
+            "system": "urn:ietf:bcp:47",
             "code": "zh-TW",
             "display": "Chinese (Taiwan)"
           },
@@ -746,7 +778,11 @@ Content-Type: application/json
       },
       "contact": {
         "relationship": {
-          "coding": "C",
+          "coding": {
+            "code": "C",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+            "display": "Emergency Contact"
+          },
           "text": "Emergency Contact"
         },
         "name": {
@@ -768,7 +804,7 @@ Content-Type: application/json
       "communication": {
         "language": {
           "coding": {
-            "system": "http://hl7.org/fhir/ValueSet/languages",
+            "system": "urn:ietf:bcp:47",
             "code": "zh-TW",
             "display": "Chinese (Taiwan)"
           },
@@ -832,7 +868,11 @@ Content-Type: application/json
       },
       "contact": {
         "relationship": {
-          "coding": "C",
+          "coding": {
+            "code": "C",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+            "display": "Emergency Contact"
+          },
           "text": "Emergency Contact"
         },
         "name": {
@@ -854,7 +894,7 @@ Content-Type: application/json
       "communication": {
         "language": {
           "coding": {
-            "system": "http://hl7.org/fhir/ValueSet/languages",
+            "system": "urn:ietf:bcp:47",
             "code": "zh-TW",
             "display": "Chinese (Taiwan)"
           },
