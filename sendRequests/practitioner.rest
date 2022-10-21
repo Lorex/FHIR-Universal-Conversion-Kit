@@ -98,7 +98,7 @@ Content-Type: application/json
       "id": "3",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2000/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "temp",
@@ -142,7 +142,7 @@ Content-Type: application/json
       "id": "4",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2001/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -186,7 +186,7 @@ Content-Type: application/json
       "id": "5",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2002/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -230,7 +230,7 @@ Content-Type: application/json
       "id": "6",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2003/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -274,7 +274,7 @@ Content-Type: application/json
       "id": "7",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2004/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -318,7 +318,7 @@ Content-Type: application/json
       "id": "8",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2005/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -362,7 +362,7 @@ Content-Type: application/json
       "id": "9",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2006/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
@@ -406,7 +406,7 @@ Content-Type: application/json
       "id": "10",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/2007/xhtml'>空值</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
       },
       "identifier": {
         "use": "official",
