@@ -1,0 +1,127 @@
+###
+
+POST http://localhost:1337
+Content-Type: application/json
+
+{
+  "profile": "procedureMS",
+  "data": [
+    {
+      "id": "1",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+      },
+      "status": "preparation",
+      "code": {
+        "coding": {
+          "system": "http://snomed.info/sct",
+          "code": "104001",
+          "display": "Excision of lesion of patella"
+        },
+        "text": "Excision of lesion of patella"
+      },
+      "subject": {
+        "reference": "Patient/pat-1"
+      },
+      "performedDateTime": "2022-08-18",
+      "asserter": {
+        "reference": "Practitioner/pra-1"
+      },
+      "performer": {
+        "actor": {
+          "reference": "Practitioner/pra-1"
+        },
+        "onBehalfOf": {
+          "reference": "Organization/org-hospital-1"
+        }
+      },
+      "bodySite": {
+        "coding": {
+          "system": "http://snomed.info/sct",
+          "code": "106004",
+          "display": "Posterior carpal region"
+        },
+        "text": "Posterior carpal region"
+      }
+    },
+    {
+      "id": "2",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+      },
+      "status": "preparation",
+      "code": {
+        "coding": {
+          "system": "http://snomed.info/sct",
+          "code": "115006",
+          "display": "Fit removable orthodontic appliance"
+        },
+        "text": "Fit removable orthodontic appliance"
+      },
+      "subject": {
+        "reference": "Patient/pat-2"
+      },
+      "performedDateTime": "2022-03-10",
+      "asserter": {
+        "reference": "Practitioner/pra-2"
+      },
+      "performer": {
+        "actor": {
+          "reference": "Practitioner/pra-2"
+        },
+        "onBehalfOf": {
+          "reference": "Organization/org-hospital-2"
+        }
+      },
+      "bodySite": {
+        "coding": {
+          "system": "http://snomed.info/sct",
+          "code": "107008",
+          "display": "Fetal part of placenta"
+        },
+        "text": "Fetal part of placenta"
+      }
+    },
+    {
+      "id": "3",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+      },
+      "status": "preparation",
+      "code": {
+        "coding": {
+          "system": "http://snomed.info/sct",
+          "code": "119000",
+          "display": "Thoracoscopic partial lobectomy of lung"
+        },
+        "text": "Thoracoscopic partial lobectomy of lung"
+      },
+      "subject": {
+        "reference": "Patient/pat-3"
+      },
+      "performedDateTime": "2022-01-05",
+      "asserter": {
+        "reference": "Practitioner/pra-3"
+      },
+      "performer": {
+        "actor": {
+          "reference": "Practitioner/pra-3"
+        },
+        "onBehalfOf": {
+          "reference": "Organization/org-hospital-3"
+        }
+      },
+      "bodySite": {
+        "coding": {
+          "system": "http://snomed.info/sct",
+          "code": "108003",
+          "display": "Condylar emissary vein"
+        },
+        "text": "Condylar emissary vein"
+      }
+    }
+  ]
+}
