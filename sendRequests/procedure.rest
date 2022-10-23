@@ -22,18 +22,18 @@ Content-Type: application/json
         "text": "Excision of lesion of patella"
       },
       "subject": {
-        "reference": "Patient/pat-1"
+        "reference": "Patient/siimjoe"
       },
       "performedDateTime": "2022-08-18",
       "asserter": {
-        "reference": "Practitioner/pra-1"
+        "reference": "Practitioner/pra-1212"
       },
       "performer": {
         "actor": {
-          "reference": "Practitioner/pra-1"
+          "reference": "Practitioner/pra-1212"
         },
         "onBehalfOf": {
-          "reference": "Organization/org-hospital-1"
+          "reference": "Organization/org-1"
         }
       },
       "bodySite": {
@@ -61,18 +61,18 @@ Content-Type: application/json
         "text": "Fit removable orthodontic appliance"
       },
       "subject": {
-        "reference": "Patient/pat-2"
+        "reference": "Patient/TCGA-17-Z058"
       },
       "performedDateTime": "2022-03-10",
       "asserter": {
-        "reference": "Practitioner/pra-2"
+        "reference": "Practitioner/pra102216003"
       },
       "performer": {
         "actor": {
-          "reference": "Practitioner/pra-2"
+          "reference": "Practitioner/pra102216003"
         },
         "onBehalfOf": {
-          "reference": "Organization/org-hospital-2"
+          "reference": "Organization/org-2"
         }
       },
       "bodySite": {
@@ -100,18 +100,18 @@ Content-Type: application/json
         "text": "Thoracoscopic partial lobectomy of lung"
       },
       "subject": {
-        "reference": "Patient/pat-3"
+        "reference": "Patient/36"
       },
       "performedDateTime": "2022-01-05",
       "asserter": {
-        "reference": "Practitioner/pra-3"
+        "reference": "Practitioner/366"
       },
       "performer": {
         "actor": {
-          "reference": "Practitioner/pra-3"
+          "reference": "Practitioner/366"
         },
         "onBehalfOf": {
-          "reference": "Organization/org-hospital-3"
+          "reference": "Organization/org-3"
         }
       },
       "bodySite": {
