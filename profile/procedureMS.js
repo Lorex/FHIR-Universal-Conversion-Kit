@@ -27,24 +27,43 @@ module.exports.fields = [
     // text已經組合成Object，直接回傳即可，無須再透過beforeConvert:()來處理
   },
   {
-    source: 'identifier',
-    target: 'Procedure.identifier',
+    source: 'status',
+    target: 'Procedure.status',
+  },
+  {
+    source: 'code',
+    target: 'Procedure.code',
     beforeConvert: (data) => {
-      let identifier = data;
-      identifier.type.coding = [identifier.type.coding];// 把coding按照FHIR Definition包成Array
+      let code = data;
+      code.coding = [code.coding];// 把coding按照FHIR Definition包成Array
 
-      return identifier;
+      return code;
     }
   },
   {
-    source: 'active',
-    target: 'Procedure.active',
+    source: 'subject',
+    target: 'Procedure.subject',
+  },
+  {
+    source: 'performedDateTime',
+    target: 'Procedure.performedDateTime',
+  },
+  {
+    source: 'asserter',
+    target: 'Procedure.asserter',
+  },
+  {
+    source: 'performer',
+    target: 'Procedure.performer',
+  },
+  {
+    source: 'bodySite',
+    target: 'Procedure.bodySite',
     beforeConvert: (data) => {
-      // https://stackoverflow.com/questions/263965/how-can-i-convert-a-string-to-boolean-in-javascript
-      let booleanValue = (data.toString().toLowerCase() === "true");
-      // https://www.w3schools.com/JSREF/jsref_tolowercase.asp
+      let bodySite = data;
+      bodySite.coding = [bodySite.coding];
 
-      return booleanValue;
+      return bodySite;
     }
   },
 
