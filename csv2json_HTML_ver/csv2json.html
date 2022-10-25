@@ -1,124 +1,124 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CSV to JSON轉換器</title>
-        <style>
-            body {
-                text-align: center;
-                background-color: black;
-                color: white;
-            }
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV to JSON轉換器</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: black;
+        color: white;
+      }
 
-            textarea {
-                margin: 2%;
-                width: 96%;
-                background-color: #232321;
-                color: white;
-            }
+      textarea {
+        margin: 2%;
+        width: 96%;
+        background-color: #232321;
+        color: white;
+      }
 
-            h1 {
-                text-shadow: 3px 3px 3px lightgray;
-            }
+      h1 {
+        text-shadow: 3px 3px 3px lightgray;
+      }
 
-            button {
-                border: none;
-                border-radius: 36px;
-                padding-left: 18px;
-                padding-right: 18px;
-                padding-top: 6px;
-                padding-bottom: 6px;
-                background-color: lightgoldenrodyellow;
-                box-shadow: 0px 9px 1px #95957d;
-                font-size: larger;
+      button {
+        border: none;
+        border-radius: 36px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        background-color: lightgoldenrodyellow;
+        box-shadow: 0px 9px 1px #95957d;
+        font-size: larger;
 
-            }
+      }
 
-            button:hover {
-                background-color: #e3e3bf;
-            }
+      button:hover {
+        background-color: #e3e3bf;
+      }
 
-            /* https://www.w3schools.com/howto/howto_css_animate_buttons.asp */
-            button:active {
-                background-color: #e3e3bf;
-                box-shadow: 0 5px 1px #666;
-                transform: translateY(6px);
-            }
+      /* https://www.w3schools.com/howto/howto_css_animate_buttons.asp */
+      button:active {
+        background-color: #e3e3bf;
+        box-shadow: 0 5px 1px #666;
+        transform: translateY(6px);
+      }
 
-            select {
-                padding: 18px;
-                margin: 12px;
-                border: none;
-                box-shadow: 3px 3px 1px gold;
-                background-color: rgb(36, 36, 36);
-                color: azure;
-                border-radius: 18px;
-                font-size: medium;
-            }
-        </style>
-    </head>
+      select {
+        padding: 18px;
+        margin: 12px;
+        border: none;
+        box-shadow: 3px 3px 1px gold;
+        background-color: rgb(36, 36, 36);
+        color: azure;
+        border-radius: 18px;
+        font-size: medium;
+      }
+    </style>
+  </head>
 
-    <body>
-        <h1>CSV to JSON轉換器</h1>
-        <hr>
-        <h3>請在下方貼上您的CSV檔案文字內容</h3>
-        <textarea name="csvText" id="csvTextArea" rows="10"></textarea>
-        <select name="converter" id="converterSelection">
-            <option value="csv2json_npm">NPM通用CSV強大轉換套件</option>
-            <option value="csv2json_selfDefine">基礎CSV通用轉換程式</option>
-            <option value="csv2json_organizationMS">自定義Organization轉換程式</option>
-        </select>
-        <button onclick="convertAndOutput()">開始轉換</button>
-        <br><br>
-        <hr>
-        <h3>JSON轉換輸出結果</h3>
-        <textarea name="outputText" id="outputTextArea" rows="30"></textarea>
-        <hr>
-        <h3>CSV檔案太大?試試直接讀取檔案</h3>
-        <textarea name="csvFilePath" id="csvFilePath" rows="2" placeholder="請貼上檔案路徑"></textarea><br>
-        <button onclick="convertAndDownload()">轉換並下載</button>
-    </body>
+  <body>
+    <h1>CSV to JSON轉換器</h1>
+    <hr>
+    <h3>請在下方貼上您的CSV檔案文字內容</h3>
+    <textarea name="csvText" id="csvTextArea" rows="10"></textarea>
+    <select name="converter" id="converterSelection">
+      <option value="csv2json_npm">NPM通用CSV強大轉換套件</option>
+      <option value="csv2json_selfDefine">基礎CSV通用轉換程式</option>
+      <option value="csv2json_organizationMS">自定義Organization轉換程式</option>
+    </select>
+    <button onclick="convertAndOutput()">開始轉換</button>
+    <br><br>
+    <hr>
+    <h3>JSON轉換輸出結果</h3>
+    <textarea name="outputText" id="outputTextArea" rows="30"></textarea>
+    <hr>
+    <h3>CSV檔案太大?試試直接讀取檔案</h3>
+    <textarea name="csvFilePath" id="csvFilePath" rows="2" placeholder="請貼上檔案路徑"></textarea><br>
+    <button onclick="convertAndDownload()">轉換並下載</button>
+  </body>
 
-    <!-- https://www.npmjs.com/package/csvtojson#browser-usage -->
-    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
-    <script src="./csv2json.js"></script>
-    <script>
-        function convertAndOutput() {
-            let csvText = document.getElementById("csvTextArea").value;
+  <!-- https://www.npmjs.com/package/csvtojson#browser-usage -->
+  <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+  <script src="./csv2json.js"></script>
+  <script>
+    function convertAndOutput() {
+      let csvText = document.getElementById("csvTextArea").value;
 
-            let outputArea = document.getElementById("outputTextArea");
-            let selectedOption = document.getElementById("converterSelection").value;
+      let outputArea = document.getElementById("outputTextArea");
+      let selectedOption = document.getElementById("converterSelection").value;
 
-            if (selectedOption == "csv2json_npm") {
-                console.log("NPM cav2json called");
+      if (selectedOption == "csv2json_npm") {
+        console.log("NPM cav2json called");
 
-                // https://www.npmjs.com/package/csvtojson#browser-usage
-                csv({ output: "json" })
-                    .fromString(csvText)
-                    .then(function (result) {
-                        outputArea.value = JSON.stringify(result);
-                    })
-            }
-            else if (selectedOption == "csv2json_selfDefine") {
-                outputArea.value = csv2json(csvText);
-            }
-            else if (selectedOption == "csv2json_organizationMS") {
-                outputArea.value = csv2json_organizationMS(csvText);
-            }
-        }
+        // https://www.npmjs.com/package/csvtojson#browser-usage
+        csv({ output: "json" })
+          .fromString(csvText)
+          .then(function (result) {
+            outputArea.value = JSON.stringify(result);
+          })
+      }
+      else if (selectedOption == "csv2json_selfDefine") {
+        outputArea.value = csv2json(csvText);
+      }
+      else if (selectedOption == "csv2json_organizationMS") {
+        outputArea.value = csv2json_organizationMS(csvText);
+      }
+    }
 
-        function convertAndDownload(){
-          let file = document.getElementById("csvFilePath");
-          
-          let filePath = file.value.toString().replaceAll('\\', "/");
-          filePath = file.value.toString().replaceAll('"', "");
-          filePath = "file:///" + filePath;
+    function convertAndDownload() {
+      let file = document.getElementById("csvFilePath");
 
-          console.log("File Path:" + filePath);
-        }
-    </script>
+      let filePath = file.value.toString().replaceAll('\\', "/");
+      filePath = file.value.toString().replaceAll('"', "");
+      filePath = "file:///" + filePath;
+
+      console.log("File Path:" + filePath);
+    }
+  </script>
 
 </html>
