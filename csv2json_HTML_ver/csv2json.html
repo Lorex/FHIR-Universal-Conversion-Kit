@@ -76,6 +76,10 @@
         <hr>
         <h3>JSON轉換輸出結果</h3>
         <textarea name="outputText" id="outputTextArea" rows="30"></textarea>
+        <hr>
+        <h3>CSV檔案太大?試試直接讀取檔案</h3>
+        <textarea name="csvFilePath" id="csvFilePath" rows="2" placeholder="請貼上檔案路徑"></textarea><br>
+        <button onclick="convertAndDownload()">轉換並下載</button>
     </body>
 
     <!-- https://www.npmjs.com/package/csvtojson#browser-usage -->
@@ -104,6 +108,16 @@
             else if (selectedOption == "csv2json_organizationMS") {
                 outputArea.value = csv2json_organizationMS(csvText);
             }
+        }
+
+        function convertAndDownload(){
+          let file = document.getElementById("csvFilePath");
+          
+          let filePath = file.value.toString().replaceAll('\\', "/");
+          filePath = file.value.toString().replaceAll('"', "");
+          filePath = "file:///" + filePath;
+
+          console.log("File Path:" + filePath);
         }
     </script>
 
