@@ -123,7 +123,9 @@
       let reader = new FileReader();
       reader.onload = function () {
         let csvText = this.result;
-        let outputFileName = csvFile.value.split(".")[0].toString() + ".json";
+        let outputFileName = csvFile.value.split(/(\\|\/)/g).pop();
+        // https://stackoverflow.com/questions/857618/javascript-how-to-extract-filename-from-a-file-input-control
+        outputFileName = outputFileName.split(".")[0].toString() + ".json";
 
         // https://www.npmjs.com/package/csvtojson#browser-usage
         csv({ output: "json" })
