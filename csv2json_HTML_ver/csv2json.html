@@ -78,8 +78,8 @@
     <textarea name="outputText" id="outputTextArea" rows="30"></textarea>
     <hr>
     <h3>CSV檔案太大?試試直接讀取檔案</h3>
-    <textarea name="csvFilePath" id="csvFilePath" rows="2" placeholder="請貼上檔案路徑"></textarea><br>
-    <button onclick="convertAndDownload()">轉換並下載</button>
+    <input type="file" onchange="selectTextFile(this.files)">
+    <!-- https://hank7891.github.io/2020/08/17/HTML-JS-動態顯示-input-file-選取內容/ -->
   </body>
 
   <!-- https://www.npmjs.com/package/csvtojson#browser-usage -->
@@ -118,6 +118,24 @@
       filePath = "file:///" + filePath;
 
       console.log("File Path:" + filePath);
+
+      readTextFile(filePath);
+    }
+
+    // https://hank7891.github.io/2020/08/17/HTML-JS-動態顯示-input-file-選取內容/
+    function selectTextFile(files) {
+      console.log("檔案順利被載入");
+      if (!files.length) {
+        return false;
+      }
+
+      let file = files[0];
+      let reader = new FileReader();
+      reader.onload = function () {
+        let csvText = this.result;
+      };
+
+      reader.readAsText(file);
     }
   </script>
 
