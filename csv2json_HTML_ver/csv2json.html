@@ -78,7 +78,7 @@
     <textarea name="outputText" id="outputTextArea" rows="30"></textarea>
     <hr>
     <h3>CSV檔案太大?試試直接讀取檔案</h3>
-    <input type="file" onchange="selectTextFile(this.files)">
+    <input type="file" onchange="selectTextFile(this.files)" id="csvFile">
     <!-- https://hank7891.github.io/2020/08/17/HTML-JS-動態顯示-input-file-選取內容/ -->
   </body>
 
@@ -110,21 +110,11 @@
       }
     }
 
-    function convertAndDownload() {
-      let file = document.getElementById("csvFilePath");
-
-      let filePath = file.value.toString().replaceAll('\\', "/");
-      filePath = file.value.toString().replaceAll('"', "");
-      filePath = "file:///" + filePath;
-
-      console.log("File Path:" + filePath);
-
-      readTextFile(filePath);
-    }
-
     // https://hank7891.github.io/2020/08/17/HTML-JS-動態顯示-input-file-選取內容/
     function selectTextFile(files) {
       console.log("檔案順利被載入");
+      let csvFile = document.getElementById("csvFile");
+
       if (!files.length) {
         return false;
       }
@@ -133,9 +123,31 @@
       let reader = new FileReader();
       reader.onload = function () {
         let csvText = this.result;
+        let outputFileName = csvFile.value.split(".")[0].toString() + ".json";
+
+        // https://www.npmjs.com/package/csvtojson#browser-usage
+        csv({ output: "json" })
+          .fromString(csvText)
+          .then(function (csv2jsonResultText) {
+            download(outputFileName, JSON.stringify(csv2jsonResultText));
+          })
       };
 
       reader.readAsText(file);
+    }
+
+    // https://stackoverflow.com/questions/3665115/how-to-create-a-file-in-memory-for-user-to-download-but-not-through-server
+    function download(filename, text) {
+      var element = document.createElement('a');
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', filename);
+
+      element.style.display = 'none';
+      document.body.appendChild(element);
+
+      element.click();
+
+      document.body.removeChild(element);
     }
   </script>
 
