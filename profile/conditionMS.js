@@ -78,6 +78,16 @@ module.exports.fields = [
         }
     },
     {
+      source: 'code',
+      target: 'Condition.code',
+      beforeConvert: (data) => {
+          let code = data;
+          code.coding = [code.coding];// 把coding按照FHIR Definition包成Array
+
+          return code;
+      }
+  },
+    {
         source: 'subject',
         target: 'Condition.subject'
     },
