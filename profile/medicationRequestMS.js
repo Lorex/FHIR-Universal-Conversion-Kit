@@ -77,6 +77,10 @@ module.exports.fields = [
     target: 'MedicationRequest.authoredOn',
   },
   {
+    source: 'requester',
+    target: 'MedicationRequest.requester',
+  },
+  {
     source: 'reasonReference',
     target: 'MedicationRequest.reasonReference',
   },
