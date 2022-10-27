@@ -2,7 +2,7 @@ module.exports.profile = {
   name: 'observationMS',
   version: '1.0.0',
   fhirServerBaseUrl: 'https://hapi.fhir.tw/fhir',
-  action: 'upload', // return, upload
+  action: 'return', // return, upload
   // fhirServerBaseUrl: 'http://140.131.93.149:8080/fhir',
   // action: 'upload',
 }
@@ -72,8 +72,10 @@ module.exports.fields = [
       return valueQuantity;
     }
   },
-  {
-    source: 'component',
-    target: 'Observation.component',
-  },
+  // 太過複雜因此不轉換，只在量測血壓的範例中出現
+  // http://hitstdio.ntunhs.edu.tw/ig/twcore/Observation-obs-bloodPressure-example.json.html
+  // {
+  //   source: 'component',
+  //   target: 'Observation.component',
+  // },
 ]
