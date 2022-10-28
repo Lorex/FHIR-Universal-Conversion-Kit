@@ -2,9 +2,11 @@ module.exports.profile = {
     name: 'conditionMS',
     version: '1.0.0',
     fhirServerBaseUrl: 'https://hapi.fhir.tw/fhir',
-    action: 'return', // return, upload
+    // action: 'return', // return, upload
+    
     // fhirServerBaseUrl: 'http://140.131.93.149:8080/fhir',
-    // action: 'upload',
+    fhirServerBaseUrl: 'https://mitwfhir.dicom.org.tw/fhir',
+    action: 'upload',
 }
 
 module.exports.globalResource = {

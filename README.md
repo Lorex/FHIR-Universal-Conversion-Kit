@@ -21,15 +21,15 @@ FHIR Universal Conversion Kit (F.U.C.K.) is a super awesome and sexy kit that ca
 - [x] Validate Procedure converted FHIR JSON
 
 - [x] Update FHIR Resources with References
-- [ ] Validate Condition converted FHIR JSON with TW Core IG FHIR Validator
+- [x] Validate Condition converted FHIR JSON with TW Core IG FHIR Validator
 - [ ] Validate Encounter converted FHIR JSON with TW Core IG FHIR Validator
-- [ ] Validate Medication converted FHIR JSON with TW Core IG FHIR Validator
-- [ ] Validate MedicationRequest converted FHIR JSON with TW Core IG FHIR Validator
-- [ ] Validate Observation converted FHIR JSON with TW Core IG FHIR Validator
-- [ ] Validate Organization converted FHIR JSON with TW Core IG FHIR Validator
-- [ ] Validate Patient converted FHIR JSON with TW Core IG FHIR Validator
-- [ ] Validate Practitioner converted FHIR JSON with TW Core IG FHIR Validator
-- [ ] Validate Procedure converted FHIR JSON with TW Core IG FHIR Validator
+- [x] Validate Medication converted FHIR JSON with TW Core IG FHIR Validator
+- [x] Validate MedicationRequest converted FHIR JSON with TW Core IG FHIR Validator
+- [x] Validate Observation converted FHIR JSON with TW Core IG FHIR Validator
+- [x] Validate Organization converted FHIR JSON with TW Core IG FHIR Validator
+- [x] Validate Patient converted FHIR JSON with TW Core IG FHIR Validator
+- [x] Validate Practitioner converted FHIR JSON with TW Core IG FHIR Validator
+- [x] Validate Procedure converted FHIR JSON with TW Core IG FHIR Validator
 
 - [ ] Upload Encounter converted FHIR JSON to CyLab FHIR Server
 - [ ] Upload Medication converted FHIR JSON to CyLab FHIR Server
