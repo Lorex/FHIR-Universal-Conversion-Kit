@@ -23,7 +23,7 @@ FHIR Universal Conversion Kit (F.U.C.K.) is a super awesome and sexy kit that ca
 
 - [x] Update FHIR Resources with References
 - [x] Validate Condition converted FHIR JSON with TW Core IG FHIR Validator
-- [ ] Validate Encounter converted FHIR JSON with TW Core IG FHIR Validator
+- [x] Validate Encounter converted FHIR JSON with TW Core IG FHIR Validator
 - [x] Validate Medication converted FHIR JSON with TW Core IG FHIR Validator
 - [x] Validate MedicationRequest converted FHIR JSON with TW Core IG FHIR Validator
 - [x] Validate Observation converted FHIR JSON with TW Core IG FHIR Validator
@@ -34,9 +34,9 @@ FHIR Universal Conversion Kit (F.U.C.K.) is a super awesome and sexy kit that ca
 - [x] Validate Location converted FHIR JSON with TW Core IG FHIR Validator
 
 - [x] Upload Condition converted FHIR JSON to CyLab FHIR Server
-- [ ] Upload Encounter converted FHIR JSON to CyLab FHIR Server
+- [x] Upload Encounter converted FHIR JSON to CyLab FHIR Server
 - [x] Upload Medication converted FHIR JSON to CyLab FHIR Server
-- [ ] Upload MedicationRequest converted FHIR JSON to CyLab FHIR Server
+- [x] Upload MedicationRequest converted FHIR JSON to CyLab FHIR Server
 - [x] Upload Observation converted FHIR JSON to CyLab FHIR Server
 - [x] Upload Organization converted FHIR JSON to CyLab FHIR Server
 - [x] Upload Patient converted FHIR JSON to CyLab FHIR Server
