@@ -3,15 +3,18 @@ module.exports.profile = {
   version: '1.0.0',
   // fhirServerBaseUrl: 'https://hapi.fhir.tw/fhir',
   // action: 'return', // return, upload
-  
+
   // fhirServerBaseUrl: 'http://140.131.93.149:8080/fhir',
   fhirServerBaseUrl: 'https://mitwfhir.dicom.org.tw/fhir',
   action: 'upload',
 }
 
 module.exports.globalResource = {
-  // Should be resource name
+  // 於meta.profile中指定用來驗證的StructureDefinition
   MedicationRequest: {
+    meta: {
+      profile: ["https://mitwfhir.dicom.org.tw/fhir/StructureDefinition/MedicationRequest"]
+    }
   }
 }
 
@@ -106,10 +109,10 @@ module.exports.fields = [
     source: 'dispenseRequest',
     target: 'MedicationRequest.dispenseRequest',
     beforeConvert: (data) => {
-        let dispenseRequest = data;
-        dispenseRequest.numberOfRepeatsAllowed = parseInt(dispenseRequest.numberOfRepeatsAllowed);
+      let dispenseRequest = data;
+      dispenseRequest.numberOfRepeatsAllowed = parseInt(dispenseRequest.numberOfRepeatsAllowed);
 
-        return dispenseRequest;
+      return dispenseRequest;
     }
   },
 ]
