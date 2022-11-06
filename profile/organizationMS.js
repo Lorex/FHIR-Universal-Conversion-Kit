@@ -5,7 +5,7 @@ module.exports.profile = {
   // action: 'return', // return, upload
   
   // fhirServerBaseUrl: 'http://140.131.93.149:8080/fhir',
-  fhirServerBaseUrl: 'https://mitwfhir.dicom.org.tw/fhir',
+  fhirServerBaseUrl: 'http://192.168.50.6:8082/fhir',
   action: 'upload',
 }
 
