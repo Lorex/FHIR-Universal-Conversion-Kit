@@ -6,7 +6,7 @@ module.exports.profile = {
 
   // fhirServerBaseUrl: 'http://140.131.93.149:8080/fhir',
   fhirServerBaseUrl: 'https://mitwfhir.dicom.org.tw/fhir',
-  action: 'upload',
+  action: 'return',
 }
 
 module.exports.globalResource = {
@@ -98,6 +98,7 @@ module.exports.fields = [
     target: 'MedicationRequest.dosageInstruction',
     beforeConvert: (data) => {
       dosageInstruction = data;
+      dosageInstruction.sequence = parseInt(dosageInstruction.sequence);
       dosageInstruction.timing.code.coding = [dosageInstruction.timing.code.coding];
 
       dosageInstruction.route.coding = [dosageInstruction.route.coding];
@@ -111,6 +112,9 @@ module.exports.fields = [
     beforeConvert: (data) => {
       let dispenseRequest = data;
       dispenseRequest.numberOfRepeatsAllowed = parseInt(dispenseRequest.numberOfRepeatsAllowed);
+
+      dispenseRequest.quantity.value = parseInt(dispenseRequest.quantity.value);
+      dispenseRequest.expectedSupplyDuration.value = parseInt(dispenseRequest.expectedSupplyDuration.value);
 
       return dispenseRequest;
     }
