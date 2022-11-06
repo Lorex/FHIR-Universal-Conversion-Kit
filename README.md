@@ -3,6 +3,8 @@
 FHIR Universal Conversion Kit (F.U.C.K.) is a super awesome and sexy kit that can convert albitary data to HL7 FHIR data. 
 
 ## TODO for RedpandaV2(2022 MI-TW FHIR Creator Task)
+- [ ] Write F.U.C.K Usage Note (from csv design to converting as json)
+
 - [x] Create Medication F.U.C.K convert profile
 - [x] Create MedicationRequest F.U.C.K convert profile
 - [x] Create Observation F.U.C.K convert profile
