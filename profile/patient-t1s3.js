@@ -4,9 +4,10 @@ module.exports.profile = {
   // fhirServerBaseUrl: 'https://hapi.fhir.tw/fhir',
   // action: 'return', // return, upload
 
-  // fhirServerBaseUrl: 'http://140.131.93.149:8080/fhir',
-  fhirServerBaseUrl: 'http://192.168.50.6:8082/fhir',
+  // fhirServerBaseUrl: 'http://192.168.50.6:8082/fhir',
+  fhirServerBaseUrl: 'http://192.168.50.5:10051/api',
   action: 'upload',
+  token: 'bd55ee71-5c87-4954-a92c-1ac6e3481ec0', // 支援token了~
 }
 
 module.exports.globalResource = {
