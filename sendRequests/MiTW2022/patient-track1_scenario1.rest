@@ -6,7 +6,7 @@ Content-Type: application/json
   "profile": "patient-t1s1",
   "data": [
     {
-      "id": "6",
+      "id": "168",
       "text": {
         "status": "empty",
         "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
@@ -115,7 +115,7 @@ Content-Type: application/json
         }
       },
       "managingOrganization": {
-        "reference": "Organization/MITW.ForContact"
+        "reference": "Organization/MITW.ForIdentifier"
       }
     }
   ]
