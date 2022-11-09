@@ -9,7 +9,7 @@ Content-Type: application/json
       "id": "369",
       "text": {
         "status": "empty",
-        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值none</div>"
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值none div</div>"
       },
       "identifier": {
         "use": "official",

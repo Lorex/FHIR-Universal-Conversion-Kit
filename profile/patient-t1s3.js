@@ -5,7 +5,7 @@ module.exports.profile = {
   // action: 'return', // return, upload
 
   // fhirServerBaseUrl: 'http://192.168.50.6:8082/fhir',
-  fhirServerBaseUrl: 'http://192.168.50.5:10051/api',
+  fhirServerBaseUrl: 'http://192.168.50.5:10070/fhir',
   action: 'upload',
   token: 'bd55ee71-5c87-4954-a92c-1ac6e3481ec0', // 支援token了~
 }
