@@ -5,9 +5,9 @@ module.exports.profile = {
   // action: 'return', // return, upload
 
   // fhirServerBaseUrl: 'http://192.168.50.6:8082/fhir',
-  fhirServerBaseUrl: 'http://192.168.50.5:10070/fhir',
+  fhirServerBaseUrl: 'http://192.168.50.5:10070/FhirApi',
   action: 'upload',
-  token: 'bd55ee71-5c87-4954-a92c-1ac6e3481ec0', // 支援token了~
+  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJlYm0iLCJzdWIiOiJ3d3cuZWJtdGVjaC5jb20iLCJhdWQiOiJlYm0gcHJvZHVjdHMiLCJpYXQiOjE2Njc3OTEzMzEsImV4cCI6MTY2ODE1MTMzMX0.kdyeYUc-bnzZrY7tLF4yffJLND3V65VkhQAr9unmbG0', // 支援token了~
 }
 
 module.exports.globalResource = {
