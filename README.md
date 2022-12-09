@@ -234,6 +234,9 @@ module.exports.fields = [
 ### 5. Copy your converted Payload JSON from output textbox and paste into your REST Client 😄
 
 ## TWcore 10 Basic FHIR Resources
+### What is TWcore
++ https://twcore.mohw.gov.tw/ig/
+
 ### List of supported FHIR Resources
 | **FHIR Resource Type** | **Corresponding F.U.C.K convert Profile** |
 |------------------------|-------------------------------------------|
@@ -248,9 +251,11 @@ module.exports.fields = [
 | Practitioner           | practitionerMS.js                         |
 | Procedure              | procedureMS.js                            |
 
-### Convert Profile Usage Example
-
 ### Excel format template Usage
+See the documentation for [How To Use TWcore Excel Format](./twcore/how-to-use-twcore-excel-format.md)
+
+### Convert Profile Usage Example
+See the documentation for [How To Use TWcore Excel Format](./twcore/how-to-use-twcore-excel-format.md)
 
 ## Special Thanks
 🎉🎉🎉
