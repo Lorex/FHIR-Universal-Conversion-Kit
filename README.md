@@ -252,6 +252,8 @@ module.exports.fields = [
 | Procedure              | procedureMS.js                            |
 
 ### Excel format template Usage
+All files are located in `twcore` folder
+
 See the documentation for [How To Use TWcore Excel Format](./twcore/how-to-use-twcore-excel-format.md)
 
 ### Convert Profile Usage Example
