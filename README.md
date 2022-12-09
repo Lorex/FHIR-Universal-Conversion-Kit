@@ -9,6 +9,12 @@ FHIR Universal Conversion Kit (F.U.C.K.) is a super awesome and sexy kit that ca
 
 ### 3. See [API Usage](#api) and test with [API Usage Example](#usage-example)
 
+### 4. You can [Learn about F.U.C.K Profile](#profile) and start to [Create your FHIR Convert Profile](#how-to-create-your-fhir-convert-profile)
+
+### 5. [Learn How to convert CSV file to Payload JSON](#how-to-convert-csv-to-payload-json)
+
+### 6. We provide [TWcore 10 Basic FHIR Resources Convert Profile and Excel format template](#twcore-10-basic-fhir-resources)
+
 ---
 
 ## Requirements
@@ -141,6 +147,8 @@ Response
 
 ## Profile
 
+### Basic Knowledge
+
 If you have many different data source formats, you can create separate profiles (also known as config files) for each of them.
 Each profile can define different data sources, source fields, conversion rules, and preprocessors.
 
@@ -150,7 +158,11 @@ Every source data will be processed and converted as the following workflow:
 
 ![workflow](https://i.imgur.com/6JwsLXC.png)
 
+### How to create your FHIR convert Profile
+
 To define a profile, just create `<profileName>.js` in the `profile` folder simply, the server should automatically load all profiles at the start.
+
+**ATTENTION: The 'Profile' in this section is NOT FHIR Profile**
 
 This is an example of the profile:
 ```javascript
@@ -212,8 +224,25 @@ module.exports.fields = [
 
 ```
 
-## Twcore FHIR format Excel template Usage
-
 ## How to convert csv to payload json
+
+## TWcore 10 Basic FHIR Resources
+### List of supported FHIR Resources
+| **FHIR Resource Type** | **Corresponding F.U.C.K convert Profile** |
+|------------------------|-------------------------------------------|
+| Condition              | conditionMS.js                            |
+| Encounter              | encounterMS.js                            |
+| Location               | location.js                               |
+| Medication             | medication-TWCore.js                      |
+| MedicationRequest      | medicationRequestMS.js                    |
+| Observation            | observationMS.js                          |
+| Organization           | organizationMS.js                         |
+| Patient                | patientMS.js                              |
+| Practitioner           | practitionerMS.js                         |
+| Procedure              | procedureMS.js                            |
+
+### Convert Profile Usage Example
+
+### Excel format template Usage
 
 ## Special Thanks
