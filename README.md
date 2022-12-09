@@ -226,6 +226,13 @@ module.exports.fields = [
 
 ## How to convert csv to payload json
 
+### 1. Open `csv2json_HTML_ver` folder
+### 2. Open `csv2json.html` with your browser
+### 3. Copy your CSV file content as text
+### 4. Paste your CSV text in input box
+![](https://i.imgur.com/q4vdPf3.png)
+### 5. Copy your converted Payload JSON from output textbox and paste into your REST Client 😄
+
 ## TWcore 10 Basic FHIR Resources
 ### List of supported FHIR Resources
 | **FHIR Resource Type** | **Corresponding F.U.C.K convert Profile** |
@@ -246,3 +253,8 @@ module.exports.fields = [
 ### Excel format template Usage
 
 ## Special Thanks
+🎉🎉🎉
+### Fork from [Lorex L. Yang's Github](https://github.com/Lorex)
+🥇🥇🥇
+### Original Repo: [FHIR Universal Conversion Kit (Project F.U.C.K)](https://github.com/Lorex/FHIR-Universal-Conversion-Kit)
+👍👍👍
