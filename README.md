@@ -2,88 +2,50 @@
 
 FHIR Universal Conversion Kit (F.U.C.K.) is a super awesome and sexy kit that can convert albitary data to HL7 FHIR data. 
 
-## TODO for RedpandaV2(2022 MI-TW FHIR Creator Task)
-- [ ] Write F.U.C.K Usage Note (from csv design to converting as json)
+## Installation & Usage Overview
+### 1. Make sure your system enviroment already meet the [Requirements](#requirements)
 
-- [x] Create Medication F.U.C.K convert profile
-- [x] Create MedicationRequest F.U.C.K convert profile
-- [x] Create Observation F.U.C.K convert profile
-- [x] Create Patient F.U.C.K convert profile
-- [x] Create Practitioner F.U.C.K convert profile
-- [x] Create Procedure F.U.C.K convert profile
-- [x] Create Location F.U.C.K convert profile
+### 2. Follow the [Installation Steps](#installation) to install this Kit on your local machine
 
-- [x] Validate Condition converted FHIR JSON
-- [x] Validate Encounter converted FHIR JSON
-- [x] Validate Medication converted FHIR JSON
-- [x] Validate MedicationRequest converted FHIR JSON
-- [x] Validate Observation converted FHIR JSON
-- [x] Validate Organization converted FHIR JSON
-- [x] Validate Patient converted FHIR JSON
-- [x] Validate Practitioner converted FHIR JSON
-- [x] Validate Procedure converted FHIR JSON
+### 3. See [API Usage](#api) and test with [API Usage Example](#usage-example)
 
-- [x] Update FHIR Resources with References
-- [x] Validate Condition converted FHIR JSON with TW Core IG FHIR Validator
-- [x] Validate Encounter converted FHIR JSON with TW Core IG FHIR Validator
-- [x] Validate Medication converted FHIR JSON with TW Core IG FHIR Validator
-- [x] Validate MedicationRequest converted FHIR JSON with TW Core IG FHIR Validator
-- [x] Validate Observation converted FHIR JSON with TW Core IG FHIR Validator
-- [x] Validate Organization converted FHIR JSON with TW Core IG FHIR Validator
-- [x] Validate Patient converted FHIR JSON with TW Core IG FHIR Validator
-- [x] Validate Practitioner converted FHIR JSON with TW Core IG FHIR Validator
-- [x] Validate Procedure converted FHIR JSON with TW Core IG FHIR Validator
-- [x] Validate Location converted FHIR JSON with TW Core IG FHIR Validator
-
-- [x] Upload Condition converted FHIR JSON to CyLab FHIR Server
-- [x] Upload Encounter converted FHIR JSON to CyLab FHIR Server
-- [x] Upload Medication converted FHIR JSON to CyLab FHIR Server
-- [x] Upload MedicationRequest converted FHIR JSON to CyLab FHIR Server
-- [x] Upload Observation converted FHIR JSON to CyLab FHIR Server
-- [x] Upload Organization converted FHIR JSON to CyLab FHIR Server
-- [x] Upload Patient converted FHIR JSON to CyLab FHIR Server
-- [x] Upload Practitioner converted FHIR JSON to CyLab FHIR Server
-- [x] Upload Procedure converted FHIR JSON to CyLab FHIR Server
-- [x] Upload Location converted FHIR JSON to CyLab FHIR Server
-
-## TODO
-- :white_check_mark: Core Engine
-- :white_check_mark: Multipule Profile (Config File) Support
-- :white_check_mark: Data Preprocessor
-- :white_check_mark: FHIR Data Uploader
-- :arrow_right: FHIR Profile Validator
+---
 
 ## Requirements
 - node.js 16.8.0
+- Any Restful API Client Tools
+  * [Postman](https://www.postman.com/downloads/)
+  * VScode Extension: [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
 
 ## Installation
-Clone this repository to your computer
+### Step1.Clone this repository to your computer
 ```bash
 $ git clone https://github.com/Lorex/FHIR-Universal-Conversion-Kit.git
 ```
 
-Install npm packages
+### Step2.Install npm packages
 ```bash
 $ cd src
 $ npm install
 ```
 
-Install npm packages
-```bash
-$ cd src
-$ npm install
-```
-
-Run Service
+### Step3.Run Service
+#### Method 1 (Make sure you're in the project's root folder)
 ```bash
 $ chmod +x ./start_server
 $ ./start_server
+```
+
+#### Method 2 (Make sure you're in the `src` folder)
+```bash
+$ node app.js
 ```
 
 ## API
 
 Server will default listen on port 1337.
 
+### Usage Guide
 API Endpoint
 ```
 POST <serverurl>
@@ -109,6 +71,73 @@ Response
 }
 ```
 
+### Usage Example
+API Endpoint
+```
+POST http://localhost:1337
+```
+
+Payload
+```json
+{
+  "profile": "dental",
+  "data": [
+    {
+      "doctor_id": "6"
+    },
+    {
+      "doctor_id": "69"
+    },
+  ]
+}
+```
+
+Response
+<details>
+
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "resourceType": "Bundle",
+      "type": "transaction",
+      "entry": [
+        {
+          "fullUrl": "https://hapi.fhir.tw/fhir/Practitioner/prac-6",
+          "resource": {
+            "resourceType": "Practitioner",
+            "id": "prac-6"
+          },
+          "request": {
+            "method": "PUT",
+            "url": "/Practitioner/prac-6"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Bundle",
+      "type": "transaction",
+      "entry": [
+        {
+          "fullUrl": "https://hapi.fhir.tw/fhir/Practitioner/prac-69",
+          "resource": {
+            "resourceType": "Practitioner",
+            "id": "prac-69"
+          },
+          "request": {
+            "method": "PUT",
+            "url": "/Practitioner/prac-69"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+</details>
 
 ## Profile
 
@@ -182,3 +211,9 @@ module.exports.fields = [
 ]
 
 ```
+
+## Twcore FHIR format Excel template Usage
+
+## How to convert csv to payload json
+
+## Special Thanks
