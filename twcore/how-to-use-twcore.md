@@ -55,4 +55,22 @@
 6. **重要!** 我們所提供的Excel格式文件，就是依照對應Resource的JSON結構所展開，若您對JSON格式有一定程度的理解，就能發現`text.div`對應到JSON結構的text object，其餘欄位亦是如此，這也進一步的**解釋了為何excel中部分欄位必須留空**，您可以發現text欄位是text.div的父結構，為了讓我們所提供的`csv2json`轉換程式能夠正常運作，故有此設計
 7. 現在您可以將您編輯完的excel文件**另存新檔**為.csv檔案，然後參考[主文件](../README.md)中的[How to convert csv to payload json](../README.md#how-to-convert-csv-to-payload-json)來轉換CSV為可以送入F.U.C.K的合法資料格式!
 
+---
+
 ## F.U.C.K Profile使用範例
+
+### 請先確保您已經將F.U.C.K系統環境搭建好並啟動再往下看範例
+
+👍 您可以參閱並實際操作
+
+[FHIR Universal Conversion Kit (F.U.C.K.) 主文件](../README.md#installation--usage-overview)的**第1~3點**
+
+### 以Medication作為範例
+#### 1.請先確定您的Medication csv檔案已經轉換為可以送入F.U.C.K的Payload JSON
+請參閱主文件的 [👉這裡](../README.md#how-to-convert-csv-to-payload-json)，查看如何將您從excel轉存的csv檔案，轉換成可以送入F.U.C.K的合法Payload JSON
+
+#### 2.找到對應的F.U.C.K profile名稱
+
+### 以Organization做為範例
+#### 1.請先確定您的Medication csv檔案已經轉換為可以送入F.U.C.K的Payload JSON
+請參閱主文件的 [👉這裡](../README.md#how-to-convert-csv-to-payload-json)，查看如何將您從excel轉存的csv檔案，轉換成可以送入F.U.C.K的合法Payload JSON
