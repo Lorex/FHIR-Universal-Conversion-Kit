@@ -254,10 +254,10 @@ module.exports.fields = [
 ### Excel format template Usage
 All files are located in `twcore` folder
 
-See the documentation for [How To Use TWcore Excel Format](./twcore/how-to-use-twcore.md#excel範例格式使用說明)
+See the documentation for [How To Use TWcore Excel Format](./Excel-templates/twcore/how-to-use-twcore.md#excel範例格式使用說明)
 
 ### Convert Profile Usage Example
-See the documentation for [How To Use TWcore Convert Profiles](./twcore/how-to-use-twcore.md#fuck-profile使用範例)
+See the documentation for [How To Use TWcore Convert Profiles](./Excel-templates/twcore/how-to-use-twcore.md#fuck-profile使用範例)
 
 ## Special Thanks
 🎉🎉🎉
