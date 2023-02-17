@@ -259,12 +259,5 @@ See the documentation for [How To Use TWcore Excel Format](./Excel-templates/twc
 ### Convert Profile Usage Example
 See the documentation for [How To Use TWcore Convert Profiles](./Excel-templates/twcore/how-to-use-twcore.md#fuck-profile使用範例)
 
-## Special Thanks
-🎉🎉🎉
-### Fork from [Lorex L. Yang's Github](https://github.com/Lorex)
-🥇🥇🥇
-### Original Repo: [FHIR Universal Conversion Kit (Project F.U.C.K)](https://github.com/Lorex/FHIR-Universal-Conversion-Kit)
-👍👍👍
-
 ## TODO List
 - [x] 完善TWcore使用手冊
