@@ -1,0 +1,450 @@
+###
+
+POST http://localhost:1337
+Content-Type: application/json
+
+{
+  "profile": "practitionerMS",
+  "data": [
+    {
+      "id": "1",
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'><h1>測試網頁原始碼 OwO</h1><p>應該放一些關於此Resource的資訊或是FHIR定義的text.div之類的值</p></div>"
+      },
+      "identifier": {
+        "use": "official",
+        "type": {
+          "coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "MD"
+          },
+          "text": "KP00017"
+        },
+        "system": "https://www.tph.mohw.gov.tw",
+        "value": "KP00017"
+      },
+      "active": "TRUE",
+      "name": {
+        "use": "official",
+        "text": "王依昇",
+        "family": "Wang",
+        "given": "Yi Sheng"
+      },
+      "telecom": {
+        "system": "phone",
+        "value": "0993277826",
+        "use": "mobile",
+        "period": {
+          "start": "2022-07-31",
+          "end": "2024-07-31"
+        }
+      },
+      "address": {
+        "text": "桃園市桃園區五福五街31號"
+      },
+      "gender": "male",
+      "birthDate": "1980-11-11",
+      "photo": {
+        "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s400/doctor.png"
+      }
+    },
+    {
+      "id": "2",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+      },
+      "identifier": {
+        "use": "usual",
+        "type": {
+          "coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "MD"
+          },
+          "text": "KP00018"
+        },
+        "system": "https://www.tph.mohw.gov.tw",
+        "value": "KP00018"
+      },
+      "active": "TRUE",
+      "name": {
+        "use": "usual",
+        "text": "李一",
+        "family": "Li",
+        "given": "Yi"
+      },
+      "telecom": {
+        "system": "phone",
+        "value": "0987654321",
+        "use": "mobile",
+        "period": {
+          "start": "2012-06-25",
+          "end": "2013-08-24"
+        }
+      },
+      "address": {
+        "text": "高雄市鳥松區興華街31號"
+      },
+      "gender": "female",
+      "birthDate": "1990-12-10",
+      "photo": {
+        "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s401/doctor.png"
+      }
+    },
+    {
+      "id": "3",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+      },
+      "identifier": {
+        "use": "temp",
+        "type": {
+          "coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "MD"
+          },
+          "text": "KP00019"
+        },
+        "system": "https://www.tph.mohw.gov.tw",
+        "value": "KP00019"
+      },
+      "active": "TRUE",
+      "name": {
+        "use": "temp",
+        "text": "陳二",
+        "family": "Chen",
+        "given": "Er"
+      },
+      "telecom": {
+        "system": "phone",
+        "value": "0912345678",
+        "use": "mobile",
+        "period": {
+          "start": "2013-08-25",
+          "end": "2014-07-09"
+        }
+      },
+      "address": {
+        "text": "桃園市桃園區宏昌二街18號"
+      },
+      "gender": "female",
+      "birthDate": "1991-01-12",
+      "photo": {
+        "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s402/doctor.png"
+      }
+    },
+    {
+      "id": "4",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+      },
+      "identifier": {
+        "use": "official",
+        "type": {
+          "coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "MD"
+          },
+          "text": "KP00020"
+        },
+        "system": "https://www.tph.mohw.gov.tw",
+        "value": "KP00020"
+      },
+      "active": "TRUE",
+      "name": {
+        "use": "official",
+        "text": "王三",
+        "family": "Wang",
+        "given": "San"
+      },
+      "telecom": {
+        "system": "phone",
+        "value": "0911221144",
+        "use": "mobile",
+        "period": {
+          "start": "2012-06-25",
+          "end": "2013-08-26"
+        }
+      },
+      "address": {
+        "text": "嘉義市西區健康十一街13號"
+      },
+      "gender": "male",
+      "birthDate": "1992-02-14",
+      "photo": {
+        "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s403/doctor.png"
+      }
+    },
+    {
+      "id": "5",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+      },
+      "identifier": {
+        "use": "official",
+        "type": {
+          "coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "MD"
+          },
+          "text": "KP00021"
+        },
+        "system": "https://www.tph.mohw.gov.tw",
+        "value": "KP00021"
+      },
+      "active": "TRUE",
+      "name": {
+        "use": "official",
+        "text": "楊一",
+        "family": "Yang",
+        "given": "YI"
+      },
+      "telecom": {
+        "system": "phone",
+        "value": "0955445599",
+        "use": "mobile",
+        "period": {
+          "start": "2013-08-25",
+          "end": "2014-07-28"
+        }
+      },
+      "address": {
+        "text": "新竹縣新埔鎮大魯閣路33號"
+      },
+      "gender": "female",
+      "birthDate": "1993-03-18",
+      "photo": {
+        "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s404/doctor.png"
+      }
+    },
+    {
+      "id": "6",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+      },
+      "identifier": {
+        "use": "official",
+        "type": {
+          "coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "MD"
+          },
+          "text": "KP00022"
+        },
+        "system": "https://www.tph.mohw.gov.tw",
+        "value": "KP00022"
+      },
+      "active": "TRUE",
+      "name": {
+        "use": "official",
+        "text": "蕭二",
+        "family": "Hsiao",
+        "given": "Er"
+      },
+      "telecom": {
+        "system": "phone",
+        "value": "0955445600",
+        "use": "mobile",
+        "period": {
+          "start": "2012-06-25",
+          "end": "2013-08-26"
+        }
+      },
+      "address": {
+        "text": "屏東縣屏東市瑞中街31號"
+      },
+      "gender": "male",
+      "birthDate": "1994-04-17",
+      "photo": {
+        "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s405/doctor.png"
+      }
+    },
+    {
+      "id": "7",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+      },
+      "identifier": {
+        "use": "official",
+        "type": {
+          "coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "MD"
+          },
+          "text": "KP00023"
+        },
+        "system": "https://www.tph.mohw.gov.tw",
+        "value": "KP00023"
+      },
+      "active": "TRUE",
+      "name": {
+        "use": "official",
+        "text": "連三",
+        "family": "Lien",
+        "given": "San"
+      },
+      "telecom": {
+        "system": "phone",
+        "value": "0955445601",
+        "use": "mobile",
+        "period": {
+          "start": "2022-01-15",
+          "end": "2022-10-04"
+        }
+      },
+      "address": {
+        "text": "臺北市中山區大直街31號"
+      },
+      "gender": "male",
+      "birthDate": "1900-07-17",
+      "photo": {
+        "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s406/doctor.png"
+      }
+    },
+    {
+      "id": "8",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+      },
+      "identifier": {
+        "use": "official",
+        "type": {
+          "coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "MD"
+          },
+          "text": "KP00024"
+        },
+        "system": "https://www.tph.mohw.gov.tw",
+        "value": "KP00024"
+      },
+      "active": "TRUE",
+      "name": {
+        "use": "official",
+        "text": "蘇一",
+        "family": "Su",
+        "given": "Yi"
+      },
+      "telecom": {
+        "system": "phone",
+        "value": "0955445602",
+        "use": "mobile",
+        "period": {
+          "start": "2022-02-15",
+          "end": "2022-10-05"
+        }
+      },
+      "address": {
+        "text": "臺南市安南區工明南二路8號"
+      },
+      "gender": "male",
+      "birthDate": "2001-05-20",
+      "photo": {
+        "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s407/doctor.png"
+      }
+    },
+    {
+      "id": "9",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+      },
+      "identifier": {
+        "use": "official",
+        "type": {
+          "coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "MD"
+          },
+          "text": "KP00025"
+        },
+        "system": "https://www.tph.mohw.gov.tw",
+        "value": "KP00025"
+      },
+      "active": "TRUE",
+      "name": {
+        "use": "official",
+        "text": "張二",
+        "family": "Chang",
+        "given": "Er"
+      },
+      "telecom": {
+        "system": "phone",
+        "value": "0955445603",
+        "use": "mobile",
+        "period": {
+          "start": "2022-04-15",
+          "end": "2022-10-06"
+        }
+      },
+      "address": {
+        "text": "桃園市觀音區富源五路18號"
+      },
+      "gender": "other",
+      "birthDate": "1969-08-26",
+      "photo": {
+        "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s408/doctor.png"
+      }
+    },
+    {
+      "id": "10",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值</div>"
+      },
+      "identifier": {
+        "use": "official",
+        "type": {
+          "coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "MD"
+          },
+          "text": "KP00026"
+        },
+        "system": "https://www.tph.mohw.gov.tw",
+        "value": "KP00026"
+      },
+      "active": "TRUE",
+      "name": {
+        "use": "official",
+        "text": "張三",
+        "family": "Chang",
+        "given": "San"
+      },
+      "telecom": {
+        "system": "phone",
+        "value": "0955445604",
+        "use": "mobile",
+        "period": {
+          "start": "2022-10-15",
+          "end": "2022-10-20"
+        }
+      },
+      "address": {
+        "text": "臺中市西區梅亭街26號"
+      },
+      "gender": "unknown",
+      "birthDate": "1996-06-09",
+      "photo": {
+        "url": "https://1.bp.blogspot.com/-6dSaKA-5r0c/UZSs9HLyutI/AAAAAAAATBc/lxpq2MB3_mc/s409/doctor.png"
+      }
+    }
+  ]
+}

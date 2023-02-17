@@ -1,0 +1,90 @@
+###
+
+POST http://localhost:1337
+Content-Type: application/json
+
+{
+  "profile": "medicationRequestMS",
+  "data": [
+    {
+      "id": "1",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">empty</div>"
+      },
+      "identifier": {
+        "use": "official",
+        "type": {
+          "coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MD",
+            "display": "Medical License number"
+          },
+          "text": "260385009"
+        },
+        "system": "http://www.moi.gov.tw/",
+        "value": "7077"
+      },
+      "status": "active",
+      "intent": "order",
+      "category": {
+        "coding": {
+          "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+          "code": "discharge",
+          "display": "Discharge"
+        },
+        "text": "Includes requests for medications created when the patient is being released from a facility"
+      },
+      "medicationCodeableConcept": {
+        "coding": {
+          "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-fda-tw",
+          "code": "衛署藥輸字第025485號",
+          "display": "阿立批挫"
+        },
+        "text": "阿立批挫"
+      },
+      "subject": {
+        "reference": "Patient/36"
+      },
+      "encounter": {
+        "reference": "Encounter/a5888689-7513-41a9-830b-ebd55bdeed59"
+      },
+      "authoredOn": "2022-08-01T18:00:14-05:00",
+      "requester": {
+        "reference": "Practitioner/366"
+      },
+      "reasonReference": {
+        "reference": "Observation/957"
+      },
+      "note": {
+        "text": "筆記欄位"
+      },
+      "dosageInstruction": {
+        "text": "三餐飯後，口服",
+        "timing": {
+          "code": {
+            "coding": {
+              "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-frequency-tw",
+              "code": "PC"
+            },
+            "text": "三餐飯後"
+          }
+        },
+        "route": {
+          "coding": {
+            "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/medication-path-tw",
+            "code": "PO"
+          }
+        }
+      },
+      "dispenseRequest": {
+        "validityPeriod": {
+          "start": "2022-08-01T18:00:14-05:00",
+          "end": "2022-08-08T18:00:14-05:00"
+        },
+        "numberOfRepeatsAllowed": "1"
+      },
+      "field57": ""
+    }
+  ]
+}

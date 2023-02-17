@@ -1,0 +1,37 @@
+{
+    "id": "1",
+    "text": {
+        "status": "generated",
+        "div": "<div>測試網頁原始碼</div>"
+    },
+    "identifier": {
+        "use": "official",
+        "type": {
+            "coding": {
+                "system": "https://twcore.mohw.gov.tw/fhir/CodeSystem/v2-0203",
+                "code": "HOI",
+                "display": "Healthcare Organization Identifier"
+            },
+            "text": "醫事機構代碼(Healthcare Organization Identifier number)"
+        },
+        "system": "https://ma.mohw.gov.tw/masearch/SearchBAS-101-1.aspx",
+        "value": "1101010012"
+    },
+    "active": "TRUE",
+    "type": {
+        "coding": {
+            "system": "http://hl7.org/fhir/R4/codesystem-organization-type.html",
+            "code": "prov",
+            "display": "Healthcare Provider"
+        },
+        "text": "醫事機構"
+    },
+    "name": "長庚醫療財團法人台北長庚紀念醫院",
+    "telecom": {
+        "system": "phone",
+        "value": "02 2713 5211"
+    },
+    "address": {
+        "text": "台北市松山區敦化北路１９９號"
+    }
+}

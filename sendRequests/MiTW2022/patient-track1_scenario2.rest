@@ -1,0 +1,122 @@
+###
+POST http://localhost:1337
+Content-Type: application/json
+
+{
+  "profile": "patient-t1s2",
+  "data": [
+    {
+      "id": "369",
+      "text": {
+        "status": "empty",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>空值none div</div>"
+      },
+      "identifier": {
+        "use": "official",
+        "type": {
+          "coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "NI",
+            "display": "NI"
+          },
+          "text": "F180959298"
+        },
+        "system": "http://www.moi.gov.tw/",
+        "value": "F180959298"
+      },
+      "active": "true",
+      "name": {
+        "use": "official",
+        "text": "董育雲",
+        "family": "董",
+        "given": "育雲"
+      },
+      "telecom": {
+        "system": "phone",
+        "value": "0968067076",
+        "use": "mobile",
+        "period": {
+          "start": "2022-06-08",
+          "end": "2068-08-06"
+        }
+      },
+      "telecom": {
+        "system": "phone",
+        "value": "0989698168",
+        "use": "mobile"
+      },
+      "telecom": {
+        "system": "email",
+        "value": "kamsung@company.com"
+      },
+      "telecom": {
+        "system": "url",
+        "value": "https://line.me/ti/p/34b2c384l5"
+      },
+      "gender": "male",
+      "birthDate": "1996-11-23",
+      "address": {
+        "text": "彰化縣芳苑鄉安家新一街55號10樓之6"
+      },
+      "address": {
+        "text": "269 臺灣省宜蘭縣冬山鄉東湖街9段6號",
+        "line": [
+          "東湖街9段6號"
+        ],
+        "city": "冬山鄉",
+        "district": "宜蘭縣",
+        "postalCode": "269",
+        "country": "臺灣"
+      },
+      "maritalStatus": {
+        "coding": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+          "code": "U",
+          "display": "unmarried"
+        },
+        "text": "unmarried"
+      },
+      "photo": {
+        "url": "https://xsgames.co/randomusers/avatar.php?g=male"
+      },
+      "contact": {
+        "relationship": {
+          "coding": {
+            "code": "C",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+            "display": "Emergency Contact"
+          },
+          "text": "Emergency Contact"
+        },
+        "name": {
+          "use": "official",
+          "text": "詹淯勛",
+          "family": "ZHAN",
+          "given": "YU XUN"
+        },
+        "telecom": {
+          "system": "phone",
+          "value": "0967852499",
+          "use": "mobile"
+        },
+        "period": {
+          "start": "2011-05-28",
+          "end": "2091-06-01"
+        }
+      },
+      "communication": {
+        "language": {
+          "coding": {
+            "system": "urn:ietf:bcp:47",
+            "code": "zh-TW",
+            "display": "Chinese (Taiwan)"
+          },
+          "text": "中文 （台灣）"
+        }
+      },
+      "managingOrganization": {
+        "reference": "Organization/MITW.ForContact"
+      }
+    }
+  ]
+}

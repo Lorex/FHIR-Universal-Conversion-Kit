@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "js-crawler": "^0.3.21"
+  }
+}
