@@ -137,6 +137,14 @@ class Convert {
       }
     }
 
+    // Token Support for F.U.C.K (write your token in Payload JSON)
+    // if(profile.profile.token != undefined)console.log("Token:" + profile.profile.token);
+    let headerConfigs = {
+      headers: {
+        Authorization: `Bearer ${profile.profile.token}`
+        // https://stackoverflow.com/questions/40988238/sending-the-bearer-token-with-axios
+      }
+    }
 
     // return convert result or upload to FHIR server
     if (profile.profile.action === 'return') {
@@ -144,7 +152,11 @@ class Convert {
     }
 
     if (profile.profile.action === 'upload') {
-      const result = await axios.post(`${profile.profile.fhirServerBaseUrl}`, bundle).catch(err => {
+      const result = await axios.post(
+        `${profile.profile.fhirServerBaseUrl}`,
+        bundle,
+        headerConfigs
+      ).catch(err => {
         console.log(err.response.data);
         throw new Error(JSON.stringify(err.response.data));
       });
