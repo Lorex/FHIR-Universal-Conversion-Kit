@@ -3,6 +3,7 @@ module.exports.profile = {
     version: '1.0.0',
     fhirServerBaseUrl: 'https://hapi.fhir.tw/fhir',
     action: 'return', // return, upload
+    token: 'your-token-string' // This line can be deleted if unused
 }
 
 module.exports.globalResource = {
