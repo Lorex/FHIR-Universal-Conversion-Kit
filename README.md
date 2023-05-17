@@ -95,6 +95,9 @@ module.exports.profile = {
     // 'upload': Upload the converted data to the FHIR server and return the server response.
     // 'return': Don't upload, just return the converted data.
     action: 'upload',
+
+    // Token Support for uploading to server!
+    token: 'your-token-string' // This line can be deleted if unused
 }
 
 module.exports.globalResource = {

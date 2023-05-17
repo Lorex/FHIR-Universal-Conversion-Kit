@@ -1,6 +1,6 @@
 'use strict';
 
-const resources = Object.assign({},require('./resources'));
+const resources = Object.assign({}, require('./resources'));
 const schema = require('./fhir_schema/schema.json');
 const objectPath = require('object-path');
 const jp = require('jsonpath');
@@ -13,7 +13,7 @@ const profilePath = '../../../profile';
 const fs = require('fs');
 const path = require('path');
 const profileFiles = fs.readdirSync(path.join(__dirname, profilePath));
-profileFiles.forEach(file => {  
+profileFiles.forEach(file => {
   const profile = require(path.join(__dirname, profilePath, file));
   _profiles[profile.profile.name] = profile;
 });
@@ -35,32 +35,32 @@ class Convert {
   async convert() {
     // iterate through each field in the data
     let data = JSON.parse(JSON.stringify(this.data));
-    
+
     let bundle = JSON.parse(JSON.stringify(this.bundle));
     let resourceIdList = JSON.parse(JSON.stringify(this.resourceIdList));
     let profiles = JSON.parse(JSON.stringify(this.profiles));
 
     // find the profile 
     let profile = JSON.parse(JSON.stringify(profiles[this.useProfile]));
-    
 
-    if(!profile) {
+
+    if (!profile) {
       throw new Error('Profile not found.');
     }
-    
+
     // run beforeProcess
     data = _profiles[this.useProfile].beforeProcess ? _profiles[this.useProfile].beforeProcess(data) : data;
 
-    for (const field in data){
+    for (const field in data) {
       // find target field in the config
       let targetField = profile.fields.find(f => {
         return (f.source === field)
       });
-      if(!targetField) {
+      if (!targetField) {
         continue;
       }
       const target = targetField.target;
-      
+
       // get the resource type
       let resourceType = target.split('.')[0];
 
@@ -132,11 +132,19 @@ class Convert {
         const resourceType = reference.value.substring(1);
         const resourceIndex = reference.path[1];
         const resourceId = resourceIdList[resourceType];
-        
+
         objectPath.set(bundle.entry[resourceIndex], reference.path.slice(2).join('.'), `${resourceType}/${resourceId}`);
       }
     }
 
+    // Token Support for F.U.C.K (write your token in Payload JSON)
+    // if(profile.profile.token != undefined)console.log("Token:" + profile.profile.token);
+    let headerConfigs = {
+      headers: {
+        Authorization: `Bearer ${profile.profile.token}`
+        // https://stackoverflow.com/questions/40988238/sending-the-bearer-token-with-axios
+      }
+    }
 
     // return convert result or upload to FHIR server
     if (profile.profile.action === 'return') {
@@ -144,7 +152,11 @@ class Convert {
     }
 
     if (profile.profile.action === 'upload') {
-      const result = await axios.post(`${profile.profile.fhirServerBaseUrl}`, bundle).catch(err => {
+      const result = await axios.post(
+        `${profile.profile.fhirServerBaseUrl}`,
+        bundle,
+        headerConfigs
+      ).catch(err => {
         console.log(err.response.data);
         throw new Error(JSON.stringify(err.response.data));
       });
