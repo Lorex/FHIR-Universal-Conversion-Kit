@@ -1,8 +1,10 @@
-![FHIR Universal Conversion Kit Logo](fuck-logo.png)
+<p align="center">
+  <img src="fuck-logo.png" alt="FHIR Universal Conversion Kit Logo" width="200" height="200">
+</p>
 
 # FHIR Universal Conversion Kit (Project F.U.C.K)
 
-FHIR Universal Conversion Kit (F.U.C.K.) is an awesome and sexy tool that can convert convert arbitrary medical data into HL7 FHIR format and supports uploading to FHIR Server.
+FHIR Universal Conversion Kit (F.U.C.K.) is an awesome and sexy tool that can convert arbitrary medical data into HL7 FHIR format and supports uploading to FHIR Server.
 
 繁體中文說明文件請參考 [README_zh-TW.md](README_zh-TW.md)
 

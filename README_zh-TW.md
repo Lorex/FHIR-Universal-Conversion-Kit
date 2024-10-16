@@ -1,4 +1,6 @@
-![FHIR Universal Conversion Kit Logo](fuck-logo.png)
+<p align="center">
+  <img src="fuck-logo.png" alt="FHIR Universal Conversion Kit Logo" width="200" height="200">
+</p>
 
 # FHIR 通用轉換工具（Project F.U.C.K）
 
@@ -157,7 +159,7 @@ module.exports.afterProcess = (bundle) => {
 本著作係採用創用 CC 姓名標示-非商業性-相同方式分享 3.0 臺灣 授權條款授權。
 
 您可自由：
-- 分享 — 以任何媒介或格式重製及散布本素材
+- 分享 — 以任何媒介或格式��製及散布本素材
 - 修改 — 重混、轉換本素材、及依本素材建立新素材
 
 惟需遵照下列條件：
