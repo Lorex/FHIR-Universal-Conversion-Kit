@@ -8,18 +8,17 @@
 
 // 引入模組
 const resources = require('./resources');
-const schema = require('./fhir_schema/schema.json');
 const objectPath = require('object-path');
 const jp = require('jsonpath');
 const uuid = require('uuid');
 const axios = require('axios');
 const path = require('path');
 const _ = require('lodash');  // 用於 deep copy
+const fs = require('fs');
 
 // 動態載入 config
 const _configs = {};
 const configPath = '../config';
-const fs = require('fs');
 const configFiles = fs.readdirSync(path.join(__dirname, configPath));
 configFiles.forEach(file => {
   if (path.extname(file) === '.json' || path.extname(file) === '.js') {
@@ -38,6 +37,15 @@ class Convert {
       throw new Error(`Config "${this.useConfig}" not found.`);
     }
     this.bundle = _.cloneDeep(resources.Bundle(useConfig));
+
+    // 根據設定檔中的 fhir_version 載入對應的 schema，如果未指定則默認使用 R4
+    const fhirVersion = this.configs[this.useConfig].config.fhir_version || 'R4';
+    const schemaPath = path.join(__dirname, 'fhir_schema', `${fhirVersion}.json`);
+    try {
+      this.schema = require(schemaPath);
+    } catch (error) {
+      throw new Error(`無法載入 FHIR schema 檔案：${schemaPath}。錯誤：${error.message}`);
+    }
   }
 
   // 轉換單筆資料
@@ -82,12 +90,12 @@ class Convert {
       if (preprocessedData === null) continue;
 
       // 檢查 schema 中是否存在該字段的定義
-      if (!schema.definitions[resourceType] || !schema.definitions[resourceType].properties[fhirPath]) {
+      if (!this.schema.definitions[resourceType] || !this.schema.definitions[resourceType].properties[fhirPath]) {
         console.warn(`警告: 在 schema 中找不到 ${resourceType}.${fhirPath} 的定義`);
         continue;
       }
 
-      const propertyType = schema.definitions[resourceType].properties[fhirPath].type;
+      const propertyType = this.schema.definitions[resourceType].properties[fhirPath].type;
 
       // 根據屬性類型設置或添加數據
       if (propertyType === 'array') {
@@ -107,6 +115,8 @@ class Convert {
 
   // 轉換 data array
   async convert(dataArray) {
+    this.displayTargetFHIRVersion();  // 在轉換開始前顯示目標 FHIR 版本
+
     // 遍歷並轉換每個數據項
     for (const item of dataArray) {
       await this.convertSingle(item);
@@ -139,9 +149,7 @@ class Convert {
       const headers = config.config.token ? { Authorization: `Bearer ${config.config.token}` } : {};
       try {
         const result = await axios.post(config.config.fhirServerBaseUrl, this.bundle, { headers });
-        console.log('上傳成功！服務器返回的數據：');
-        console.log(JSON.stringify(result.data, null, 2));
-
+        console.log('上傳成功！');
         // 解析 Bundle transaction-response
         if (result.data.resourceType === 'Bundle' && result.data.type === 'transaction-response') {
           console.log('資源上傳狀態：');
@@ -174,6 +182,12 @@ class Convert {
         }
       }
     }
+  }
+
+  // 新增一個方法來顯示目標 FHIR 版本
+  displayTargetFHIRVersion() {
+    const fhirVersion = this.configs[this.useConfig].config.fhir_version || 'R4';
+    console.log(`目標 FHIR 版本：${fhirVersion}`);
   }
 }
 

@@ -7,6 +7,7 @@ module.exports.config = {
     version: '1.0.0',
     fhirServerBaseUrl: 'https://hapi.fhir.org/baseR4',
     action: 'upload',
+    fhir_version: 'R4',  // 新增此行，可以是 'R4', 'R4B', 或 'R5'
 }
 
 module.exports.globalResource = {
