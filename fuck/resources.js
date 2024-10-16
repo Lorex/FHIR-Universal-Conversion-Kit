@@ -12,7 +12,7 @@ const loadResource = (resourceName) => {
 module.exports.Organization = loadResource('organization');
 
 module.exports.Bundle = (config) => {
-  const c = require(`../../../config/${config}`);
+  const c = require(`../config/${config}`);
   return {
     resourceType: 'Bundle',
     type: 'transaction',

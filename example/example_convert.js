@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const { Convert } = require('../src/lib/fuck');
+const { Convert } = require('../fuck');
 
-// 讀取測試數據
+// 硬編碼的測試數據
 const testData = [
     {
         patientId: "P001",
@@ -32,7 +32,7 @@ const testData = [
 
 // 轉換數據
 async function convertData() {
-  const convert = new Convert('test_config');
+  const convert = new Convert('example_config');
   return await convert.convert(testData);
 }
 

@@ -1,5 +1,39 @@
 {
+  "name": "project-fuck",
+  "private": true,
+  "version": "1.0.0",
+  "description": "FHIR Universal Conversion Kit",
+  "keywords": [],
   "dependencies": {
-    "uuid": "^10.0.0"
-  }
+    "@sailshq/lodash": "^3.10.3",
+    "axios": "^0.24.0",
+    "jsonpath": "^1.1.1",
+    "node-uuid": "^1.4.8",
+    "object-path": "^0.11.8",
+    "sails": "^1.5.0",
+    "sails-hook-orm": "^4.0.0",
+    "sails-hook-sockets": "^2.0.0",
+    "uuid": "^8.3.2",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "5.16.0"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
+    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lorex/FHIR-Universal-Conversion-Kit.git"
+  },
+  "author": "Lorex@sitatech",
+  "license": "CC-TW BY-NC-SA 3.0",
+  "engines": {
+    "node": "^20.18"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

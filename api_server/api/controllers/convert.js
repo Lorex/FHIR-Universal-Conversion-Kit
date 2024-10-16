@@ -1,4 +1,4 @@
-const Convert = require('../../lib/fuck').Convert;
+const Convert = require('../../../fuck').Convert;
 
 module.exports = {
   friendlyName: 'Convert',
@@ -21,7 +21,7 @@ module.exports = {
   exits: sails.config.custom.exits,
 
   fn: async function (inputs, exits) {
-    const Convert = require('../../lib/fuck').Convert;
+    const Convert = require('../../../fuck').Convert;
 
     let res = [];
 

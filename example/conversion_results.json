@@ -1,0 +1,230 @@
+{
+  "resourceType": "Bundle",
+  "id": "2aa77d79-ba16-4ba9-a8fb-ab69e53617bb",
+  "type": "transaction-response",
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://hapi.fhir.org/baseR4"
+    }
+  ],
+  "entry": [
+    {
+      "response": {
+        "status": "201 Created",
+        "location": "Organization/dce32ed1-1053-4afd-b881-266c47592b0c/_history/1",
+        "etag": "1",
+        "lastModified": "2024-10-16T15:32:27.925+00:00",
+        "outcome": {
+          "resourceType": "OperationOutcome",
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Organization/dce32ed1-1053-4afd-b881-266c47592b0c/_history/1&quot; using update as create (ie. create with client assigned ID). Took 1ms.</td></tr></table></div>"
+          },
+          "issue": [
+            {
+              "severity": "information",
+              "code": "informational",
+              "details": {
+                "coding": [
+                  {
+                    "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
+                    "code": "SUCCESSFUL_UPDATE_AS_CREATE",
+                    "display": "Update as create succeeded."
+                  }
+                ]
+              },
+              "diagnostics": "Successfully created resource \"Organization/dce32ed1-1053-4afd-b881-266c47592b0c/_history/1\" using update as create (ie. create with client assigned ID). Took 1ms."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "response": {
+        "status": "201 Created",
+        "location": "Patient/a6a20401-2b25-4829-ba03-d49818a072b9/_history/1",
+        "etag": "1",
+        "lastModified": "2024-10-16T15:32:27.925+00:00",
+        "outcome": {
+          "resourceType": "OperationOutcome",
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Patient/a6a20401-2b25-4829-ba03-d49818a072b9/_history/1&quot; using update as create (ie. create with client assigned ID). Took 15ms.</td></tr></table></div>"
+          },
+          "issue": [
+            {
+              "severity": "information",
+              "code": "informational",
+              "details": {
+                "coding": [
+                  {
+                    "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
+                    "code": "SUCCESSFUL_UPDATE_AS_CREATE",
+                    "display": "Update as create succeeded."
+                  }
+                ]
+              },
+              "diagnostics": "Successfully created resource \"Patient/a6a20401-2b25-4829-ba03-d49818a072b9/_history/1\" using update as create (ie. create with client assigned ID). Took 15ms."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "response": {
+        "status": "201 Created",
+        "location": "Observation/ca064a39-5233-4c22-a800-5a94a23fdb7f/_history/1",
+        "etag": "1",
+        "lastModified": "2024-10-16T15:32:27.925+00:00",
+        "outcome": {
+          "resourceType": "OperationOutcome",
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Observation/ca064a39-5233-4c22-a800-5a94a23fdb7f/_history/1&quot; using update as create (ie. create with client assigned ID). Took 2ms.</td></tr></table></div>"
+          },
+          "issue": [
+            {
+              "severity": "information",
+              "code": "informational",
+              "details": {
+                "coding": [
+                  {
+                    "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
+                    "code": "SUCCESSFUL_UPDATE_AS_CREATE",
+                    "display": "Update as create succeeded."
+                  }
+                ]
+              },
+              "diagnostics": "Successfully created resource \"Observation/ca064a39-5233-4c22-a800-5a94a23fdb7f/_history/1\" using update as create (ie. create with client assigned ID). Took 2ms."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "response": {
+        "status": "201 Created",
+        "location": "Patient/f72c49fb-b7d9-4b8a-be39-673495001d8a/_history/1",
+        "etag": "1",
+        "lastModified": "2024-10-16T15:32:27.925+00:00",
+        "outcome": {
+          "resourceType": "OperationOutcome",
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Patient/f72c49fb-b7d9-4b8a-be39-673495001d8a/_history/1&quot; using update as create (ie. create with client assigned ID). Took 14ms.</td></tr></table></div>"
+          },
+          "issue": [
+            {
+              "severity": "information",
+              "code": "informational",
+              "details": {
+                "coding": [
+                  {
+                    "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
+                    "code": "SUCCESSFUL_UPDATE_AS_CREATE",
+                    "display": "Update as create succeeded."
+                  }
+                ]
+              },
+              "diagnostics": "Successfully created resource \"Patient/f72c49fb-b7d9-4b8a-be39-673495001d8a/_history/1\" using update as create (ie. create with client assigned ID). Took 14ms."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "response": {
+        "status": "201 Created",
+        "location": "Observation/e6ccb3e2-2e54-4c2e-93e8-01ea6a6a70b5/_history/1",
+        "etag": "1",
+        "lastModified": "2024-10-16T15:32:27.925+00:00",
+        "outcome": {
+          "resourceType": "OperationOutcome",
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Observation/e6ccb3e2-2e54-4c2e-93e8-01ea6a6a70b5/_history/1&quot; using update as create (ie. create with client assigned ID). Took 2ms.</td></tr></table></div>"
+          },
+          "issue": [
+            {
+              "severity": "information",
+              "code": "informational",
+              "details": {
+                "coding": [
+                  {
+                    "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
+                    "code": "SUCCESSFUL_UPDATE_AS_CREATE",
+                    "display": "Update as create succeeded."
+                  }
+                ]
+              },
+              "diagnostics": "Successfully created resource \"Observation/e6ccb3e2-2e54-4c2e-93e8-01ea6a6a70b5/_history/1\" using update as create (ie. create with client assigned ID). Took 2ms."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "response": {
+        "status": "201 Created",
+        "location": "Patient/91178def-418d-4cfe-bbe8-ed30376072f6/_history/1",
+        "etag": "1",
+        "lastModified": "2024-10-16T15:32:27.925+00:00",
+        "outcome": {
+          "resourceType": "OperationOutcome",
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Patient/91178def-418d-4cfe-bbe8-ed30376072f6/_history/1&quot; using update as create (ie. create with client assigned ID). Took 15ms.</td></tr></table></div>"
+          },
+          "issue": [
+            {
+              "severity": "information",
+              "code": "informational",
+              "details": {
+                "coding": [
+                  {
+                    "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
+                    "code": "SUCCESSFUL_UPDATE_AS_CREATE",
+                    "display": "Update as create succeeded."
+                  }
+                ]
+              },
+              "diagnostics": "Successfully created resource \"Patient/91178def-418d-4cfe-bbe8-ed30376072f6/_history/1\" using update as create (ie. create with client assigned ID). Took 15ms."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "response": {
+        "status": "201 Created",
+        "location": "Observation/00089b3e-8e03-4384-abf3-94fb3feb1931/_history/1",
+        "etag": "1",
+        "lastModified": "2024-10-16T15:32:27.925+00:00",
+        "outcome": {
+          "resourceType": "OperationOutcome",
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Observation/00089b3e-8e03-4384-abf3-94fb3feb1931/_history/1&quot; using update as create (ie. create with client assigned ID). Took 1ms.</td></tr></table></div>"
+          },
+          "issue": [
+            {
+              "severity": "information",
+              "code": "informational",
+              "details": {
+                "coding": [
+                  {
+                    "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
+                    "code": "SUCCESSFUL_UPDATE_AS_CREATE",
+                    "display": "Update as create succeeded."
+                  }
+                ]
+              },
+              "diagnostics": "Successfully created resource \"Observation/00089b3e-8e03-4384-abf3-94fb3feb1931/_history/1\" using update as create (ie. create with client assigned ID). Took 1ms."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2023 Lorex and Sitatech Information Services Co., Ltd.
+ * This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+ * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
+ */
+
 'use strict';
 
 // 引入模組
@@ -12,7 +18,7 @@ const _ = require('lodash');  // 用於 deep copy
 
 // 動態載入 config
 const _configs = {};
-const configPath = '../../../config';
+const configPath = '../config';
 const fs = require('fs');
 const configFiles = fs.readdirSync(path.join(__dirname, configPath));
 configFiles.forEach(file => {
@@ -133,10 +139,39 @@ class Convert {
       const headers = config.config.token ? { Authorization: `Bearer ${config.config.token}` } : {};
       try {
         const result = await axios.post(config.config.fhirServerBaseUrl, this.bundle, { headers });
+        console.log('上傳成功！服務器返回的數據：');
+        console.log(JSON.stringify(result.data, null, 2));
+
+        // 解析 Bundle transaction-response
+        if (result.data.resourceType === 'Bundle' && result.data.type === 'transaction-response') {
+          console.log('資源上傳狀態：');
+          result.data.entry.forEach((entry, index) => {
+            const resource = this.bundle.entry[index].resource;
+            const status = entry.response.status;
+            const location = entry.response.location;
+            const id = location ? location.split('/')[1] : 'Unknown';
+            console.log(`${resource.resourceType} ${id} 上傳狀態: ${status}`);
+          });
+        }
+
         return result.data;
       } catch (err) {
-        console.error('上傳到 FHIR 服務器時發生錯誤:', (err.response && err.response.data) || err.message);
-        throw err;
+        if (err.response) {
+          // 服務器回應了一個超出 2xx 範圍的狀態碼
+          console.error('上傳到 FHIR 服務器時發生錯誤:');
+          console.error(`狀態碼: ${err.response.status}`);
+          console.error('回應頭:', err.response.headers);
+          console.error('回應內容:', err.response.data);
+          throw new Error(`FHIR 服務器錯誤 (${err.response.status}): ${JSON.stringify(err.response.data)}`);
+        } else if (err.request) {
+          // 請求已經發出，但沒有收到回應
+          console.error('未收到 FHIR 服務器的回應');
+          throw new Error('未收到 FHIR 服務器的回應');
+        } else {
+          // 在設置請求時發生了一些錯誤
+          console.error('發送請求時發生錯誤:', err.message);
+          throw new Error(`發送請求時發生錯誤: ${err.message}`);
+        }
       }
     }
   }

@@ -3,22 +3,22 @@ const uuid = require('uuid');
 const organizationId = uuid.v4();
 
 module.exports.config = {
-    name: 'test_config',
+    name: 'example_config',
     version: '1.0.0',
-    fhirServerBaseUrl: 'https://hapi.fhir.tw/fhir',
-    action: 'return', // 為了測試，我們使用 'return' 而不是 'upload'
+    fhirServerBaseUrl: 'https://hapi.fhir.org/baseR4',
+    action: 'upload',
 }
 
 module.exports.globalResource = {
     Organization: {
         resourceType: 'Organization',
         id: organizationId,
-        name: '測試醫院',
-        alias: ['Test Hospital'],
+        name: '高雄榮民總醫院',
+        alias: ['高雄榮民總醫院'],
         telecom: [
             {
                 system: 'phone',
-                value: '02-12345678',
+                value: '07-3422121',
                 use: 'work'
             }
         ],
@@ -26,11 +26,11 @@ module.exports.globalResource = {
             {
                 use: 'work',
                 type: 'both',
-                text: '台北市測試區測試路123號',
-                line: ['測試路123號'],
-                city: '台北市',
-                district: '測試區',
-                postalCode: '123456'
+                text: '高雄市左營區大中一路386號',
+                line: ['高雄市左營區大中一路386號'],
+                city: '高雄市',
+                district: '左營區',
+                postalCode: '813'
             }
         ]
     },
@@ -46,11 +46,11 @@ module.exports.globalResource = {
         status: 'final',
         code: {
             coding: [{
-                system: 'https://www.vghtc.gov.tw/',
-                code: 'TEST-00001',
-                display: '測試數據',
+                system: 'http://loinc.org',
+                code: '77176-0',  // 血型的 LOINC 代碼
+                display: '血型',
             }],
-            text: '測試數據',
+            text: '血型測試',
         }
     },
 }
