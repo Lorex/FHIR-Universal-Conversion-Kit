@@ -1,166 +1,143 @@
 'use strict';
 
-const resources = Object.assign({}, require('./resources'));
+// 引入模組
+const resources = require('./resources');
 const schema = require('./fhir_schema/schema.json');
 const objectPath = require('object-path');
 const jp = require('jsonpath');
 const uuid = require('uuid');
 const axios = require('axios');
-
-// load all profiles from profile folder
-const _profiles = {};
-const profilePath = '../../../profile';
-const fs = require('fs');
 const path = require('path');
-const profileFiles = fs.readdirSync(path.join(__dirname, profilePath));
-profileFiles.forEach(file => {
-  const profile = require(path.join(__dirname, profilePath, file));
-  _profiles[profile.profile.name] = profile;
+const _ = require('lodash');  // 用於 deep copy
+
+// 動態載入 config
+const _configs = {};
+const configPath = '../../../config';
+const fs = require('fs');
+const configFiles = fs.readdirSync(path.join(__dirname, configPath));
+configFiles.forEach(file => {
+  if (path.extname(file) === '.json' || path.extname(file) === '.js') {
+    const config = require(path.join(__dirname, configPath, file));
+    _configs[config.config.name] = config;
+  }
 });
 
-
+// 轉換 class
 class Convert {
-  constructor(src, useProfile) {
-    this.data = src;
-    this.useProfile = useProfile;
+  constructor(useConfig) {
+    this.useConfig = useConfig;
     this.resourceIdList = {};
-    this.profiles = JSON.parse(JSON.stringify(_profiles));
-    if (!_profiles[this.useProfile]) {
-      throw new Error('Profile not found.');
-    } else {
-      this.bundle = JSON.parse(JSON.stringify(resources.Bundle(useProfile)));
+    this.configs = _.cloneDeep(_configs);
+    if (!this.configs[this.useConfig]) {
+      throw new Error(`Config "${this.useConfig}" not found.`);
     }
+    this.bundle = _.cloneDeep(resources.Bundle(useConfig));
   }
 
-  async convert() {
-    // iterate through each field in the data
-    let data = JSON.parse(JSON.stringify(this.data));
+  // 轉換單筆資料
+  async convertSingle(src) {
+    let data = _.cloneDeep(src);
+    let config = this.configs[this.useConfig];
 
-    let bundle = JSON.parse(JSON.stringify(this.bundle));
-    let resourceIdList = JSON.parse(JSON.stringify(this.resourceIdList));
-    let profiles = JSON.parse(JSON.stringify(this.profiles));
+    // 運行 beforeProcess hook函數（如果存在）
+    data = config.beforeProcess ? config.beforeProcess(data) : data;
 
-    // find the profile 
-    let profile = JSON.parse(JSON.stringify(profiles[this.useProfile]));
+    const resourceEntries = {};
 
-
-    if (!profile) {
-      throw new Error('Profile not found.');
-    }
-
-    // run beforeProcess
-    data = _profiles[this.useProfile].beforeProcess ? _profiles[this.useProfile].beforeProcess(data) : data;
-
+    // 遍歷數據的每個欄位
     for (const field in data) {
-      // find target field in the config
-      let targetField = profile.fields.find(f => {
-        return (f.source === field)
-      });
-      if (!targetField) {
-        continue;
-      }
-      const target = targetField.target;
+      const targetField = config.fields.find(f => f.source === field);
+      if (!targetField) continue;
 
-      // get the resource type
-      let resourceType = target.split('.')[0];
+      const { target, beforeConvert } = targetField;
+      const [resourceType, ...fhirPathParts] = target.split('.');
+      const fhirPath = fhirPathParts.join('.');
 
-      // find resource in the bundle
-      let resource = bundle.entry.find(entry => entry.resource.resourceType === resourceType);
-
-      // if resource does not exist, create it
-      if (!resource) {
+      // 如果該 Resource 還沒有資料，創建一個新的
+      if (!resourceEntries[resourceType]) {
         const id = uuid.v4();
-        bundle.entry.push({
-          fullUrl: `${profile.profile.fhirServerBaseUrl}/${resourceType}/${id}`,
+        resourceEntries[resourceType] = {
+          fullUrl: `${config.config.fhirServerBaseUrl}/${resourceType}/${id}`,
           resource: {
-            resourceType: resourceType,
-            id: id,
-            ...profile.globalResource[resourceType]
+            resourceType,
+            id,
+            ..._.cloneDeep(config.globalResource[resourceType])
           },
           request: {
             method: 'PUT',
             url: `/${resourceType}/${id}`
           }
-        });
+        };
       }
 
-      // get resource index in the bundle
-      let resourceIndex = bundle.entry.findIndex(entry => entry.resource.resourceType === resourceType);
+      // 運行 beforeConvert hook 函數（如果存在）
+      // 欄位資料預處理器：在轉換前對欄位資料進行處理
+      const preprocessedData = beforeConvert ? beforeConvert(data[field]) : data[field];
+      if (preprocessedData === null) continue;
 
-
-      // get fhir path in the target
-      let fhirPath = target.split('.').slice(1).join('.');
-
-      // run beforeConvert function if it exists
-      const targetbeforeConvert = _profiles[this.useProfile].fields.find(f => {
-        return (f.source === field)
-      });
-      let preprocessedData = targetbeforeConvert.beforeConvert ? targetbeforeConvert.beforeConvert(data[field]) : data[field];
-
-      // skip if the data is empty
-      if (preprocessedData === null) {
+      // 檢查 schema 中是否存在該字段的定義
+      if (!schema.definitions[resourceType] || !schema.definitions[resourceType].properties[fhirPath]) {
+        console.warn(`警告: 在 schema 中找不到 ${resourceType}.${fhirPath} 的定義`);
         continue;
       }
 
-      // write the resource to the bundle
-      switch (schema.definitions[resourceType].properties[fhirPath].type) {
-        case 'array':
-          objectPath.push(bundle.entry[resourceIndex].resource, fhirPath, preprocessedData);
-          break;
-        default:
-          objectPath.set(bundle.entry[resourceIndex].resource, fhirPath, preprocessedData);
-          break;
+      const propertyType = schema.definitions[resourceType].properties[fhirPath].type;
+
+      // 根據屬性類型設置或添加數據
+      if (propertyType === 'array') {
+        objectPath.push(resourceEntries[resourceType].resource, fhirPath, preprocessedData);
+      } else {
+        objectPath.set(resourceEntries[resourceType].resource, fhirPath, preprocessedData);
       }
 
-      // if id was changed, update the fullUrl
-      bundle.entry[resourceIndex].fullUrl = `${profile.profile.fhirServerBaseUrl}/${resourceType}/${bundle.entry[resourceIndex].resource.id}`;
-      bundle.entry[resourceIndex].request.url = `/${resourceType}/${bundle.entry[resourceIndex].resource.id}`;
-      resourceIdList[resourceType] = bundle.entry[resourceIndex].resource.id;
-    }
-    // build id list
-    resourceIdList = {};
-    for (let i = 0; i < bundle.entry.length; i++) {
-      resourceIdList[bundle.entry[i].resource.resourceType] = bundle.entry[i].resource.id;
+      this.resourceIdList[resourceType] = resourceEntries[resourceType].resource.id;
     }
 
-    const references = jp.nodes(bundle.entry, '$..reference');
-    for (let i = 0; i < references.length; i++) {
+    // 將所有創建的 resource 添加到 bundle 中
+    Object.values(resourceEntries).forEach(entry => {
+      this.bundle.entry.push(entry);
+    });
+  }
 
-      const reference = references[i];
+  // 轉換 data array
+  async convert(dataArray) {
+    // 遍歷並轉換每個數據項
+    for (const item of dataArray) {
+      await this.convertSingle(item);
+    }
 
+    // 處理 reference
+    const references = jp.nodes(this.bundle.entry, '$..reference');
+    for (const reference of references) {
       if (reference.value.startsWith('#')) {
         const resourceType = reference.value.substring(1);
         const resourceIndex = reference.path[1];
-        const resourceId = resourceIdList[resourceType];
-
-        objectPath.set(bundle.entry[resourceIndex], reference.path.slice(2).join('.'), `${resourceType}/${resourceId}`);
+        const resourceId = this.resourceIdList[resourceType];
+        objectPath.set(this.bundle.entry[resourceIndex], reference.path.slice(2).join('.'), `${resourceType}/${resourceId}`);
       }
     }
 
-    // Token Support for F.U.C.K (write your token in Payload JSON)
-    // if(profile.profile.token != undefined)console.log("Token:" + profile.profile.token);
-    let headerConfigs = {
-      headers: {
-        Authorization: `Bearer ${profile.profile.token}`
-        // https://stackoverflow.com/questions/40988238/sending-the-bearer-token-with-axios
+    const config = this.configs[this.useConfig];
+
+    // 運行 afterProcess hook 函數（如果存在）
+    if (config.afterProcess) {
+      this.bundle = config.afterProcess(this.bundle);
+    }
+
+    // 根據配置決定返回結果或上傳到 FHIR server
+    if (config.config.action === 'return') {
+      return this.bundle;
+    }
+
+    if (config.config.action === 'upload') {
+      const headers = config.config.token ? { Authorization: `Bearer ${config.config.token}` } : {};
+      try {
+        const result = await axios.post(config.config.fhirServerBaseUrl, this.bundle, { headers });
+        return result.data;
+      } catch (err) {
+        console.error('上傳到 FHIR 服務器時發生錯誤:', (err.response && err.response.data) || err.message);
+        throw err;
       }
-    }
-
-    // return convert result or upload to FHIR server
-    if (profile.profile.action === 'return') {
-      return bundle;
-    }
-
-    if (profile.profile.action === 'upload') {
-      const result = await axios.post(
-        `${profile.profile.fhirServerBaseUrl}`,
-        bundle,
-        headerConfigs
-      ).catch(err => {
-        console.log(err.response.data);
-        throw new Error(JSON.stringify(err.response.data));
-      });
-      return result.data;
     }
   }
 }

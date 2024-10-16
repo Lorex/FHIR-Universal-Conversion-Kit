@@ -1,0 +1,23 @@
+[
+  {
+    "patientId": "P001",
+    "name": "張三",
+    "birthDate": "1980-01-01",
+    "gender": "male",
+    "bloodType": "A"
+  },
+  {
+    "patientId": "P002",
+    "name": "李四",
+    "birthDate": "1990-05-15",
+    "gender": "female",
+    "bloodType": "B"
+  },
+  {
+    "patientId": "P003",
+    "name": "王五",
+    "birthDate": "1975-12-31",
+    "gender": "male",
+    "bloodType": "O"
+  }
+]
