@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="fuck-logo.png" alt="FHIR Universal Conversion Kit Logo" width="200" height="200">
+  <img src="fuck-logo.png" alt="FHIR Universal Conversion Kit Logo" width="200" height="271">
 </p>
 
 # FHIR Universal Conversion Kit (Project F.U.C.K)
