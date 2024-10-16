@@ -1,9 +1,16 @@
 {
-  "name": "project-fuck",
-  "private": true,
-  "version": "1.0.0",
-  "description": "FHIR Universal Conversion Kit",
-  "keywords": [],
+  "name": "fhir-universal-conversion-kit",
+  "private": false,
+  "version": "1.1.0",
+  "description": "A toolkit that can convert healthcare data from various formats to FHIR format.",
+  "keywords": [
+    "healthcare",
+    "fhir",
+    "conversion",
+    "converter",
+    "tool",
+    "kit"
+  ],
   "dependencies": {
     "@sailshq/lodash": "^3.10.3",
     "axios": "^0.24.0",
@@ -31,7 +38,7 @@
     "url": "https://github.com/Lorex/FHIR-Universal-Conversion-Kit.git"
   },
   "author": "Lorex@sitatech",
-  "license": "CC-TW BY-NC-SA 3.0",
+  "license": "For users outside Taiwan: CC BY-NC-SA 4.0, For users in Taiwan: CC-TW BY-NC-SA 3.0",
   "engines": {
     "node": "^20.18"
   },

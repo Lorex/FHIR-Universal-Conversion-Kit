@@ -7,12 +7,12 @@ module.exports = {
 
   inputs: {
     data: {
-      description: '要轉換的數據。',
+      description: 'Data to be converted.',
       type: 'json',
       required: true
     },
     config: {
-      description: '要使用的配置文件。',
+      description: 'Configuration file to be used.',
       type: 'string',
       required: true
     }

@@ -1,8 +1,12 @@
+![FHIR Universal Conversion Kit Logo](fuck-logo.png)
+
 # FHIR Universal Conversion Kit (Project F.U.C.K)
 
-FHIR Universal Conversion Kit (F.U.C.K.) is a powerful and flexible toolkit designed to convert arbitrary data to HL7 FHIR format.
+FHIR Universal Conversion Kit (F.U.C.K.) is an awesome and sexy tool that can convert convert arbitrary medical data into HL7 FHIR format and supports uploading to FHIR Server.
 
-## Features
+繁體中文說明文件請參考 [README_zh-TW.md](README_zh-TW.md)
+
+## Development Progress
 - :white_check_mark: Core Conversion Engine
 - :white_check_mark: Multiple Configuration File Support
 - :white_check_mark: Data Preprocessor
@@ -108,11 +112,20 @@ module.exports.config = {
 }
 
 module.exports.globalResource = {
-    // Define global resource templates here
+    // Define global FHIR Resource templates here
+    // You can customize FHIR Resource Template, if not defined, it will use FHIR default Resource Template
 }
 
 module.exports.fields = [
     // Define field mappings here
+    {
+      source: 'source field name',
+      target: 'target FHIR field name, using FHIR Path',
+      beforeConvert: (data) => {
+        // Process the data field before conversion
+        return data;
+      }
+    }
 ]
 
 module.exports.beforeProcess = (data) => {
@@ -127,15 +140,15 @@ module.exports.afterProcess = (bundle) => {
 ```
 
 ## Error Handling
-The toolkit provides detailed error messages, including:
+This tool provides detailed error messages, including:
 - Server response status
 - Response headers
 - Response body
 
-This information is crucial for debugging and understanding FHIR server responses.
+If the conversion fails, it will return an error message with an error code for easy debugging.
 
 ## Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+If you have any new ideas, feel free to submit an Issue or Pull Request.
 
 ## License
 
@@ -151,20 +164,6 @@ Under the following terms:
 - NonCommercial — You may not use the material for commercial purposes.
 - ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
 
-For more details, please refer to the LICENSE file.
-
-對於台灣地區（中華民國境內）使用者：
-本著作係採用創用 CC 姓名標示-非商業性-相同方式分享 3.0 台灣 授權條款授權。
-
-您可自由：
-- 分享 — 以任何媒介或格式重製及散布本素材
-- 修改 — 重混、轉換本素材、及依本素材建立新素材
-
-惟需遵照下列條件：
-- 姓名標示 — 您必須給予適當表彰、提供指向本授權條款的連結，以及指出（本作品的原始版本）是否已被變更。您可以任何合理方式為前述表彰，但不得以任何方式暗示授權人為您或您的使用方式背書。
-- 非商業性 — 您不得將本素材進行商業目的之使用。
-- 相同方式分享 — 若您重混、轉換本素材或依本素材建立新素材，您必須依本素材的授權條款來散布您的貢獻物。
-
-詳細資訊請參考 LICENSE 文件。
+For more details, please refer to the [LICENSE](LICENSE) file.
 
 © 2023 Lorex and Sitatech Information Services Co., Ltd. All Rights Reserved.

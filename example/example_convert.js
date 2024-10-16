@@ -2,45 +2,45 @@ const fs = require('fs');
 const path = require('path');
 const { Convert } = require('../fuck');
 
-// 硬編碼的測試數據
+// Hardcoded test data
 const testData = [
     {
         patientId: "P001",
-        lastName: "張",
-        firstName: "三",
+        lastName: "Zhang",
+        firstName: "San",
         birthDate: "1980-01-01",
         gender: "male",
         bloodType: "A"
     },
     {
         patientId: "P002",
-        lastName: "李",
-        firstName: "四",
+        lastName: "Li",
+        firstName: "Si",
         birthDate: "1990-05-15",
         gender: "female",
         bloodType: "B"
     },
     {
         patientId: "P003",
-        lastName: "王",
-        firstName: "五",
+        lastName: "Wang",
+        firstName: "Wu",
         birthDate: "1975-12-31",
         gender: "male",
         bloodType: "O"
     }
 ];
 
-// 轉換數據
+// Convert data
 async function convertData() {
   const convert = new Convert('example_config');
   return await convert.convert(testData);
 }
 
-// 執行轉換並將結果寫入文件
+// Execute conversion and write results to file
 convertData().then(result => {
   const outputPath = path.join(__dirname, 'conversion_results.json');
   fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
-  console.log(`轉換結果已寫入: ${outputPath}`);
+  console.log(`Conversion results have been written to: ${outputPath}`);
 }).catch(error => {
-  console.error('轉換過程中發生錯誤:', error);
+  console.error('An error occurred during the conversion process:', error);
 });

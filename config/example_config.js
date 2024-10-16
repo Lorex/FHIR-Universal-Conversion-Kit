@@ -13,8 +13,8 @@ module.exports.globalResource = {
     Organization: {
         resourceType: 'Organization',
         id: organizationId,
-        name: '高雄榮民總醫院',
-        alias: ['高雄榮民總醫院'],
+        name: 'Kaohsiung Veterans General Hospital',
+        alias: ['Kaohsiung Veterans General Hospital'],
         telecom: [
             {
                 system: 'phone',
@@ -26,10 +26,10 @@ module.exports.globalResource = {
             {
                 use: 'work',
                 type: 'both',
-                text: '高雄市左營區大中一路386號',
-                line: ['高雄市左營區大中一路386號'],
-                city: '高雄市',
-                district: '左營區',
+                text: 'No. 386, Dazhong 1st Rd, Zuoying District, Kaohsiung City',
+                line: ['No. 386, Dazhong 1st Rd, Zuoying District, Kaohsiung City'],
+                city: 'Kaohsiung City',
+                district: 'Zuoying District',
                 postalCode: '813'
             }
         ]
@@ -47,10 +47,10 @@ module.exports.globalResource = {
         code: {
             coding: [{
                 system: 'http://loinc.org',
-                code: '77176-0',  // 血型的 LOINC 代碼
-                display: '血型',
+                code: '77176-0',  // LOINC code for blood type
+                display: 'Blood Type',
             }],
-            text: '血型測試',
+            text: 'Blood Type Test',
         }
     },
 }
@@ -92,7 +92,7 @@ module.exports.fields = [
                     coding: [{
                         system: 'http://loinc.org',
                         code: '77176-0',
-                        display: '血型'
+                        display: 'Blood Type'
                     }]
                 },
                 valueString: data
@@ -101,28 +101,28 @@ module.exports.fields = [
     }
 ]
 
-// 全域資料預處理器
+// Global data pre-processor
 module.exports.beforeProcess = (data) => {
-    // 組合姓名
+    // Combine names
     data.fullName = `${data.lastName} ${data.firstName}`;
     
-    // 添加時間戳
+    // Add timestamp
     data.timestamp = new Date().toISOString();
     
-    // 刪除原始的 lastName 和 firstName 欄位
+    // Delete original lastName and firstName fields
     delete data.lastName;
     delete data.firstName;
     
     return data;
 }
 
-// 新增一個全域後處理器來添加 Organization 資源
+// Add a global post-processor to add Organization resource
 module.exports.afterProcess = (bundle) => {
-    // 檢查是否已經存在 Organization 資源
+    // Check if Organization resource already exists
     const organizationEntry = bundle.entry.find(entry => entry.resource.resourceType === 'Organization');
     
     if (!organizationEntry) {
-        // 如果不存在，則添加 Organization 資源
+        // If not, add Organization resource
         bundle.entry.unshift({
             fullUrl: `${module.exports.config.fhirServerBaseUrl}/Organization/${organizationId}`,
             resource: module.exports.globalResource.Organization,
