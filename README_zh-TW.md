@@ -34,6 +34,7 @@ F.U.C.K. 是 FHIR Universal Conversion Kit 的縮寫，所以中間的點記得�
 - :white_check_mark: FHIR 資料上傳器
 - :white_check_mark: 詳細錯誤處理
 - :white_check_mark: FHIR 資源驗證器
+- :white_check_mark: GUI 介面
 - :arrow_right: 多資料來源支援
 - :arrow_right: TW Core IG 內建支援
 

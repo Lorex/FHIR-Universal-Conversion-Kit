@@ -36,6 +36,7 @@ F.U.C.K. stands for "FHIR Universal Conversion Kit", so the middle dot should no
 - :white_check_mark: FHIR Data Uploader
 - :white_check_mark: Detailed Error Handling
 - :white_check_mark: FHIR Resource Validator
+- :white_check_mark: GUI Configuration Builder
 - :arrow_right: Multi-source Data Support
 - :arrow_right: TW Core IG Built-in Support
 
