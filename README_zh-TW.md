@@ -21,9 +21,10 @@ F.U.C.K. 是 FHIR Universal Conversion Kit 的縮寫，所以中間的點記得�
 ### F.U.C.K. 有什麼特色？
 
 - 支援多種 FHIR 版本：R4、R4B、R5，後續會持續增加，商用版可自訂 FHIR 版本。
-- 支援自動驗證：轉換後的 FHIR 資源會進行自動驗證，確保資源符合 FHIR 規範。
+- 資料驗證：轉換後的 FHIR 資源會進行自動驗證，確保資源符合 FHIR 規範。
 - 支援前處理和後處理：您可以在轉換前後進行資料處理，例如：資料清理、正規化、加解密等。
-- 支援上傳到 FHIR Server：轉換後的 FHIR 資源可以上傳到 FHIR Server，例如：HAPI、Firely 等。
+- 自動上傳 FHIR Server：轉換後的 FHIR 資源可以自動上傳到 FHIR Server，例如：HAPI、Firely 等。
+- 不用寫程式：F.U.C.K. 提供了一個友善的 GUI 介面，讓你不需要寫程式就可以建立設定檔。
 - 拯救工程師的肝：寫醫資系統已經夠累了，別再讓這種鳥事來增加你的肝指數。
 
 ## 開發進度

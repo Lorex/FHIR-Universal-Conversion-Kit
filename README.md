@@ -20,10 +20,12 @@ F.U.C.K. is a tool designed to convert various medical data into FHIR format and
 F.U.C.K. stands for "FHIR Universal Conversion Kit", so the middle dot should not be omitted. :P
 
 ### Why should I F.U.C.K.?
-- **Ease of Use**: Streamlines the conversion of various medical data into FHIR format.
-- **Versatility**: Supports multiple FHIR versions, ensuring broad compatibility.
-- **Validation**: Automatically validates data against FHIR standards to ensure compliance.
-- **Customization**: Offers options for pre-processing and post-processing of data.
+
+- **Multi-FHIR Version Support**: Supports multiple FHIR versions, ensuring broad compatibility.
+- **Data Validation**: Converts and validates data, then automatically uploads to FHIR Server.
+- **Data Pre/Post-processor**: Offers options for pre-processing and post-processing of data.
+- **Auto Uploader**: Converts and validates data, then automatically uploads to FHIR Server.
+- **Less Coding**: Provides a GUI for creating configuration files without writing code.
 - **Efficiency**: Save your ass and NEVER write code to convert medical data again!
 
 
