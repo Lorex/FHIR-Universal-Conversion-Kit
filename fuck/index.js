@@ -41,7 +41,7 @@ class Convert {
 
     // 根據設定檔中的 fhir_version 載入對應的 schema，如果未指定則默認使用 R4
     const fhirVersion = this.configs[this.useConfig].config.fhir_version || 'R4';
-    const schemaPath = path.join(__dirname, 'fhir_schema', `${fhirVersion}.json`);
+    const schemaPath = path.join(__dirname, 'fhir_packages', fhirVersion, 'fhir.schema.json');
     try {
       this.schema = require(schemaPath);
     } catch (error) {

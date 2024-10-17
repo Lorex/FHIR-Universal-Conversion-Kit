@@ -327,7 +327,7 @@ ${fields.value.map(field => `    {
         const loadFhirSchema = async (version) => {
             loadingSchema.value = true
             try {
-                const response = await fetch(`/fuck/fhir_schema/${version}.json`)
+                const response = await fetch(`/fuck/fhir_packages/${version}/fhir.schema.json`)
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`)
                 }
@@ -335,7 +335,7 @@ ${fields.value.map(field => `    {
                 console.log('Loaded FHIR schema:', schema)
                 fhirSchema.value = schema
                 
-                // 提取 discriminator.mapping 欄位的所有 key
+                // 從 discriminator.mapping 中擷取支援的 resource types
                 if (schema.discriminator && schema.discriminator.mapping) {
                     availableResources.value = Object.keys(schema.discriminator.mapping)
                 } else {
