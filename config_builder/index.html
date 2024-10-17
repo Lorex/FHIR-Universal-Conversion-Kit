@@ -25,6 +25,7 @@
     
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.15.1/beautify.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -172,6 +173,31 @@
                             <div id="postprocessorEditor" style="height: 300px;"></div>
                         </div>
                     </div>
+                    
+                    <!-- 替換全域 Resource 模板部分 -->
+                    <h2 class="mt-4 mb-2 fw-bold">{{ $t('globalResourceTemplates') }}</h2>
+                    <p class="text-muted small mb-2">{{ $t('globalResourceTemplatesTooltip') }}</p>
+                    <div id="globalResourceTemplates" class="mb-2">
+                        <div v-for="(template, index) in globalResourceTemplates" :key="index" class="mb-3 resource-template">
+                            <div class="row g-2 mb-2">
+                                <div class="col">
+                                    <input type="text" class="form-control" :placeholder="$t('resourceType')" v-model="template.resourceType" required>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-secondary btn-sm" @click="toggleResourceTemplateEditor(index)">
+                                        {{ $t('editTemplate') }}
+                                    </button>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-danger btn-sm" @click="removeResourceTemplate(index)" v-text="$t('removeResource')"></button>
+                                </div>
+                            </div>
+                            <div v-if="template.showEditor" class="mt-2">
+                                <div :id="'resourceTemplateEditor' + index" style="height: 200px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-sm mb-3" @click="addResourceTemplate" v-text="$t('addResource')"></button>
                 </form>
             </div>
 

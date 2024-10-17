@@ -45,6 +45,13 @@ const i18nResources = {
         hidePreprocessor: '隱藏欄位預處理器',
         fieldPreprocessor: '預處理...',
         enableFieldPreprocessor: '為這個欄位啟用預處理器',
+        globalResourceTemplates: '全域 Resource 模板',
+        globalResourceTemplatesTooltip: '在這裡定義全域 FHIR Resource 模板，這些模板將用於所有轉換的資源。',
+        newResourceType: '新增 Resource 類型',
+        addResource: '添加 Resource',
+        removeResource: '移除',
+        resourceType: 'Resource 類型',
+        editTemplate: '編輯模板',
     },
     'en': {
         title: 'F.U.C.K. Config Builder',
@@ -90,6 +97,15 @@ const i18nResources = {
         hidePreprocessor: 'Hide Field Preprocessor',
         fieldPreprocessor: 'Preprocess...',
         enableFieldPreprocessor: 'Enable preprocessor for this field',
+        globalResourceTemplates: 'Global Resource Templates',
+        globalResourceTemplatesTooltip: 'Define global FHIR Resource templates here. These templates will be used for all converted resources.',
+        newResourceType: 'New Resource Type',
+        addResource: 'Add Resource',
+        removeResource: 'Remove',
+        resourceType: 'Resource Type',
+        editTemplate: 'Edit Template',
+        addResource: 'Add Resource',
+        removeResource: 'Remove',
     }
 }
 
