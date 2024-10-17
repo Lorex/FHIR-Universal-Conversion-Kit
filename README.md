@@ -4,6 +4,10 @@
 
 # FHIR Universal Conversion Kit (Project F.U.C.K)
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com) [![npm version](https://badge.fury.io/js/@fhir-uck%2Ffhir-converter-core.svg)](https://badge.fury.io/js/@fhir-uck%2Ffhir-converter-core) [![HitCount](https://hits.dwyl.com/Lorex/FHIR-Universal-Conversion-Kit.svg?style=flat-square)](http://hits.dwyl.com/Lorex/FHIR-Universal-Conversion-Kit)
+
+[![NPM](https://nodei.co/npm/@fhir-uck%2Ffhir-converter-core.png)](https://nodei.co/npm/@fhir-uck%2Ffhir-converter-core/)
+
 FHIR Universal Conversion Kit (F.U.C.K.) is an awesome and sexy tool that can convert arbitrary medical data into HL7 FHIR format and supports uploading to FHIR Server.
 
 For Chinese documentation, please refer to [README_zh-TW.md](README_zh-TW.md)
@@ -46,16 +50,11 @@ F.U.C.K. stands for "FHIR Universal Conversion Kit", so the middle dot should no
 - Node.js 20.18.0 or higher
 
 ### Installation
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Lorex/FHIR-Universal-Conversion-Kit.git
-   ```
+Install F.U.C.K. using npm:
 
-2. Install dependencies:
-   ```bash
-   cd FHIR-Universal-Conversion-Kit
-   npm install
-   ```
+```bash
+npm install @fhir-uck/fhir-converter-core
+```
 
 ## Go F.U.C.K. yourself!
 
@@ -64,7 +63,7 @@ F.U.C.K. stands for "FHIR Universal Conversion Kit", so the middle dot should no
 You can use F.U.C.K. directly in your Node.js application:
 
 ```javascript
-const { Convert, Validator } = require('path/to/src');
+const { Convert, Validator } = require('@fhir-uck/fhir-converter-core');
 
 const config = 'your_config_name';
 const data = [/* your data array */];
@@ -85,16 +84,52 @@ convertAndValidateData();
 
 ### As an API
 
-To deploy F.U.C.K. as an API:
+To deploy F.U.C.K. as an API, you'll need to create a server application. Here's a basic example using Express:
 
-1. Start the server:
+1. Install Express:
    ```bash
-   npm start
+   npm install express
    ```
 
-2. Make a POST request to the API endpoint:
+2. Create a server file (e.g., `server.js`):
+   ```javascript
+   const express = require('express');
+   const { Convert, Validator } = require('@fhir-uck/fhir-converter-core');
+
+   const app = express();
+   app.use(express.json());
+
+   app.post('/api/convert', async (req, res) => {
+     const { config, data, validate } = req.body;
+     
+     try {
+       const convert = new Convert(config);
+       const result = await convert.convert(data);
+       
+       if (validate) {
+         const validator = new Validator();
+         const validationResult = await validator.validate(result);
+         res.json({ result, validationResult });
+       } else {
+         res.json({ result });
+       }
+     } catch (error) {
+       res.status(500).json({ error: error.message });
+     }
+   });
+
+   const PORT = process.env.PORT || 3000;
+   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
    ```
-   POST http://your-server-url/api/convert
+
+3. Start the server:
+   ```bash
+   node server.js
+   ```
+
+4. Make a POST request to the API endpoint:
+   ```
+   POST http://localhost:3000/api/convert
    ```
 
    With the following JSON payload:
@@ -107,10 +142,32 @@ To deploy F.U.C.K. as an API:
    ```
 
 ### Running the Example Conversion
-To run a conversion using the example script:
+To run a conversion using an example script, create a new file (e.g., `example_convert.js`) with the following content:
+
+```javascript
+const { Convert, Validator } = require('@fhir-uck/fhir-converter-core');
+
+const config = 'example_config'; // Replace with your config name
+const data = [/* your example data */];
+
+async function exampleConvert() {
+  const convert = new Convert(config);
+  const result = await convert.convert(data);
+  
+  const validator = new Validator();
+  const validationResult = await validator.validate(result);
+  
+  console.log('Conversion result:', result);
+  console.log('Validation result:', validationResult);
+}
+
+exampleConvert();
+```
+
+Then run the script:
 
 ```bash
-node example/example_convert.js
+node example_convert.js
 ```
 
 ## Configuration Files

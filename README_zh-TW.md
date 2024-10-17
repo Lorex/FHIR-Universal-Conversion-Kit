@@ -4,6 +4,10 @@
 
 # FHIR 通用轉換工具（Project F.U.C.K）
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com) [![npm version](https://badge.fury.io/js/@fhir-uck%2Ffhir-converter-core.svg)](https://badge.fury.io/js/@fhir-uck%2Ffhir-converter-core) [![HitCount](https://hits.dwyl.com/Lorex/FHIR-Universal-Conversion-Kit.svg?style=flat-square)](http://hits.dwyl.com/Lorex/FHIR-Universal-Conversion-Kit)
+
+[![NPM](https://nodei.co/npm/@fhir-uck%2Ffhir-converter-core.png)](https://nodei.co/npm/@fhir-uck%2Ffhir-converter-core/)
+
 FHIR 通用轉換工具（F.U.C.K.）是一個超讚的工具 ~~（至少比某些法人拿大把經費寫出來的垃圾還好用）~~ ，他可以將各種醫療資料轉換成 FHIR 格式，並支援上傳到 FHIR Server。
 
 ## 簡介
@@ -43,16 +47,11 @@ F.U.C.K. 是 FHIR Universal Conversion Kit 的縮寫，所以中間的點記得�
 - Node.js 20.18.0 或更新版本
 
 ### 安裝
-1. 複製此儲存庫：
-   ```bash
-   git clone https://github.com/Lorex/FHIR-Universal-Conversion-Kit.git
-   ```
+使用 npm 安裝 F.U.C.K.：
 
-2. 安裝相依套件：
-   ```bash
-   cd FHIR-Universal-Conversion-Kit
-   npm install
-   ```
+```bash
+npm install @fhir-uck/fhir-converter-core
+```
 
 ## 如何使用 F.U.C.K.？
 
@@ -61,7 +60,7 @@ F.U.C.K. 是 FHIR Universal Conversion Kit 的縮寫，所以中間的點記得�
 您可以直接在 Node.js 應用程式中使用 F.U.C.K.：
 
 ```javascript
-const { Convert, Validator } = require('path/to/src');
+const { Convert, Validator } = require('@fhir-uck/fhir-converter-core');
 
 const config = '設定檔名稱';
 const data = [/* 原始資料陣列 */];
@@ -82,16 +81,52 @@ convertAndValidateData();
 
 ### 作為 API 使用
 
-要將 F.U.C.K. 部署為 API：
+要將 F.U.C.K. 部署為 API，您需要創建一個伺服器應用程式。以下是使用 Express 的基本範例：
 
-1. 啟動伺服器：
+1. 安裝 Express：
    ```bash
-   npm start
+   npm install express
    ```
 
-2. 向 API 端點發送 POST 請求：
+2. 創建一個伺服器檔案（例如 `server.js`）：
+   ```javascript
+   const express = require('express');
+   const { Convert, Validator } = require('@fhir-uck/fhir-converter-core');
+
+   const app = express();
+   app.use(express.json());
+
+   app.post('/api/convert', async (req, res) => {
+     const { config, data, validate } = req.body;
+     
+     try {
+       const convert = new Convert(config);
+       const result = await convert.convert(data);
+       
+       if (validate) {
+         const validator = new Validator();
+         const validationResult = await validator.validate(result);
+         res.json({ result, validationResult });
+       } else {
+         res.json({ result });
+       }
+     } catch (error) {
+       res.status(500).json({ error: error.message });
+     }
+   });
+
+   const PORT = process.env.PORT || 3000;
+   app.listen(PORT, () => console.log(`伺服器已於 Port ${PORT} 啟動`));
    ```
-   POST http://your-server-url/api/convert
+
+3. 啟動伺服器：
+   ```bash
+   node server.js
+   ```
+
+4. 向 API 端點發送 POST 請求：
+   ```
+   POST http://localhost:3000/api/convert
    ```
 
    使用以下 JSON 內容：
@@ -104,10 +139,32 @@ convertAndValidateData();
    ```
 
 ### 執行範例轉換
-要使用範例腳本執行轉換：
+要使用範例腳本執行轉換，創建一個新檔案（例如 `example_convert.js`）並輸入以下內容：
+
+```javascript
+const { Convert, Validator } = require('@fhir-uck/fhir-converter-core');
+
+const config = 'example_config'; // 替換為您的設定檔名稱
+const data = [/* 您的範例資料 */];
+
+async function exampleConvert() {
+  const convert = new Convert(config);
+  const result = await convert.convert(data);
+  
+  const validator = new Validator();
+  const validationResult = await validator.validate(result);
+  
+  console.log('轉換結果:', result);
+  console.log('驗證結果:', validationResult);
+}
+
+exampleConvert();
+```
+
+然後執行腳本：
 
 ```bash
-node example/example_convert.js
+node example_convert.js
 ```
 
 ## 設定檔
