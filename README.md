@@ -6,7 +6,26 @@
 
 FHIR Universal Conversion Kit (F.U.C.K.) is an awesome and sexy tool that can convert arbitrary medical data into HL7 FHIR format and supports uploading to FHIR Server.
 
-繁體中文說明文件請參考 [README_zh-TW.md](README_zh-TW.md)
+For Chinese documentation, please refer to [README_zh-TW.md](README_zh-TW.md)
+
+## Introduction
+
+### What the F.U.C.K.?
+
+F.U.C.K. is a tool designed to convert various medical data into FHIR format and supports uploading to FHIR Server. Traditional medical data integration between different systems often requires writing a conversion program for each data format, which can be burdensome for developers. F.U.C.K. offers a Low-Code or even No-Code solution, allowing users to simply write a configuration file to convert various data into FHIR format. Subsequently, the FHIR format can be used for cross-hospital or cross-system data exchange.
+
+
+### Why is it called F.U.C.K.?
+
+F.U.C.K. stands for "FHIR Universal Conversion Kit", so the middle dot should not be omitted. :P
+
+### Why should I F.U.C.K.?
+- **Ease of Use**: Streamlines the conversion of various medical data into FHIR format.
+- **Versatility**: Supports multiple FHIR versions, ensuring broad compatibility.
+- **Validation**: Automatically validates data against FHIR standards to ensure compliance.
+- **Customization**: Offers options for pre-processing and post-processing of data.
+- **Efficiency**: Save your ass and NEVER write code to convert medical data again!
+
 
 ## Development Progress
 - :white_check_mark: Core Conversion Engine
@@ -14,12 +33,16 @@ FHIR Universal Conversion Kit (F.U.C.K.) is an awesome and sexy tool that can co
 - :white_check_mark: Data Preprocessor
 - :white_check_mark: FHIR Data Uploader
 - :white_check_mark: Detailed Error Handling
-- :arrow_right: FHIR Profile Validator (Coming Soon)
+- :white_check_mark: FHIR Resource Validator
+- :arrow_right: Multi-source Data Support
+- :arrow_right: TW Core IG Built-in Support
 
-## Requirements
+## How to get F.U.C.K.ed?
+
+### Requirements
 - Node.js 20.18.0 or higher
 
-## Installation
+### Installation
 1. Clone this repository:
    ```bash
    git clone https://github.com/Lorex/FHIR-Universal-Conversion-Kit.git
@@ -31,25 +54,30 @@ FHIR Universal Conversion Kit (F.U.C.K.) is an awesome and sexy tool that can co
    npm install
    ```
 
-## Usage
+## Go F.U.C.K. yourself!
 
 ### As a Library
 
 You can use F.U.C.K. directly in your Node.js application:
 
 ```javascript
-const { Convert } = require('path/to/fuck');
+const { Convert, Validator } = require('path/to/fuck');
 
 const config = 'your_config_name';
 const data = [/* your data array */];
 
-async function convertData() {
+async function convertAndValidateData() {
   const convert = new Convert(config);
   const result = await convert.convert(data);
+  
+  const validator = new Validator();
+  const validationResult = await validator.validate(result);
+  
   console.log(result);
+  console.log(validationResult);
 }
 
-convertData();
+convertAndValidateData();
 ```
 
 ### As an API
@@ -70,7 +98,8 @@ To deploy F.U.C.K. as an API:
    ```json
    {
      "config": "your_config_name",
-     "data": [/* your data array */]
+     "data": [/* your data array */],
+     "validate": true  // Set to true if you want to validate the converted data
    }
    ```
 
@@ -86,7 +115,7 @@ Configuration files are located in the `config` folder. Each configuration file 
 - Data source format
 - Conversion rules
 - Pre-processing and post-processing hooks
-
+- Validation rules
 To create a new configuration, add a new `.js` file in the `config` folder.
 
 ## Conversion Process
@@ -95,7 +124,8 @@ The conversion process follows this workflow:
 2. Pre-process data (if defined)
 3. Convert individual fields
 4. Post-process data (if defined)
-5. Return or upload the resulting FHIR Bundle
+5. Validate the resulting FHIR Bundle (if enabled)
+6. Return or upload the resulting FHIR Bundle
 
 ## Configuration File Structure
 
@@ -141,11 +171,57 @@ module.exports.afterProcess = (bundle) => {
 }
 ```
 
+## FHIR Resource Validator
+
+F.U.C.K. includes a built-in FHIR Resource Validator, which can be used to validate whether the converted FHIR resources comply with FHIR specifications. The validator checks:
+
+- The accuracy of resource structure
+- Mandatory fields
+- Data type consistency
+- Value set regulations
+
+The validator has two operating modes:
+
+### 1. Automatic Validation in Configuration File
+
+You can enable automatic validation in the configuration file. This way, every conversion will automatically include validation:
+
+```javascript
+module.exports.config = {
+    name: 'example_config',
+    version: '1.0.0',
+    fhirServerBaseUrl: 'https://hapi.fhir.org/baseR4',
+    action: 'upload',
+    validate: true  // Enable automatic validation
+}
+```
+
+When `validate` is set to `true`, the conversion process will automatically include validation steps. If validation fails, the conversion result will include validation error information.
+
+### 2. Independent Use
+
+You can also use the validator independently, allowing you to manually validate when needed:
+
+```javascript
+const { Validator } = require('path/to/fuck');
+
+const validator = new Validator();
+const validationResult = await validator.validate(fhirBundle);
+
+if (validationResult.valid) {
+  console.log('FHIR resource is valid');
+} else {
+  console.log('Validation errors:', validationResult.errors);
+}
+```
+
+This approach allows you to validate at any time outside of the conversion process, providing you with greater flexibility.
+
 ## Error Handling
-This tool provides detailed error messages, including:
+F.U.C.K. provides detailed error messages, including:
 - Server response status
-- Response headers
 - Response body
+- Validation errors
 
 If the conversion fails, it will return an error message with an error code for easy debugging.
 

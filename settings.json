@@ -1,0 +1,12 @@
+{
+  "validator_server": [{
+    "version": "R4",
+    "url": "http://hapi.fhir.org/baseR4"
+  }, {
+    "version": "R4B",
+    "url": "http://hapi.fhir.org/baseR4B"
+  }, {
+    "version": "R5",
+    "url": "http://hapi.fhir.org/baseR5"
+  }]
+}

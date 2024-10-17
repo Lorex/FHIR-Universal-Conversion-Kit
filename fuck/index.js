@@ -15,6 +15,7 @@ const axios = require('axios');
 const path = require('path');
 const _ = require('lodash');  // 用於 deep copy
 const fs = require('fs');
+const { validateResource } = require('./validator');
 
 // 動態載入 config
 const _configs = {};
@@ -107,7 +108,7 @@ class Convert {
       this.resourceIdList[resourceType] = resourceEntries[resourceType].resource.id;
     }
 
-    // 將所有創建的 resource 添加到 bundle 中
+    // 將所創建的 resource 添加到 bundle 中
     Object.values(resourceEntries).forEach(entry => {
       this.bundle.entry.push(entry);
     });
@@ -135,6 +136,12 @@ class Convert {
 
     const config = this.configs[this.useConfig];
 
+    // 只有在 config.config.validate 為 true 時才進行驗證
+    let validationResults = null;
+    if (config.config.validate === true) {
+      validationResults = await this.validateResources();
+    }
+
     // 運行 afterProcess hook 函數（如果存在）
     if (config.afterProcess) {
       this.bundle = config.afterProcess(this.bundle);
@@ -142,7 +149,10 @@ class Convert {
 
     // 根據配置決定返回結果或上傳到 FHIR server
     if (config.config.action === 'return') {
-      return this.bundle;
+      return {
+        bundle: this.bundle,
+        validationResults: validationResults
+      };
     }
 
     if (config.config.action === 'upload') {
@@ -162,7 +172,10 @@ class Convert {
           });
         }
 
-        return result.data;
+        return {
+          uploadResult: result.data,
+          validationResults: validationResults
+        };
       } catch (err) {
         if (err.response) {
           // 服務器回應了一個超出 2xx 範圍的狀態碼
@@ -189,6 +202,37 @@ class Convert {
     const fhirVersion = this.configs[this.useConfig].config.fhir_version || 'R4';
     console.log(`目標 FHIR 版本：${fhirVersion}`);
   }
+
+  async validateResources() {
+    const fhirVersion = this.configs[this.useConfig].config.fhir_version || 'R4';
+    const validationResults = [];
+
+    console.log('開始驗證資源...');
+    for (const entry of this.bundle.entry) {
+      const result = await validateResource(entry.resource, fhirVersion);
+      validationResults.push({
+        resourceType: entry.resource.resourceType,
+        id: entry.resource.id,
+        ...result
+      });
+    }
+
+    console.log('驗證結果：');
+    validationResults.forEach(result => {
+      console.log(`${result.resourceType} ${result.id}: ${result.valid ? '通過' : '未通過'}`);
+      if (!result.valid) {
+        result.issues.forEach(issue => {
+          console.log(`  ${issue.severity}: ${issue.details} (${issue.location})`);
+        });
+      }
+    });
+
+    return validationResults;
+  }
 }
 
-module.exports.Convert = Convert;
+// 將 validateResource 函數作為模組的一部分導出
+module.exports = {
+  Convert,
+  validateResource
+};

@@ -1,0 +1,11 @@
+{
+  "valid": true,
+  "issues": [
+    {
+      "severity": "information",
+      "code": "informational",
+      "details": "",
+      "location": ""
+    }
+  ]
+}
