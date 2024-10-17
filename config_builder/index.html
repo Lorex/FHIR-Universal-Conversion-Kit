@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F.U.C.K. Config Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+        "vue-i18n": "https://unpkg.com/vue-i18n@9/dist/vue-i18n.esm-browser.js"
+      }
+    }
+    </script>
+    
+    <!-- Ace Editor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.js"></script>
+    
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#" v-text="$t('title')"></a>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="https://github.com/Lorex/FHIR-Universal-Conversion-Kit" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe"></i> {{ $t('language') }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#" @click="changeLanguage('zh-TW')"><i class="fas fa-flag"></i> 繁體中文</a></li>
+                            <li><a class="dropdown-item" href="#" @click="changeLanguage('en')"><i class="fas fa-flag"></i> English</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content-wrapper">
+            <!-- 左側設定區塊 -->
+            <div class="left-column">
+                <h2 class="mb-3 fw-bold">{{ $t('configSettings') }}</h2>
+                <p class="text-muted small mb-3">{{ $t('configSettingsTooltip') }}</p>
+                <form>
+                    <div class="row g-2 mb-3">
+                        <div class="col-md-6">
+                            <label for="configName" class="form-label">{{ $t('configName') }}</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="configName" v-model="config.name" required>
+                                <button class="btn btn-outline-secondary" type="button" @click="generateRandomName">{{ $t('generateRandomName') }}</button>
+                            </div>
+                            <p class="text-muted small mt-1">{{ $t('configNameTooltip') }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="version" class="form-label">{{ $t('version') }}</label>
+                            <input type="text" class="form-control" id="version" v-model="config.version" required>
+                            <p class="text-muted small mt-1">{{ $t('versionTooltip') }}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="row g-2 mb-3">
+                        <div class="col-md-6">
+                            <label for="action" class="form-label">{{ $t('action') }}</label>
+                            <select class="form-select" id="action" v-model="config.action" required>
+                                <option value="upload" v-text="$t('upload')"></option>
+                                <option value="return" v-text="$t('return')"></option>
+                            </select>
+                            <p class="text-muted small mt-1">{{ $t('actionTooltip') }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="fhirVersion" class="form-label">{{ $t('fhirVersion') }}</label>
+                            <select class="form-select" id="fhirVersion" v-model="config.fhir_version" required>
+                                <option value="R4">R4</option>
+                                <option value="R4B">R4B</option>
+                                <option value="R5">R5</option>
+                            </select>
+                            <p class="text-muted small mt-1">{{ $t('fhirVersionTooltip') }}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3" v-if="config.action === 'upload'">
+                        <label for="fhirServerBaseUrl" class="form-label">{{ $t('fhirServerBaseUrl') }}</label>
+                        <input type="url" class="form-control" id="fhirServerBaseUrl" v-model="config.fhirServerBaseUrl" required>
+                        <p class="text-muted small mt-1">{{ $t('fhirServerBaseUrlTooltip') }}</p>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">{{ $t('validate') }}</label>
+                        <div class="form-check form-switch">
+                            <input type="checkbox" class="form-check-input" id="validate" v-model="config.validate">
+                            <label class="form-check-label" for="validate">
+                                {{ config.validate ? $t('enableValidation') : $t('disableValidation') }}
+                            </label>
+                        </div>
+                        <p class="text-muted small mt-1">{{ $t('validateTooltip') }}</p>
+                    </div>
+                    
+                    <h2 class="mt-4 mb-2 fw-bold">{{ $t('fieldMappings') }}</h2>
+                    <p class="text-muted small mb-2">{{ $t('fieldMappingsTooltip') }}</p>
+                    <div id="fieldMappings" class="mb-2">
+                        <div v-for="(field, index) in fields" :key="index" class="mb-3 field-mapping">
+                            <div class="row g-2 mb-2">
+                                <div class="col">
+                                    <input type="text" class="form-control" :placeholder="$t('sourceField')" v-model="field.source" required>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" :placeholder="$t('targetField')" v-model="field.target" required>
+                                </div>
+                                <div class="col-auto">
+                                  <button type="button" class="btn btn-secondary btn-sm" @click="toggleFieldPreprocessor(index)">
+                                      {{ $t('fieldPreprocessor') }}
+                                  </button>
+                              </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-danger btn-sm" @click="removeField(index)" v-text="$t('removeField')"></button>
+                                </div>
+                            </div>
+                            <div v-if="field.showPreprocessor" class="mt-2">
+                                <div class="form-check form-switch mb-2">
+                                    <input class="form-check-input" type="checkbox" v-model="field.enablePreprocessor" :id="'enableFieldPreprocessor' + index">
+                                    <label class="form-check-label" :for="'enableFieldPreprocessor' + index">
+                                        {{ $t('enableFieldPreprocessor') }}
+                                    </label>
+                                </div>
+                                <div :id="'fieldPreprocessor' + index" style="height: 200px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn btn-secondary btn-sm mb-3" @click="addField" v-text="$t('addField')"></button>
+
+                    <h2 class="mt-4 mb-2 fw-bold">{{ $t('globalProcessors') }}</h2>
+                    <p class="text-muted small mb-2">{{ $t('globalProcessorsTooltip') }}</p>
+                    
+                    <ul class="nav nav-tabs" id="processorTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="preprocessor-tab" data-bs-toggle="tab" data-bs-target="#preprocessor" type="button" role="tab" aria-controls="preprocessor" aria-selected="true" v-text="$t('preprocessor')"></button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="postprocessor-tab" data-bs-toggle="tab" data-bs-target="#postprocessor" type="button" role="tab" aria-controls="postprocessor" aria-selected="false" v-text="$t('postprocessor')"></button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="processorTabsContent">
+                        <div class="tab-pane fade show active" id="preprocessor" role="tabpanel" aria-labelledby="preprocessor-tab">
+                            <div class="form-check form-switch processor-switch">
+                                <input class="form-check-input" type="checkbox" v-model="enablePreprocessor" id="enablePreprocessor">
+                                <label class="form-check-label" for="enablePreprocessor">
+                                    {{ enablePreprocessor ? $t('enablePreprocessor') : $t('disablePreprocessor') }}
+                                </label>
+                            </div>
+                            <div id="preprocessorEditor" style="height: 300px;"></div>
+                        </div>
+                        <div class="tab-pane fade" id="postprocessor" role="tabpanel" aria-labelledby="postprocessor-tab">
+                            <div class="form-check form-switch processor-switch">
+                                <input class="form-check-input" type="checkbox" v-model="enablePostprocessor" id="enablePostprocessor">
+                                <label class="form-check-label" for="enablePostprocessor">
+                                    {{ enablePostprocessor ? $t('enablePostprocessor') : $t('disablePostprocessor') }}
+                                </label>
+                            </div>
+                            <div id="postprocessorEditor" style="height: 300px;"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 右側生成的設定檔區塊 -->
+            <div class="right-column">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h2 class="fw-bold">{{ $t('generatedConfig') }}</h2>
+                    <button class="btn btn-primary" @click="downloadConfig">
+                        <i class="bi bi-download me-2"></i>{{ $t('downloadConfig') }}
+                    </button>
+                </div>
+                <p class="text-muted small mb-2">{{ $t('generatedConfigTooltip') }}</p>
+                <div id="generatedConfigEditor"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>

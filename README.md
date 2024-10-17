@@ -116,9 +116,10 @@ Configuration files are located in the `config` folder. Each configuration file 
 - Conversion rules
 - Pre-processing and post-processing hooks
 - Validation rules
-To create a new configuration, add a new `.js` file in the `config` folder.
 
-## Conversion Process
+You can create new configuration files by adding `.js` files to the `config` folder, or use the GUI builder to create configuration files.
+
+### Conversion Process
 The conversion process follows this workflow:
 1. Load configuration
 2. Pre-process data (if defined)
@@ -127,7 +128,17 @@ The conversion process follows this workflow:
 5. Validate the resulting FHIR Bundle (if enabled)
 6. Return or upload the resulting FHIR Bundle
 
-## Configuration File Structure
+### Using the GUI Configuration Builder
+
+F.U.C.K. provides a user-friendly GUI for creating and editing configuration files. To use the GUI:
+
+1. Open the `config_builder/index.html` file in your web browser.
+2. Use the interface to set up your configuration, including field mappings, preprocessors, and postprocessors.
+3. Click the "Download Config" button to save your configuration file.
+4. Place the downloaded configuration file in the `config` folder of your F.U.C.K. installation.
+
+
+### Configuration File Structure
 
 Here's an example of a configuration file:
 
