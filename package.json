@@ -17,9 +17,6 @@
     "jsonpath": "^1.1.1",
     "node-uuid": "^1.4.8",
     "object-path": "^0.11.8",
-    "sails": "^1.5.0",
-    "sails-hook-orm": "^4.0.0",
-    "sails-hook-sockets": "^2.0.0",
     "uuid": "^8.3.2",
     "lodash": "^4.17.21"
   },
@@ -27,12 +24,11 @@
     "eslint": "5.16.0"
   },
   "scripts": {
-    "start": "NODE_ENV=production node app.js",
     "test": "npm run lint && npm run custom-tests && echo 'Done.'",
     "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
     "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
   },
-  "main": "app.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Lorex/FHIR-Universal-Conversion-Kit.git"
