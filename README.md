@@ -64,7 +64,7 @@ F.U.C.K. stands for "FHIR Universal Conversion Kit", so the middle dot should no
 You can use F.U.C.K. directly in your Node.js application:
 
 ```javascript
-const { Convert, Validator } = require('path/to/fuck');
+const { Convert, Validator } = require('path/to/src');
 
 const config = 'your_config_name';
 const data = [/* your data array */];
@@ -217,7 +217,7 @@ When `validate` is set to `true`, the conversion process will automatically incl
 You can also use the validator independently, allowing you to manually validate when needed:
 
 ```javascript
-const { Validator } = require('path/to/fuck');
+const { Validator } = require('path/to/src');
 
 const validator = new Validator();
 const validationResult = await validator.validate(fhirBundle);

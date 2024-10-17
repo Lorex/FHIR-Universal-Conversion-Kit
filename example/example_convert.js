@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { Convert } = require('../fuck');
+const { Convert } = require('../src');
 
 // Hardcoded test data
 const testData = [

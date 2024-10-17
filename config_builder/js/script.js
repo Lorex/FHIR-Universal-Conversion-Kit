@@ -327,7 +327,7 @@ ${fields.value.map(field => `    {
         const loadFhirSchema = async (version) => {
             loadingSchema.value = true
             try {
-                const response = await fetch(`/fuck/fhir_packages/${version}/fhir.schema.json`)
+                const response = await fetch(`/src/fhir_packages/${version}/fhir.schema.json`)
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`)
                 }

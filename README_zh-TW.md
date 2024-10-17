@@ -61,7 +61,7 @@ F.U.C.K. 是 FHIR Universal Conversion Kit 的縮寫，所以中間的點記得�
 您可以直接在 Node.js 應用程式中使用 F.U.C.K.：
 
 ```javascript
-const { Convert, Validator } = require('path/to/fuck');
+const { Convert, Validator } = require('path/to/src');
 
 const config = '設定檔名稱';
 const data = [/* 原始資料陣列 */];
@@ -213,7 +213,7 @@ module.exports.config = {
 您也可以獨立使用驗證器，這允許您在需要時手動進行驗證：
 
 ```javascript
-const { Validator } = require('path/to/fuck');
+const { Validator } = require('path/to/src');
 
 const validator = new Validator();
 const validationResult = await validator.validate(fhirBundle);

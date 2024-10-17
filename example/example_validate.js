@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { validateResource } = require('../fuck');
+const { validateResource } = require('../src');
 
 // Generate an example FHIR Patient resource
 const examplePatient = {
