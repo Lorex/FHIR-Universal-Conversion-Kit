@@ -1,15 +1,18 @@
 {
-  "name": "fhir-uck-",
+  "name": "fhir-uck-core",
   "private": false,
   "version": "1.1.0",
   "description": "A toolkit that can convert healthcare data from various formats to FHIR format.",
   "keywords": [
-    "healthcare",
-    "fhir",
-    "conversion",
-    "converter",
-    "tool",
-    "kit"
+    "FHIR",
+    "HL7",
+    "Healthcare",
+    "Converter",
+    "Mapper",
+    "Generator",
+    "Template",
+    "Engine",
+    "JSON to FHIR"
   ],
   "dependencies": {
     "@sailshq/lodash": "^3.10.3",
