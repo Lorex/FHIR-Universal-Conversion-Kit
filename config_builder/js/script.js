@@ -1,4 +1,4 @@
-import { createApp, ref, onMounted, watch, nextTick } from 'vue'
+import { createApp, ref, onMounted, watch, nextTick, computed } from 'vue'
 import i18n from './i18n.js'  // 導入 i18n 實例
 
 const app = createApp({
@@ -202,7 +202,7 @@ module.exports.afterProcess = (bundle) => {
                     .join('\n')
             }
 
-            // 檢查所有可能包含 import 或 require 的地方
+            // 檢查所有可能包 import 或 require 地方
             checkForImports(preprocessorEditor.getValue())
             checkForImports(postprocessorEditor.getValue())
             Object.values(resourceTemplateEditors.value).forEach(editor => checkForImports(editor.getValue()))
@@ -320,6 +320,55 @@ ${fields.value.map(field => `    {
             }
         }
 
+        const fhirSchema = ref({})
+        const loadingSchema = ref(false)
+        const availableResources = ref([])
+
+        const loadFhirSchema = async (version) => {
+            loadingSchema.value = true
+            try {
+                const response = await fetch(`/fuck/fhir_schema/${version}.json`)
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`)
+                }
+                const schema = await response.json()
+                console.log('Loaded FHIR schema:', schema)
+                fhirSchema.value = schema
+                
+                // 提取 discriminator.mapping 欄位的所有 key
+                if (schema.discriminator && schema.discriminator.mapping) {
+                    availableResources.value = Object.keys(schema.discriminator.mapping)
+                } else {
+                    console.warn('discriminator.mapping not found in schema')
+                    availableResources.value = []
+                }
+            } catch (error) {
+                console.error("Could not load FHIR schema:", error)
+                availableResources.value = []
+            } finally {
+                loadingSchema.value = false
+            }
+        }
+
+        // 當 FHIR 版本改變時加載對應的 schema
+        watch(() => config.value.fhir_version, (newVersion) => {
+            loadFhirSchema(newVersion)
+        })
+
+        // 初始加載 schema
+        onMounted(() => {
+            loadFhirSchema(config.value.fhir_version)
+        })
+
+        // 修改 watch 函數以使用新的 availableResources
+        watch(() => config.value.fhir_version, (newVersion) => {
+            globalResourceTemplates.value.forEach((template) => {
+                if (!availableResources.value.includes(template.resourceType)) {
+                    template.resourceType = ''
+                }
+            })
+        })
+
         return {
             config,
             fields,
@@ -336,7 +385,9 @@ ${fields.value.map(field => `    {
             newResourceType,
             addResourceTemplate,
             removeResourceTemplate,
-            toggleResourceTemplateEditor
+            toggleResourceTemplateEditor,
+            availableResources,
+            loadingSchema
         }
     }
 })

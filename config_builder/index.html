@@ -55,7 +55,7 @@
                 <h2 class="mb-3 fw-bold">{{ $t('configSettings') }}</h2>
                 <p class="text-muted small mb-3">{{ $t('configSettingsTooltip') }}</p>
                 <form>
-                    <div class="row g-2 mb-3">
+                    <div class="row g-2">
                         <div class="col-md-6">
                             <label for="configName" class="form-label">{{ $t('configName') }}</label>
                             <div class="input-group">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     
-                    <div class="row g-2 mb-3">
+                    <div class="row g-2">
                         <div class="col-md-6">
                             <label for="action" class="form-label">{{ $t('action') }}</label>
                             <select class="form-select" id="action" v-model="config.action" required>
@@ -112,21 +112,15 @@
                     <p class="text-muted small mb-2">{{ $t('fieldMappingsTooltip') }}</p>
                     <div id="fieldMappings" class="mb-2">
                         <div v-for="(field, index) in fields" :key="index" class="mb-3 field-mapping">
-                            <div class="row g-2 mb-2">
-                                <div class="col">
-                                    <input type="text" class="form-control" :placeholder="$t('sourceField')" v-model="field.source" required>
-                                </div>
-                                <div class="col">
-                                    <input type="text" class="form-control" :placeholder="$t('targetField')" v-model="field.target" required>
-                                </div>
-                                <div class="col-auto">
-                                  <button type="button" class="btn btn-secondary btn-sm" @click="toggleFieldPreprocessor(index)">
-                                      {{ $t('fieldPreprocessor') }}
-                                  </button>
-                              </div>
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-danger btn-sm" @click="removeField(index)" v-text="$t('removeField')"></button>
-                                </div>
+                            <div class="input-group mb-2">
+                                <input type="text" class="form-control" :placeholder="$t('sourceField')" v-model="field.source" required>
+                                <input type="text" class="form-control" :placeholder="$t('targetField')" v-model="field.target" required>
+                                <button type="button" class="btn btn-secondary" @click="toggleFieldPreprocessor(index)">
+                                    {{ $t('fieldPreprocessor') }}
+                                </button>
+                                <button type="button" class="btn btn-danger" @click="removeField(index)">
+                                    {{ $t('removeField') }}
+                                </button>
                             </div>
                             <div v-if="field.showPreprocessor" class="mt-2">
                                 <div class="form-check form-switch mb-2">
@@ -174,23 +168,30 @@
                         </div>
                     </div>
                     
-                    <!-- 替換全域 Resource 模板部分 -->
+                    <!-- 全域 Resource 模板部分 -->
                     <h2 class="mt-4 mb-2 fw-bold">{{ $t('globalResourceTemplates') }}</h2>
                     <p class="text-muted small mb-2">{{ $t('globalResourceTemplatesTooltip') }}</p>
-                    <div id="globalResourceTemplates" class="mb-2">
+                    <div v-if="loadingSchema" class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p>Loading FHIR schema...</p>
+                    </div>
+                    <div id="globalResourceTemplates" class="mb-2" v-else>
                         <div v-for="(template, index) in globalResourceTemplates" :key="index" class="mb-3 resource-template">
-                            <div class="row g-2 mb-2">
-                                <div class="col">
-                                    <input type="text" class="form-control" :placeholder="$t('resourceType')" v-model="template.resourceType" required>
-                                </div>
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-secondary btn-sm" @click="toggleResourceTemplateEditor(index)">
-                                        {{ $t('editTemplate') }}
-                                    </button>
-                                </div>
-                                <div class="col-auto">
-                                    <button type="button" class="btn btn-danger btn-sm" @click="removeResourceTemplate(index)" v-text="$t('removeResource')"></button>
-                                </div>
+                            <div class="input-group mb-2">
+                                <select class="form-select" v-model="template.resourceType" required>
+                                    <option value="">{{ $t('selectResourceType') }}</option>
+                                    <option v-for="resource in availableResources" :key="resource" :value="resource">
+                                        {{ resource }}
+                                    </option>
+                                </select>
+                                <button type="button" class="btn btn-secondary" @click="toggleResourceTemplateEditor(index)">
+                                    {{ $t('editTemplate') }}
+                                </button>
+                                <button type="button" class="btn btn-danger" @click="removeResourceTemplate(index)">
+                                    {{ $t('removeResource') }}
+                                </button>
                             </div>
                             <div v-if="template.showEditor" class="mt-2">
                                 <div :id="'resourceTemplateEditor' + index" style="height: 200px;"></div>

@@ -18,7 +18,7 @@ const i18nResources = {
         fieldMappings: '欄位映射',
         addField: '添加欄位',
         generateConfig: '生成設定檔',
-        generatedConfig: '生成的設定檔',
+        generatedConfig: '設定檔預覽',
         sourceField: '來源欄位',
         targetField: '目標欄位',
         removeField: '移除',
@@ -52,6 +52,7 @@ const i18nResources = {
         removeResource: '移除',
         resourceType: 'Resource 類型',
         editTemplate: '編輯模板',
+        selectResourceType: '選擇 Resource 類型',
     },
     'en': {
         title: 'F.U.C.K. Config Builder',
@@ -74,7 +75,7 @@ const i18nResources = {
         sourceField: 'Source Field',
         targetField: 'Target Field',
         removeField: 'Remove',
-        globalProcessors: 'Global Processors',
+        globalProcessors: 'Global Data Processors',
         preprocessor: 'Global Preprocessor',
         postprocessor: 'Global Postprocessor',
         enablePreprocessor: 'Enable Preprocessor',
@@ -106,6 +107,7 @@ const i18nResources = {
         editTemplate: 'Edit Template',
         addResource: 'Add Resource',
         removeResource: 'Remove',
+        selectResourceType: 'Select Resource Type',
     }
 }
 
