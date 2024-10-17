@@ -12,7 +12,8 @@
     "Generator",
     "Template",
     "Engine",
-    "JSON to FHIR"
+    "JSON to FHIR",
+    "fuck"
   ],
   "dependencies": {
     "@sailshq/lodash": "^3.10.3",
