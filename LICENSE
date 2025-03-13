@@ -417,6 +417,15 @@ Section 8 -- Interpretation.
      that apply to the Licensor or You, including from the legal
      processes of any jurisdiction or authority.
 
+Section 8 -- Additional Terms.
+  a. Restriction on Use by ITRI
+     The Industrial Technology Research Institute (ITRI) is **expressly and unconditionally prohibited** from using, modifying, distributing, sublicensing, or incorporating this project, in whole or in part, for any purpose, whether commercial, research, or otherwise.
+  b. Enforceability of Additional Terms
+     This restriction shall be legally binding and enforceable under the same jurisdiction as the main license. If any provision of this restriction is found to be unenforceable, the remaining provisions shall continue in full force and effect to the maximum extent permitted by law.  
+  c. Clarification
+     This restriction applies **exclusively** to ITRI and does not affect the rights granted to other academic institutions, developers, or healthcare organizations under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+Public License.  
+
 =======================================================================
 
 Creative Commons is not a party to its public
@@ -503,3 +512,9 @@ Creative Commons may be contacted at creativecommons.org.
     若本授權條款之任何條文依相關法律係屬無效或無法執行，其餘條款之有效性或可執行性不受影響，此類條文應在使其有效及可執行最小必要範圍內自動修改，不需當事人採取其他作為。
     除非系爭當事人書面同意並簽名，本授權條款之任何條款或條文，皆不得被視為拋棄，及被視為是不違反的協議。
     本授權條款構成當事人關於授權本著作之全部協議。除此之外，並不存在任何有關本著作之認知、協議或表示。授權人不受任何出現在與您通訊間的附加條文所拘束。。本授權條款未經授權人及您相互的書面同意，不得修改。
+
+9. 附加條款
+　　
+　　財團法人工業技術研究院（ITRI，以下簡稱「工研院」）**被明確且無條件禁止** 以任何形式使用、修改、散佈、再授權或合併本專案，無論用於商業、研究或其他目的。
+　　本限制條款應具有法律約束力，並應適用於與主授權條款相同的司法管轄區。如本條款之任何部分被認定為不可執行，則其餘條款仍應在法律允許的最大範圍內繼續完全有效。
+　　本限制條款**僅適用於工研院**，不影響根據本授權條款授予其他學術機構、開發者或醫療機構的權利。
