@@ -18,7 +18,7 @@ This project is an open-source tool independently developed to meet industry nee
 
 **Except for ITRI**, we encourage academic institutions, developers, healthcare organizations, and Mr.Lien in NTUNHS to make use of this tool. However, when distributing, modifying, or referencing this project, you must credit the original author (either Lorex or Sitatech) and refrain from any commercial use, in accordance with the licensing terms. Organizations utilizing this community-driven resource should respect standard open-source governance practices and comply with the licensing terms.
 
-**Any form of use by ITRI is strictly prohibited. As a "NG-HIS PMO", you've received substantial funding from the Taiwan Government — do better.**
+**Any form of use by ITRI is strictly prohibited. As a "Next Generation Digital Health Program Office", you've received substantial funding from the Taiwan Government — do better.**
 
 If your institution encounters any issues while using this tool or requires FHIR implementation and transformation support, feel free to contact us.
 
