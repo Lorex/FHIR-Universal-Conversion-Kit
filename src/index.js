@@ -78,18 +78,35 @@ class Convert {
 
     const resourceEntries = {};
 
-    // 遍歷數據的每個欄位
-    for (const field in data) {
-      const targetField = config.fields.find(f => f.source === field);
-      if (!targetField) continue;
+    // 遍歷設定檔中的每個欄位映射，支援巢狀路徑 / JSONPath 來源
+    for (const fieldMap of config.fields) {
+      const { source, target, beforeConvert } = fieldMap;
 
-      const { target, beforeConvert } = targetField;
+      // 取得來源資料
+      let rawValue;
+      if (source.startsWith('$')) {
+        // 若使用 JSONPath 語法
+        const matches = jp.query(data, source);
+        rawValue = matches.length > 0 ? matches[0] : undefined;
+      } else {
+        // 否則視為物件路徑（dot / bracket）
+        const normalizedSrc = source.replace(/\[(\d+)\]/g, '.$1');
+        rawValue = objectPath.get(data, normalizedSrc);
+      }
+
+      if (rawValue === undefined) continue; // 找不到來源值
+
+      // 運行 beforeConvert hook 函數（如果存在）
+      // 欄位資料預處理器：在轉換前對欄位資料進行處理
+      const preprocessedData = beforeConvert ? beforeConvert(rawValue) : rawValue;
+      if (preprocessedData === null) continue;
+
+      // 解析 target => templateName 與 fhirPath
       const { templateName, fhirPath: rawFhirPath } = (() => {
         const [tmpl, ...restParts] = target.split('.');
         return { templateName: tmpl, fhirPath: restParts.join('.') };
       })();
 
-      // 正規化路徑，把如 component[0].value 轉為 component.0.value，便於 object-path 處理
       const fhirPath = rawFhirPath.replace(/\[(\d+)\]/g, '.$1');
 
       // 從 globalResource 取得模板定義，判斷實際的 resourceType
@@ -113,11 +130,6 @@ class Convert {
           }
         };
       }
-
-      // 運行 beforeConvert hook 函數（如果存在）
-      // 欄位資料預處理器：在轉換前對欄位資料進行處理
-      const preprocessedData = beforeConvert ? beforeConvert(data[field]) : data[field];
-      if (preprocessedData === null) continue;
 
       // 取得頂層屬性名稱，並移除索引
       const topLevelKey = fhirPath.split('.')[0].replace(/\d+/, '');
@@ -145,7 +157,7 @@ class Convert {
       }
 
       // 保存 id 供 reference 轉換使用，以實際的 FHIR 資源類型為 key
-      this.resourceIdList[baseResourceType] = resourceEntries[templateName].resource.id;
+      this.resourceIdList[baseResourceType] = targetResource.id;
     }
 
     // 在合併進入 bundle 之前，先解析此 batch 內部的 inline references
@@ -246,17 +258,14 @@ class Convert {
           console.error('回應頭:', err.response.headers);
           console.error('回應內容:', err.response.data);
           throw new Error(`FHIR 服務器錯誤 (${err.response.status}): ${JSON.stringify(err.response.data)}`);
-        } else if (err.request) {
-          // 請求已經發出，但沒有收到回應
-          console.error('未收到 FHIR 服務器的回應');
-          throw new Error('未收到 FHIR 服務器的回應');
         } else {
-          // 在設置請求時發生了一些錯誤
           console.error('發送請求時發生錯誤:', err.message);
           throw new Error(`發送請求時發生錯誤: ${err.message}`);
         }
       }
     }
+
+    // 若 action=upload 不進入 try/catch 的 return，函式仍需結束
   }
 
   // 新增一個方法來顯示目標 FHIR 版本
@@ -279,16 +288,6 @@ class Convert {
       });
     }
 
-    console.log('驗證結果：');
-    validationResults.forEach(result => {
-      console.log(`${result.resourceType} ${result.id}: ${result.valid ? '通過' : '未通過'}`);
-      if (!result.valid) {
-        result.issues.forEach(issue => {
-          console.log(`  ${issue.severity}: ${issue.details} (${issue.location})`);
-        });
-      }
-    });
-
     return validationResults;
   }
 
@@ -297,32 +296,15 @@ class Convert {
     for (const reference of references) {
       if (typeof reference.value === 'string' && reference.value.startsWith('#')) {
         const refType = reference.value.substring(1);
-        const resourceIndex = reference.path[1]; // entry index in bundle
+        const resourceIndex = reference.path[1];
         const targetId = this.resourceIdList[refType];
-        let resolvedId = targetId;
-        if (!resolvedId) {
-          // 嘗試從 bundle 中尋找資源並補上 id
-          const targetEntry = this.bundle.entry.find(e => e.resource && e.resource.resourceType === refType);
-          if (targetEntry) {
-            if (!targetEntry.resource.id) {
-              targetEntry.resource.id = uuid.v4();
-            }
-            resolvedId = targetEntry.resource.id;
-            this.resourceIdList[refType] = resolvedId;
-          }
-        }
-
-        if (resolvedId) {
-          const newRef = `${refType}/${resolvedId}`;
-          console.log('Updating reference', reference.path, '=>', newRef);
-          objectPath.set(
-            this.bundle.entry[resourceIndex],
-            reference.path.slice(2).join('.'),
-            newRef
-          );
-        } else {
-          console.warn(`無法解析 reference：未找到 ${refType} 的資源 ID`);
-        }
+        if (!targetId) continue;
+        const newRef = `${refType}/${targetId}`;
+        objectPath.set(
+          this.bundle.entry[resourceIndex],
+          reference.path.slice(2).join('.'),
+          newRef
+        );
       }
     }
   }

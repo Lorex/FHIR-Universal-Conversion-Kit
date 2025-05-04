@@ -88,7 +88,7 @@ module.exports.globalResource = {
 
 module.exports.fields = [
     {
-        source: 'patientId',
+        source: 'patientData.patientId',
         target: 'Patient.id',
         beforeConvert: (data) => {
             return `patient-${data}`;

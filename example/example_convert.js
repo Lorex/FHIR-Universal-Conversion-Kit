@@ -6,7 +6,9 @@ const config = require('../config/example_config'); // or 'example_config'
 // Hardcoded test data
 const testData = [
     {
-        patientId: "P001", 
+        patientData: {
+          patientId: "P001", 
+        },
         lastName: "Zhang",
         firstName: "San",
         birthDate: "1980-01-01",
