@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { Convert } = require('../src');
+const config = require('../config/example_config'); // or 'example_config'
 
 // Hardcoded test data
 const testData = [
@@ -41,8 +42,9 @@ const testData = [
 
 // Convert data
 async function convertData() {
-  const convert = new Convert('example_config');
-  return await convert.convert(testData);
+  const convert = new Convert(config);
+  const bundle = await convert.convert(testData);
+  return bundle;
 }
 
 // Execute conversion and write results to file

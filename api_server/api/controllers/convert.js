@@ -5,6 +5,8 @@ module.exports = {
 
   description: 'Convert something.',
 
+  extendedDescription: `\n    Pass \`config\` either as a string (config file name) or as the full config object.\n    Example body:\n    {\n      "data": [...],\n      "config": "example_config"\n    }\n    or\n    {\n      "data": [...],\n      "config": require('../../config/example_config')\n    }\n  `,
+
   inputs: {
     data: {
       description: 'Data to be converted.',
@@ -12,8 +14,8 @@ module.exports = {
       required: true
     },
     config: {
-      description: 'Configuration file to be used.',
-      type: 'string',
+      description: 'Configuration data or config name string',
+      type: 'json',
       required: true
     }
   },

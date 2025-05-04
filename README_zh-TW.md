@@ -68,26 +68,30 @@ npm install @fhir-uck/fhir-converter-core
 
 ### 作為函式庫使用
 
-您可以直接在 Node.js 應用程式中使用 F.U.C.K.：
+您可以直接在 Node.js 應用程式中使用 F.U.C.K.，可傳入設定檔名稱（字串）或設定物件：
 
 ```javascript
-const { Convert, Validator } = require('@fhir-uck/fhir-converter-core');
+const { Convert } = require('@fhir-uck/fhir-converter-core');
 
-const config = '設定檔名稱';
+// 方法一：傳入設定檔名稱（字串）
+const configName = '設定檔名稱';
+const convert1 = new Convert(configName);
+
+// 方法二：傳入設定物件
+const configObject = require('./config/設定檔名稱');
+const convert2 = new Convert(configObject);
+
 const data = [/* 原始資料陣列 */];
 
-async function convertAndValidateData() {
-  const convert = new Convert(config);
-  const result = await convert.convert(data);
-  
-  const validator = new Validator();
-  const validationResult = await validator.validate(result);
-  
+async function convertData() {
+  // 可選用 convert1 或 convert2
+  const result = await convert1.convert(data);
+  // 若 config 有啟用驗證，result 會包含 validationResults
+  // 否則只會有 bundle 欄位
   console.log(result);
-  console.log(validationResult);
 }
 
-convertAndValidateData();
+convertData();
 ```
 
 ### 作為 API 使用
@@ -274,7 +278,7 @@ module.exports.config = {
 }
 ```
 
-當 `validate` 設為 `true` 時，轉換過程會自動包含驗證步驟。如果驗證失敗，轉換結果中會包含驗證錯誤訊息。
+當 `validate` 設為 `true` 時，轉換過程會自動包含驗證步驟。如果驗證失敗，轉換結果中會包含驗證錯誤訊息。若未啟用驗證，轉換結果只會有 bundle 欄位，不會出現 validationResults。
 
 ### 2. 獨立呼叫使用
 
@@ -293,7 +297,7 @@ if (validationResult.valid) {
 }
 ```
 
-使用這種方式讓您可以在轉換過程外的任何時候進行驗證以提升靈活性。
+> 注意：獨立呼叫驗證時，回傳的結果只包含驗證資訊（如 valid, errors），與轉換主流程回傳的 bundle 結構不同。主流程只有啟用驗證時才會有 validationResults 欄位，否則只會有 bundle。
 
 ## 錯誤處理
 F.U.C.K. 提供詳細的錯誤訊息，包括：

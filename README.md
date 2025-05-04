@@ -64,26 +64,30 @@ npm install @fhir-uck/fhir-converter-core
 
 ### As a Library
 
-You can use F.U.C.K. directly in your Node.js application:
+You can use F.U.C.K. directly in your Node.js application. You may pass either a config name (string) or a config object:
 
 ```javascript
-const { Convert, Validator } = require('@fhir-uck/fhir-converter-core');
+const { Convert } = require('@fhir-uck/fhir-converter-core');
 
-const config = 'your_config_name';
+// Option 1: Use config name (string)
+const configName = 'your_config_name';
+const convert1 = new Convert(configName);
+
+// Option 2: Use config object
+const configObject = require('./config/your_config_name');
+const convert2 = new Convert(configObject);
+
 const data = [/* your data array */];
 
-async function convertAndValidateData() {
-  const convert = new Convert(config);
-  const result = await convert.convert(data);
-  
-  const validator = new Validator();
-  const validationResult = await validator.validate(result);
-  
+async function convertData() {
+  // Use either convert1 or convert2
+  const result = await convert1.convert(data);
+  // If validation is enabled in config, result will include validationResults
+  // Otherwise, result will only have the bundle field
   console.log(result);
-  console.log(validationResult);
 }
 
-convertAndValidateData();
+convertData();
 ```
 
 ### As an API
@@ -271,7 +275,7 @@ module.exports.config = {
 }
 ```
 
-When `validate` is set to `true`, the conversion process will automatically include validation steps. If validation fails, the conversion result will include validation error information.
+When `validate` is set to `true`, the conversion process will automatically include validation steps. If validation fails, the conversion result will include validation error information. If validation is not enabled, the result will only contain the bundle field and will not include validationResults.
 
 ### 2. Independent Use
 
@@ -290,7 +294,7 @@ if (validationResult.valid) {
 }
 ```
 
-This approach allows you to validate at any time outside of the conversion process, providing you with greater flexibility.
+> Note: Standalone validation returns only validation info (such as valid, errors), not the bundle. In the main conversion process, validationResults is only present if validation is enabled; otherwise, only bundle is returned.
 
 ## Error Handling
 F.U.C.K. provides detailed error messages, including:

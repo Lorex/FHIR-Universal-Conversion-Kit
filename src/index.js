@@ -30,14 +30,33 @@ configFiles.forEach(file => {
 
 // 轉換 class
 class Convert {
-  constructor(useConfig) {
-    this.useConfig = useConfig;
+  /**
+   * @param {string|object} configInput  - 可以是設定檔名稱 (string) 或直接傳入的設定物件 (object)
+   */
+  constructor(configInput) {
+    // 初始化屬性
     this.resourceIdList = {};
+
+    // 先將 config 目錄中的所有設定載入
     this.configs = _.cloneDeep(_configs);
-    if (!this.configs[this.useConfig]) {
-      throw new Error(`Config "${this.useConfig}" not found.`);
+
+    // 處理傳入的 configInput
+    if (typeof configInput === 'string') {
+      this.useConfig = configInput;
+      if (!this.configs[this.useConfig]) {
+        throw new Error(`Config "${this.useConfig}" not found.`);
+      }
+    } else if (typeof configInput === 'object' && configInput !== null) {
+      // 動態注入傳入的設定物件
+      this.useConfig = (configInput.config && configInput.config.name) ? configInput.config.name : `inline_${Date.now()}`;
+      // 直接以傳入的設定覆蓋（若名稱重覆，使用者傳入的優先）
+      this.configs[this.useConfig] = _.cloneDeep(configInput);
+    } else {
+      throw new Error('Invalid config input: must be a string config name or a config object');
     }
-    this.bundle = _.cloneDeep(resources.Bundle(useConfig));
+
+    // 建立空的 Bundle，可接受字串或物件
+    this.bundle = _.cloneDeep(resources.Bundle(configInput));
 
     // 根據設定檔中的 fhir_version 載入對應的 schema，如果未指定則默認使用 R4
     const fhirVersion = this.configs[this.useConfig].config.fhir_version || 'R4';
@@ -191,10 +210,11 @@ class Convert {
 
     // 根據配置決定返回結果或上傳到 FHIR server
     if (config.config.action === 'return') {
-      return {
-        bundle: this.bundle,
-        validationResults: validationResults
-      };
+      const result = { bundle: this.bundle };
+      if (validationResults !== null) {
+        result.validationResults = validationResults;
+      }
+      return result;
     }
 
     if (config.config.action === 'upload') {
