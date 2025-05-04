@@ -156,8 +156,9 @@ class Convert {
         objectPath.set(targetResource, fhirPath, preprocessedData);
       }
 
-      // 保存 id 供 reference 轉換使用，以實際的 FHIR 資源類型為 key
+      // 保存 id 供 reference 轉換使用，同時以 templateName 與實際 resourceType 為 key
       this.resourceIdList[baseResourceType] = targetResource.id;
+      this.resourceIdList[templateName] = targetResource.id;
     }
 
     // 在合併進入 bundle 之前，先解析此 batch 內部的 inline references
@@ -165,6 +166,11 @@ class Convert {
     Object.values(resourceEntries).forEach(entry => {
       if (entry.resource && entry.resource.resourceType) {
         localIdMap[entry.resource.resourceType] = entry.resource.id;
+      }
+      // 也加入 templateName 對應，方便解析 #TemplateName
+      const tplName = Object.keys(resourceEntries).find(k => resourceEntries[k] === entry);
+      if (tplName) {
+        localIdMap[tplName] = entry.resource.id;
       }
     });
 
@@ -174,10 +180,15 @@ class Convert {
       refs.forEach(r => {
         if (typeof r.value === 'string' && r.value.startsWith('#')) {
           const refType = r.value.substring(1);
-          const refId = localIdMap[refType];
-          if (refId) {
-            objectPath.set(entry.resource, r.path.slice(1).join('.'), `${refType}/${refId}`);
+          // 先用 refType 直接找，找不到再嘗試轉為實際 resourceType
+          let targetId = this.resourceIdList[refType];
+          if (!targetId && this.configs[this.useConfig].globalResource[refType]) {
+            const rt = this.configs[this.useConfig].globalResource[refType].resourceType || refType;
+            targetId = this.resourceIdList[rt];
           }
+          if (!targetId) return;
+          const newRef = `${refType}/${targetId}`;
+          objectPath.set(entry.resource, r.path.slice(1).join('.'), newRef);
         }
       });
     });

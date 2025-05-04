@@ -83,7 +83,20 @@ module.exports.globalResource = {
             reference: '#Organization'
         },
     },
-   
+    PractitionerRequester: {
+        resourceType: 'Practitioner',
+    },
+    PractitionerPerformer: {
+        resourceType: 'Practitioner',
+    },
+    ServiceRequest: {
+        requester: {
+            reference: '#PractitionerRequester'
+        },
+        performer: {
+            reference: '#PractitionerPerformer'
+        },
+    },
 }
 
 module.exports.fields = [
@@ -130,7 +143,18 @@ module.exports.fields = [
         source: 'abp_number',
         target: 'ObservationABP.component[2].valueQuantity.value'
     },
-        
+    {
+        source: 'requester',
+        target: 'PractitionerRequester.identifier[0].value'
+    },
+    {
+        source: 'performer',
+        target: 'PractitionerPerformer.identifier[0].value'
+    },
+    {
+        source: 'orderId',
+        target: 'ServiceRequest.identifier[0].value'
+    },
 ]
 
 // Global data pre-processor

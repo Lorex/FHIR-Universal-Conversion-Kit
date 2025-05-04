@@ -16,7 +16,10 @@ const testData = [
         bloodType: "A",
         abp_systolic: 120,
         abp_diastolic: 80,
-        abp_number: 1
+        abp_number: 1,
+        requester: 'R123456789',
+        performer: 'F123999888',
+        orderId: '1234567890',
     },
     // {
     //     patientId: "P002",
