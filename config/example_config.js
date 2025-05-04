@@ -1,12 +1,11 @@
 const uuid = require('uuid');
-
 const organizationId = uuid.v4();
 
 module.exports.config = {
     name: 'example_config',
     version: '1.0.0',
     fhirServerBaseUrl: 'https://hapi.fhir.org/baseR4',
-    action: 'upload',
+    action: 'return',
     fhir_version: 'R4',  // FHIR 版本，可以是 'R4', 'R4B', 或 'R5'
     validate: false // 設定是否啟用驗證
 }
@@ -14,34 +13,58 @@ module.exports.config = {
 module.exports.globalResource = {
     Organization: {
         resourceType: 'Organization',
-        id: organizationId,
         name: 'Kaohsiung Veterans General Hospital',
-        alias: ['Kaohsiung Veterans General Hospital'],
-        telecom: [
-            {
-                system: 'phone',
-                value: '07-3422121',
-                use: 'work'
-            }
-        ],
-        address: [
-            {
-                use: 'work',
-                type: 'both',
-                text: 'No. 386, Dazhong 1st Rd, Zuoying District, Kaohsiung City',
-                line: ['No. 386, Dazhong 1st Rd, Zuoying District, Kaohsiung City'],
-                city: 'Kaohsiung City',
-                district: 'Zuoying District',
-                postalCode: '813'
-            }
-        ]
+        // other fields
     },
-    Patient: {
-        managingOrganization: {
-            reference: `Organization/${organizationId}`
+    ObservationABP: {
+        resourceType: 'Observation',
+        status: 'final',
+        subject: {
+            reference: '#Patient'
         },
+        code: {
+            coding: [{
+                system: 'http://loinc.org',
+                code: '96607-7',
+            }],
+            text: 'Average Blood Pressure',
+        },
+        component: [{
+            code: {
+                coding: [{
+                    system: 'http://loinc.org',
+                    code: '96608-5',
+                }]
+            },
+            valueQuantity: {
+                code: 'mm[Hg]',
+                system: 'http://unitsofmeasure.org',
+            }
+        },
+        {
+            code: {
+                coding: [{
+                    system: 'http://loinc.org',
+                    code: '96609-3',
+                }]
+            },
+            valueQuantity: {
+                code: 'mm[Hg]',
+                system: 'http://unitsofmeasure.org',
+            }
+        },
+        {
+            code: {
+                coding: [{
+                    system: ' http://snomed.info/sct',
+                    code: '246432004',
+                }]
+            },
+        },
+    ]
     },
-    Observation: {
+    ObservationBloodType: {
+        resourceType: 'Observation',
         subject: {
             reference: '#Patient'
         },
@@ -53,8 +76,14 @@ module.exports.globalResource = {
                 display: 'Blood Type',
             }],
             text: 'Blood Type Test',
-        }
+        },
     },
+    Patient: {
+        managingOrganization: {
+            reference: '#Organization'
+        },
+    },
+   
 }
 
 module.exports.fields = [
@@ -87,20 +116,21 @@ module.exports.fields = [
     },
     {
         source: 'bloodType',
-        target: 'Observation.component',
-        beforeConvert: (data) => {
-            return {
-                code: {
-                    coding: [{
-                        system: 'http://loinc.org',
-                        code: '77176-0',
-                        display: 'Blood Type'
-                    }]
-                },
-                valueString: data
-            }
-        }
-    }
+        target: 'ObservationBloodType.valueString',
+    },
+    {
+        source: 'abp_systolic',
+        target: 'ObservationABP.component[0].valueQuantity.value'
+    },
+    {
+        source: 'abp_diastolic',
+        target: 'ObservationABP.component[1].valueQuantity.value'
+    },
+    {
+        source: 'abp_number',
+        target: 'ObservationABP.component[2].valueQuantity.value'
+    },
+        
 ]
 
 // Global data pre-processor
@@ -127,7 +157,7 @@ module.exports.afterProcess = (bundle) => {
         // If not, add Organization resource
         bundle.entry.unshift({
             fullUrl: `${module.exports.config.fhirServerBaseUrl}/Organization/${organizationId}`,
-            resource: module.exports.globalResource.Organization,
+            resource: { id: organizationId, ...module.exports.globalResource.Organization },
             request: {
                 method: 'PUT',
                 url: `Organization/${organizationId}`

@@ -1,230 +1,139 @@
 {
-  "uploadResult": {
+  "bundle": {
     "resourceType": "Bundle",
-    "id": "305159db-ac2c-492a-9f62-e2c9746ea89f",
-    "type": "transaction-response",
-    "link": [
-      {
-        "relation": "self",
-        "url": "https://hapi.fhir.org/baseR4"
-      }
-    ],
+    "type": "transaction",
     "entry": [
       {
-        "response": {
-          "status": "201 Created",
-          "location": "Organization/e6ab9cc8-d9b4-45ff-9e22-f8933d7d8d72/_history/1",
-          "etag": "1",
-          "lastModified": "2024-10-17T18:50:26.254+00:00",
-          "outcome": {
-            "resourceType": "OperationOutcome",
-            "text": {
-              "status": "generated",
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Organization/e6ab9cc8-d9b4-45ff-9e22-f8933d7d8d72/_history/1&quot; using update as create (ie. create with client assigned ID). Took 1ms.</td></tr></table></div>"
-            },
-            "issue": [
-              {
-                "severity": "information",
-                "code": "informational",
-                "details": {
-                  "coding": [
-                    {
-                      "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
-                      "code": "SUCCESSFUL_UPDATE_AS_CREATE",
-                      "display": "Update as create succeeded."
-                    }
-                  ]
-                },
-                "diagnostics": "Successfully created resource \"Organization/e6ab9cc8-d9b4-45ff-9e22-f8933d7d8d72/_history/1\" using update as create (ie. create with client assigned ID). Took 1ms."
-              }
-            ]
-          }
+        "fullUrl": "https://hapi.fhir.org/baseR4/Organization/19cd378d-a6f3-444a-854b-3d1d5656ea8c",
+        "resource": {
+          "id": "19cd378d-a6f3-444a-854b-3d1d5656ea8c",
+          "resourceType": "Organization",
+          "name": "Kaohsiung Veterans General Hospital"
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Organization/19cd378d-a6f3-444a-854b-3d1d5656ea8c"
         }
       },
       {
-        "response": {
-          "status": "201 Created",
-          "location": "Patient/5ad059ad-2c42-4348-ae84-f367c841dc8d/_history/1",
-          "etag": "1",
-          "lastModified": "2024-10-17T18:50:26.254+00:00",
-          "outcome": {
-            "resourceType": "OperationOutcome",
-            "text": {
-              "status": "generated",
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Patient/5ad059ad-2c42-4348-ae84-f367c841dc8d/_history/1&quot; using update as create (ie. create with client assigned ID). Took 15ms.</td></tr></table></div>"
-            },
-            "issue": [
-              {
-                "severity": "information",
-                "code": "informational",
-                "details": {
-                  "coding": [
-                    {
-                      "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
-                      "code": "SUCCESSFUL_UPDATE_AS_CREATE",
-                      "display": "Update as create succeeded."
-                    }
-                  ]
-                },
-                "diagnostics": "Successfully created resource \"Patient/5ad059ad-2c42-4348-ae84-f367c841dc8d/_history/1\" using update as create (ie. create with client assigned ID). Took 15ms."
-              }
-            ]
-          }
+        "fullUrl": "https://hapi.fhir.org/baseR4/Patient/d090e674-7258-44ab-9202-9a2c04e87e7c",
+        "resource": {
+          "resourceType": "Patient",
+          "managingOrganization": {
+            "reference": "Organization/19cd378d-a6f3-444a-854b-3d1d5656ea8c"
+          },
+          "id": "patient-P001",
+          "birthDate": "1980-01-01",
+          "gender": "male",
+          "name": [
+            {
+              "use": "official",
+              "text": "Zhang San",
+              "family": "Zhang",
+              "given": [
+                "San"
+              ]
+            }
+          ]
+        },
+        "request": {
+          "method": "PUT",
+          "url": "/Patient/d090e674-7258-44ab-9202-9a2c04e87e7c"
         }
       },
       {
-        "response": {
-          "status": "201 Created",
-          "location": "Observation/53ebe37d-7f99-4146-b180-e78aa8ce106a/_history/1",
-          "etag": "1",
-          "lastModified": "2024-10-17T18:50:26.254+00:00",
-          "outcome": {
-            "resourceType": "OperationOutcome",
-            "text": {
-              "status": "generated",
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Observation/53ebe37d-7f99-4146-b180-e78aa8ce106a/_history/1&quot; using update as create (ie. create with client assigned ID). Took 3ms.</td></tr></table></div>"
-            },
-            "issue": [
+        "fullUrl": "https://hapi.fhir.org/baseR4/Observation/a7c53004-0c67-42d3-b043-5cbd0b7200cf",
+        "resource": {
+          "resourceType": "Observation",
+          "subject": {
+            "reference": "Patient/patient-P001"
+          },
+          "status": "final",
+          "code": {
+            "coding": [
               {
-                "severity": "information",
-                "code": "informational",
-                "details": {
-                  "coding": [
-                    {
-                      "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
-                      "code": "SUCCESSFUL_UPDATE_AS_CREATE",
-                      "display": "Update as create succeeded."
-                    }
-                  ]
-                },
-                "diagnostics": "Successfully created resource \"Observation/53ebe37d-7f99-4146-b180-e78aa8ce106a/_history/1\" using update as create (ie. create with client assigned ID). Took 3ms."
+                "system": "http://loinc.org",
+                "code": "77176-0",
+                "display": "Blood Type"
               }
-            ]
-          }
+            ],
+            "text": "Blood Type Test"
+          },
+          "id": "a7c53004-0c67-42d3-b043-5cbd0b7200cf",
+          "valueString": "A"
+        },
+        "request": {
+          "method": "PUT",
+          "url": "/Observation/a7c53004-0c67-42d3-b043-5cbd0b7200cf"
         }
       },
       {
-        "response": {
-          "status": "201 Created",
-          "location": "Patient/371601d6-48e0-4682-8acc-b2d914c6c538/_history/1",
-          "etag": "1",
-          "lastModified": "2024-10-17T18:50:26.254+00:00",
-          "outcome": {
-            "resourceType": "OperationOutcome",
-            "text": {
-              "status": "generated",
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Patient/371601d6-48e0-4682-8acc-b2d914c6c538/_history/1&quot; using update as create (ie. create with client assigned ID). Took 14ms.</td></tr></table></div>"
-            },
-            "issue": [
+        "fullUrl": "https://hapi.fhir.org/baseR4/Observation/cfeb5264-f3bb-4f78-b82e-b71ed87f1efe",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "subject": {
+            "reference": "Patient/patient-P001"
+          },
+          "code": {
+            "coding": [
               {
-                "severity": "information",
-                "code": "informational",
-                "details": {
-                  "coding": [
-                    {
-                      "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
-                      "code": "SUCCESSFUL_UPDATE_AS_CREATE",
-                      "display": "Update as create succeeded."
-                    }
-                  ]
-                },
-                "diagnostics": "Successfully created resource \"Patient/371601d6-48e0-4682-8acc-b2d914c6c538/_history/1\" using update as create (ie. create with client assigned ID). Took 14ms."
+                "system": "http://loinc.org",
+                "code": "96607-7"
               }
-            ]
-          }
-        }
-      },
-      {
-        "response": {
-          "status": "201 Created",
-          "location": "Observation/cf261817-e8d6-4b7b-96b4-f4f57557cf1d/_history/1",
-          "etag": "1",
-          "lastModified": "2024-10-17T18:50:26.254+00:00",
-          "outcome": {
-            "resourceType": "OperationOutcome",
-            "text": {
-              "status": "generated",
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Observation/cf261817-e8d6-4b7b-96b4-f4f57557cf1d/_history/1&quot; using update as create (ie. create with client assigned ID). Took 1ms.</td></tr></table></div>"
+            ],
+            "text": "Average Blood Pressure"
+          },
+          "component": [
+            {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "96608-5"
+                  }
+                ]
+              },
+              "valueQuantity": {
+                "code": "mm[Hg]",
+                "system": "http://unitsofmeasure.org",
+                "value": 120
+              }
             },
-            "issue": [
-              {
-                "severity": "information",
-                "code": "informational",
-                "details": {
-                  "coding": [
-                    {
-                      "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
-                      "code": "SUCCESSFUL_UPDATE_AS_CREATE",
-                      "display": "Update as create succeeded."
-                    }
-                  ]
-                },
-                "diagnostics": "Successfully created resource \"Observation/cf261817-e8d6-4b7b-96b4-f4f57557cf1d/_history/1\" using update as create (ie. create with client assigned ID). Took 1ms."
+            {
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "96609-3"
+                  }
+                ]
+              },
+              "valueQuantity": {
+                "code": "mm[Hg]",
+                "system": "http://unitsofmeasure.org",
+                "value": 80
               }
-            ]
-          }
-        }
-      },
-      {
-        "response": {
-          "status": "201 Created",
-          "location": "Patient/de4609a7-ab72-4692-9ee1-8b4c0a55c1e8/_history/1",
-          "etag": "1",
-          "lastModified": "2024-10-17T18:50:26.254+00:00",
-          "outcome": {
-            "resourceType": "OperationOutcome",
-            "text": {
-              "status": "generated",
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Patient/de4609a7-ab72-4692-9ee1-8b4c0a55c1e8/_history/1&quot; using update as create (ie. create with client assigned ID). Took 14ms.</td></tr></table></div>"
             },
-            "issue": [
-              {
-                "severity": "information",
-                "code": "informational",
-                "details": {
-                  "coding": [
-                    {
-                      "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
-                      "code": "SUCCESSFUL_UPDATE_AS_CREATE",
-                      "display": "Update as create succeeded."
-                    }
-                  ]
-                },
-                "diagnostics": "Successfully created resource \"Patient/de4609a7-ab72-4692-9ee1-8b4c0a55c1e8/_history/1\" using update as create (ie. create with client assigned ID). Took 14ms."
+            {
+              "code": {
+                "coding": [
+                  {
+                    "system": " http://snomed.info/sct",
+                    "code": "246432004"
+                  }
+                ]
+              },
+              "valueQuantity": {
+                "value": 1
               }
-            ]
-          }
-        }
-      },
-      {
-        "response": {
-          "status": "201 Created",
-          "location": "Observation/65eb0015-4bc4-4d81-93d8-87fb27abd772/_history/1",
-          "etag": "1",
-          "lastModified": "2024-10-17T18:50:26.254+00:00",
-          "outcome": {
-            "resourceType": "OperationOutcome",
-            "text": {
-              "status": "generated",
-              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight: bold;\">INFORMATION</td><td>[]</td><td>Successfully created resource &quot;Observation/65eb0015-4bc4-4d81-93d8-87fb27abd772/_history/1&quot; using update as create (ie. create with client assigned ID). Took 1ms.</td></tr></table></div>"
-            },
-            "issue": [
-              {
-                "severity": "information",
-                "code": "informational",
-                "details": {
-                  "coding": [
-                    {
-                      "system": "https://hapifhir.io/fhir/CodeSystem/hapi-fhir-storage-response-code",
-                      "code": "SUCCESSFUL_UPDATE_AS_CREATE",
-                      "display": "Update as create succeeded."
-                    }
-                  ]
-                },
-                "diagnostics": "Successfully created resource \"Observation/65eb0015-4bc4-4d81-93d8-87fb27abd772/_history/1\" using update as create (ie. create with client assigned ID). Took 1ms."
-              }
-            ]
-          }
+            }
+          ],
+          "id": "cfeb5264-f3bb-4f78-b82e-b71ed87f1efe"
+        },
+        "request": {
+          "method": "PUT",
+          "url": "/Observation/cfeb5264-f3bb-4f78-b82e-b71ed87f1efe"
         }
       }
     ]

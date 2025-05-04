@@ -5,29 +5,38 @@ const { Convert } = require('../src');
 // Hardcoded test data
 const testData = [
     {
-        patientId: "P001",
+        patientId: "P001", 
         lastName: "Zhang",
         firstName: "San",
         birthDate: "1980-01-01",
         gender: "male",
-        bloodType: "A"
+        bloodType: "A",
+        abp_systolic: 120,
+        abp_diastolic: 80,
+        abp_number: 1
     },
-    {
-        patientId: "P002",
-        lastName: "Li",
-        firstName: "Si",
-        birthDate: "1990-05-15",
-        gender: "female",
-        bloodType: "B"
-    },
-    {
-        patientId: "P003",
-        lastName: "Wang",
-        firstName: "Wu",
-        birthDate: "1975-12-31",
-        gender: "male",
-        bloodType: "O"
-    }
+    // {
+    //     patientId: "P002",
+    //     lastName: "Li", 
+    //     firstName: "Si",
+    //     birthDate: "1990-05-15",
+    //     gender: "female", 
+    //     bloodType: "B",
+    //     abp_systolic: 115,
+    //     abp_diastolic: 75,
+    //     abp_number: 2
+    // },
+    // {
+    //     patientId: "P003",
+    //     lastName: "Wang",
+    //     firstName: "Wu", 
+    //     birthDate: "1975-12-31",
+    //     gender: "male",
+    //     bloodType: "O",
+    //     abp_systolic: 130,
+    //     abp_diastolic: 85,
+    //     abp_number: 3
+    // }
 ];
 
 // Convert data

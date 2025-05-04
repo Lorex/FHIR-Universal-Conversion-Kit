@@ -65,22 +65,32 @@ class Convert {
       if (!targetField) continue;
 
       const { target, beforeConvert } = targetField;
-      const [resourceType, ...fhirPathParts] = target.split('.');
-      const fhirPath = fhirPathParts.join('.');
+      const { templateName, fhirPath: rawFhirPath } = (() => {
+        const [tmpl, ...restParts] = target.split('.');
+        return { templateName: tmpl, fhirPath: restParts.join('.') };
+      })();
 
-      // 如果該 Resource 還沒有資料，創建一個新的
-      if (!resourceEntries[resourceType]) {
+      // 正規化路徑，把如 component[0].value 轉為 component.0.value，便於 object-path 處理
+      const fhirPath = rawFhirPath.replace(/\[(\d+)\]/g, '.$1');
+
+      // 從 globalResource 取得模板定義，判斷實際的 resourceType
+      const templateDefinition = config.globalResource[templateName] || {};
+      const baseResourceType = templateDefinition.resourceType || templateName;
+
+      // 如果該 Template 還沒有資料，創建一個新的
+      if (!resourceEntries[templateName]) {
         const id = uuid.v4();
-        resourceEntries[resourceType] = {
-          fullUrl: `${config.config.fhirServerBaseUrl}/${resourceType}/${id}`,
+        const clonedTemplate = _.omit(_.cloneDeep(templateDefinition), ['resourceType', 'id']);
+        resourceEntries[templateName] = {
+          fullUrl: `${config.config.fhirServerBaseUrl}/${baseResourceType}/${id}`,
           resource: {
-            resourceType,
-            id,
-            ..._.cloneDeep(config.globalResource[resourceType])
+            resourceType: baseResourceType,
+            ...clonedTemplate,
+            id
           },
           request: {
             method: 'PUT',
-            url: `/${resourceType}/${id}`
+            url: `/${baseResourceType}/${id}`
           }
         };
       }
@@ -90,23 +100,56 @@ class Convert {
       const preprocessedData = beforeConvert ? beforeConvert(data[field]) : data[field];
       if (preprocessedData === null) continue;
 
+      // 取得頂層屬性名稱，並移除索引
+      const topLevelKey = fhirPath.split('.')[0].replace(/\d+/, '');
+
       // 檢查 schema 中是否存在該字段的定義
-      if (!this.schema.definitions[resourceType] || !this.schema.definitions[resourceType].properties[fhirPath]) {
-        console.warn(`警告: 在 schema 中找不到 ${resourceType}.${fhirPath} 的定義`);
+      if (!this.schema.definitions[baseResourceType] || !this.schema.definitions[baseResourceType].properties[topLevelKey]) {
+        console.warn(`警告: 在 schema 中找不到 ${baseResourceType}.${topLevelKey} 的定義`);
         continue;
       }
 
-      const propertyType = this.schema.definitions[resourceType].properties[fhirPath].type;
+      const propertyType = this.schema.definitions[baseResourceType].properties[topLevelKey].type;
 
-      // 根據屬性類型設置或添加數據
-      if (propertyType === 'array') {
-        objectPath.push(resourceEntries[resourceType].resource, fhirPath, preprocessedData);
+      const targetResource = resourceEntries[templateName].resource;
+
+      // 根據屬性類型及路徑是否包含索引決定 push 或 set
+      if (propertyType === 'array' && !fhirPath.includes('.0') && !/\.\d+\./.test(fhirPath)) {
+        // 對於陣列且未指定索引的情況，使用 push
+        objectPath.push(targetResource, fhirPath, preprocessedData);
       } else {
-        objectPath.set(resourceEntries[resourceType].resource, fhirPath, preprocessedData);
+        // 否則直接 set（覆蓋或創建指定索引）
+        if (propertyType === 'array' && !targetResource[topLevelKey]) {
+          targetResource[topLevelKey] = [];
+        }
+        objectPath.set(targetResource, fhirPath, preprocessedData);
       }
 
-      this.resourceIdList[resourceType] = resourceEntries[resourceType].resource.id;
+      // 保存 id 供 reference 轉換使用，以實際的 FHIR 資源類型為 key
+      this.resourceIdList[baseResourceType] = resourceEntries[templateName].resource.id;
     }
+
+    // 在合併進入 bundle 之前，先解析此 batch 內部的 inline references
+    const localIdMap = {};
+    Object.values(resourceEntries).forEach(entry => {
+      if (entry.resource && entry.resource.resourceType) {
+        localIdMap[entry.resource.resourceType] = entry.resource.id;
+      }
+    });
+
+    // 解析 local reference (僅限於此 batch)
+    Object.values(resourceEntries).forEach(entry => {
+      const refs = jp.nodes(entry.resource, '$..reference');
+      refs.forEach(r => {
+        if (typeof r.value === 'string' && r.value.startsWith('#')) {
+          const refType = r.value.substring(1);
+          const refId = localIdMap[refType];
+          if (refId) {
+            objectPath.set(entry.resource, r.path.slice(1).join('.'), `${refType}/${refId}`);
+          }
+        }
+      });
+    });
 
     // 將所創建的 resource 添加到 bundle 中
     Object.values(resourceEntries).forEach(entry => {
@@ -123,28 +166,27 @@ class Convert {
       await this.convertSingle(item);
     }
 
-    // 處理 reference
-    const references = jp.nodes(this.bundle.entry, '$..reference');
-    for (const reference of references) {
-      if (reference.value.startsWith('#')) {
-        const resourceType = reference.value.substring(1);
-        const resourceIndex = reference.path[1];
-        const resourceId = this.resourceIdList[resourceType];
-        objectPath.set(this.bundle.entry[resourceIndex], reference.path.slice(2).join('.'), `${resourceType}/${resourceId}`);
-      }
+    const config = this.configs[this.useConfig];
+
+    // 運行 afterProcess hook 函數（如果存在）
+    if (config.afterProcess) {
+      this.bundle = config.afterProcess(this.bundle);
     }
 
-    const config = this.configs[this.useConfig];
+    // 更新 resourceIdList 以包含 afterProcess 新增的資源
+    this.bundle.entry.forEach(entry => {
+      if (entry.resource && entry.resource.resourceType && entry.resource.id) {
+        this.resourceIdList[entry.resource.resourceType] = entry.resource.id;
+      }
+    });
+
+    // 解析 inline reference
+    this.resolveInlineReferences();
 
     // 只有在 config.config.validate 為 true 時才進行驗證
     let validationResults = null;
     if (config.config.validate === true) {
       validationResults = await this.validateResources();
-    }
-
-    // 運行 afterProcess hook 函數（如果存在）
-    if (config.afterProcess) {
-      this.bundle = config.afterProcess(this.bundle);
     }
 
     // 根據配置決定返回結果或上傳到 FHIR server
@@ -228,6 +270,41 @@ class Convert {
     });
 
     return validationResults;
+  }
+
+  resolveInlineReferences() {
+    const references = jp.nodes(this.bundle.entry, '$..reference');
+    for (const reference of references) {
+      if (typeof reference.value === 'string' && reference.value.startsWith('#')) {
+        const refType = reference.value.substring(1);
+        const resourceIndex = reference.path[1]; // entry index in bundle
+        const targetId = this.resourceIdList[refType];
+        let resolvedId = targetId;
+        if (!resolvedId) {
+          // 嘗試從 bundle 中尋找資源並補上 id
+          const targetEntry = this.bundle.entry.find(e => e.resource && e.resource.resourceType === refType);
+          if (targetEntry) {
+            if (!targetEntry.resource.id) {
+              targetEntry.resource.id = uuid.v4();
+            }
+            resolvedId = targetEntry.resource.id;
+            this.resourceIdList[refType] = resolvedId;
+          }
+        }
+
+        if (resolvedId) {
+          const newRef = `${refType}/${resolvedId}`;
+          console.log('Updating reference', reference.path, '=>', newRef);
+          objectPath.set(
+            this.bundle.entry[resourceIndex],
+            reference.path.slice(2).join('.'),
+            newRef
+          );
+        } else {
+          console.warn(`無法解析 reference：未找到 ${refType} 的資源 ID`);
+        }
+      }
+    }
   }
 }
 
