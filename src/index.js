@@ -179,16 +179,12 @@ class Convert {
       const refs = jp.nodes(entry.resource, '$..reference');
       refs.forEach(r => {
         if (typeof r.value === 'string' && r.value.startsWith('#')) {
-          const refType = r.value.substring(1);
-          // 先用 refType 直接找，找不到再嘗試轉為實際 resourceType
-          let targetId = this.resourceIdList[refType];
-          if (!targetId && this.configs[this.useConfig].globalResource[refType]) {
-            const rt = this.configs[this.useConfig].globalResource[refType].resourceType || refType;
-            targetId = this.resourceIdList[rt];
+          const tpl = r.value.substring(1);
+          const actualType = (config.globalResource[tpl] && config.globalResource[tpl].resourceType) || tpl;
+          const refId = localIdMap[tpl] || localIdMap[actualType];
+          if (refId) {
+            objectPath.set(entry.resource, r.path.slice(1).join('.'), `${actualType}/${refId}`);
           }
-          if (!targetId) return;
-          const newRef = `${refType}/${targetId}`;
-          objectPath.set(entry.resource, r.path.slice(1).join('.'), newRef);
         }
       });
     });
@@ -306,13 +302,13 @@ class Convert {
     const references = jp.nodes(this.bundle.entry, '$..reference');
     for (const reference of references) {
       if (typeof reference.value === 'string' && reference.value.startsWith('#')) {
-        const refType = reference.value.substring(1);
-        const resourceIndex = reference.path[1];
-        const targetId = this.resourceIdList[refType];
+        const tplName = reference.value.substring(1);
+        const resolvedType = (this.configs[this.useConfig].globalResource[tplName] && this.configs[this.useConfig].globalResource[tplName].resourceType) || tplName;
+        let targetId = this.resourceIdList[tplName] || this.resourceIdList[resolvedType];
         if (!targetId) continue;
-        const newRef = `${refType}/${targetId}`;
+        const newRef = `${resolvedType}/${targetId}`;
         objectPath.set(
-          this.bundle.entry[resourceIndex],
+          this.bundle.entry[reference.path[1]],
           reference.path.slice(2).join('.'),
           newRef
         );
