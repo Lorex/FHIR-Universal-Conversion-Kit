@@ -1,7 +1,7 @@
 {
   "name": "@fhir-uck/fhir-converter-core",
   "private": false,
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A toolkit that can convert healthcare data from various formats to FHIR format.",
   "keywords": [
     "FHIR",
