@@ -19,16 +19,17 @@
     "@sailshq/lodash": "^3.10.3",
     "axios": "^0.24.0",
     "jsonpath": "^1.1.1",
+    "lodash": "^4.17.21",
     "node-uuid": "^1.4.8",
     "object-path": "^0.11.8",
-    "uuid": "^8.3.2",
-    "lodash": "^4.17.21"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "eslint": "5.16.0"
+    "eslint": "5.16.0",
+    "mocha": "^11.7.5"
   },
   "scripts": {
-    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "test": "mocha test/**/*.spec.js",
     "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
     "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
   },
@@ -38,9 +39,9 @@
     "url": "git+https://github.com/Lorex/FHIR-Universal-Conversion-Kit.git"
   },
   "author": "Lorex@sitatech",
-  "license": "For users outside Taiwan: CC BY-NC-SA 4.0, For users in Taiwan: CC-TW BY-NC-SA 3.0",
+  "license": "SEE LICENSE IN LICENSE",
   "engines": {
-    "node": "^20.18"
+    "node": ">=20.0.0"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
